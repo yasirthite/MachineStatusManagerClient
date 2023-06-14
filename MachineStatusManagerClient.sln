@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineStatusManagerClient", "MachineStatusManagerClient\MachineStatusManagerClient.csproj", "{78941C1B-817A-404F-A1C7-2F6C0AFEB200}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRayMachineStatusManagement", "XRayMachineStatusManager.cs\XRayMachineStatusManagement.csproj", "{8F326191-91B6-4C4B-84F2-E716F7413856}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78941C1B-817A-404F-A1C7-2F6C0AFEB200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78941C1B-817A-404F-A1C7-2F6C0AFEB200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78941C1B-817A-404F-A1C7-2F6C0AFEB200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78941C1B-817A-404F-A1C7-2F6C0AFEB200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F326191-91B6-4C4B-84F2-E716F7413856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F326191-91B6-4C4B-84F2-E716F7413856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F326191-91B6-4C4B-84F2-E716F7413856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F326191-91B6-4C4B-84F2-E716F7413856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E76793C7-2EDF-4B02-A7F7-F1685190EEAC}
+	EndGlobalSection
+EndGlobal
