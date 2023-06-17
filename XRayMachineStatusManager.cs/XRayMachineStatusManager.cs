@@ -1,44 +1,99 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Diagnostics;
-using Microsoft.Extensions.Logging.TraceSource;
-//using XRayMachineStatusManager.cs;
+
 
 namespace XRayMachineStatusManagement
 {
-    public class XRayMachineStatusManager 
+    public class XRayMachineStatusManager
     {
         private readonly ConsoleLogger _logger;
-        
+
         private readonly bool _suppressInvalidValueException;
 
-        public event EventHandler<int> TurnOnSource;
-        public event EventHandler<int> TurnOffSource;
-        public event EventHandler<int> TurnOnDetector1;
-        public event EventHandler<int> TurnOffDetector1;
-        public event EventHandler<int> TurnOnDetector2;
-        public event EventHandler<int> TurnOffDetector2;
+        /// <summary>
+        /// Delay in milliseconds of two endpoint sensors that control source.
+        /// </summary>
+        private TimeSpan SourceSensorsWaitTime = TimeSpan.FromMilliseconds(500);
+        /// <summary>
+        /// Delay in milliseconds of all sensors that control detectors.
+        /// </summary>
+        private TimeSpan DetectorSensorsWaitTime = TimeSpan.FromMilliseconds(200);
+
+        private SensorRecord Prev_SensorRecord_S1 = default;
+        private SensorRecord Prev_SensorRecord_S2;
+        private SensorRecord Prev_SensorRecord_S3;
+        private SensorRecord Prev_SensorRecord_S4;
+        private SensorRecord Prev_SensorRecord_S5;
+
+        public event EventHandler<SensorCode> TurnOnSource;
+        public event EventHandler<SensorCode> TurnOffSource;
+        public event EventHandler<SensorCode> TurnOnDetector1;
+        public event EventHandler<SensorCode> TurnOffDetector1;
+        public event EventHandler<SensorCode> TurnOnDetector2;
+        public event EventHandler<SensorCode> TurnOffDetector2;
 
 
         public XRayMachineStatusManager()
         {
-            _suppressInvalidValueException = false;
+            _suppressInvalidValueException = true;
             _logger = new ConsoleLogger();
         }
 
-        public async Task DecideStatusAsync(int sensorCode)
+        private bool IsValid(SensorRecord currentSensorRecord)
+        {
+            TimeSpan timeStampDifference = currentSensorRecord.timeStamp - Prev_SensorRecord_S1.timeStamp;
+
+            switch (currentSensorRecord.sensorCode)
+            {
+                case SensorCode.S1_ON_FWD:
+                    if (Prev_SensorRecord_S1.timeStamp == DateTime.MinValue)
+                    {
+                        _logger.LogInformation($"Prev_SensorRecord_S1 {Prev_SensorRecord_S1.timeStamp.Millisecond} ms ===============> 0 (VALID)");
+                        
+                        Prev_SensorRecord_S1 = currentSensorRecord; 
+                        
+                        return true;
+                    }
+                    else if (timeStampDifference > SourceSensorsWaitTime)
+                    {
+                        _logger.LogInformation($"Difference in prev and current SensorRecord_S1 => " +
+                            $"{timeStampDifference.TotalMilliseconds} ms ================> (IN-VALID)");
+                        
+                        Prev_SensorRecord_S1 = currentSensorRecord;
+
+                        return false;
+                    }
+                    else
+                    {
+                        _logger.LogInformation($"{timeStampDifference.TotalMilliseconds} ms ================> (VALID)");
+                        
+                        Prev_SensorRecord_S1 = currentSensorRecord;
+                        
+                        return true;
+                    }
+                    break;
+            }
+            return true;
+        }
+
+        public async Task DecideStatusAsync(SensorCode sensorCode)
         {
             try
             {
-                await Task.Delay(100);
+                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][DECIDE_STATUS_ASYNC: -----> [{sensorCode}]");
+
+                SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
+
+                if (!IsValid(newSensorRecord))
+                    return;
 
                 switch (sensorCode)
                 {
-                    case 4849: //FWD:S1_ON
+                    case SensorCode.S1_ON_FWD:
                         if (IsSourceOn)
                         {
-                            _logger.LogInformation($"[S1_ON:{sensorCode}]:Source Already ON.");
+                            _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: Source Already ON.");
                             nBagsPartiallyInsideTunnel += 1;
                             LogBagData();
                             break;
@@ -47,21 +102,82 @@ namespace XRayMachineStatusManagement
                         {
                             IsSourceOn = true;
                             nBagsPartiallyInsideTunnel += 1;
-                            _logger.LogInformation($"[S1_ON:{sensorCode}]:Source Turned ON.");
+                            _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]: Source is Turning ON ...");
                             LogBagData();
                             TurnOnSource?.Invoke(this, sensorCode);
                             break;
                         }
 
-                    case 5849: //FWD:S1_OFF
+                    case SensorCode.S1_OFF_FWD:
                         {
                             nBagsPartiallyInsideTunnel -= 1;
                             nBagsFullyInsideTunnel += 1;
-                            _logger.LogInformation($"[S1_OFF:{sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
                             break;
                         }
 
-                    case 4865://FWD:S5_ON
+                    case SensorCode.S2_ON_FWD:
+                        {
+                            if (IsDetector1_On)
+                            {
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is already ON.");
+                            }
+                            else
+                            {
+                                IsDetector1_On = true;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
+                                TurnOnDetector1?.Invoke(this, sensorCode);
+                            }
+                            break;
+                        }
+
+                    case SensorCode.S2_OFF_FWD:
+                        //Todo: Add fully/partially inside for detection.
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Noted Un-used Sensor Signal.");
+                        break;
+
+                    case SensorCode.S3_ON_FWD:
+                        if (IsDetector2_On)
+                        {
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is already ON.");
+                        }
+                        else
+                        {
+                            IsDetector2_On = true;
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
+                            TurnOnDetector2?.Invoke(this, sensorCode);
+                        }
+                        break;
+
+                    case SensorCode.S3_OFF_FWD:
+                        //Todo: Add fully/partially inside for detection.
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                        break;
+
+                    case SensorCode.S4_ON_FWD:
+                        //Todo: Add fully/partially inside for detection.
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                        break;
+
+                    case SensorCode.S4_OFF_FWD:
+                        {
+                            if (IsDetector1_On)
+                            {
+                                IsDetector1_On = false;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
+                                TurnOffDetector1?.Invoke(this, sensorCode);
+                            }
+                            if (IsDetector2_On)
+                            {
+                                IsDetector2_On = false;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
+                                TurnOffDetector2?.Invoke(this, sensorCode);
+                            }
+
+                            break;
+                        }
+
+                    case SensorCode.S5_ON_FWD:
                         {
                             nBagsPartiallyInsideTunnel += 1;
                             nBagsFullyInsideTunnel -= 1;
@@ -69,20 +185,20 @@ namespace XRayMachineStatusManagement
                             break;
                         }
 
-                    case 5865: //FWD:S5_OFF
+                    case SensorCode.S5_OFF_FWD:
                         {
                             if (IsSourceOff)
                             {
-                                _logger.LogWarning($"[S5_OFF:{sensorCode}]: Source SHOULD NOT have been already OFF at this state. This state is alarming.");
+                                _logger.LogWarning($"[{sensorCode}:{(int)sensorCode}]: Source SHOULD NOT have been already OFF at this state. This state is alarming.");
                                 if (IsBagInTunnel)
                                 {
-                                    _logger.LogCritical($"[S5_OFF:{sensorCode}]: Source is Off but the bag(s) is/are partially or fully inside the tunnel.");
+                                    _logger.LogCritical($"[{sensorCode}:{(int)sensorCode}]: Source is Off but the bag(s) is/are partially or fully inside the tunnel.");
                                     LogBagData();
                                     throw new Exception("Source is off but bag(s) is/are partially or fully inside the tunnel");
                                 }
 
                                 nBagsPartiallyInsideTunnel -= 1;
-                                _logger.LogInformation($"[S5_OFF:{sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
                                 break;
                             }
                             else
@@ -97,82 +213,186 @@ namespace XRayMachineStatusManagement
                                     IsSourceOn = false;
                                     nBagsPartiallyInsideTunnel -= 1;
                                     LogBagData();
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
                                     TurnOffSource?.Invoke(this, sensorCode);
                                 }
                                 break;
                             }
                         }
 
-                    case 4841://FWD:S2_ON
+                    default:
+                        if (_suppressInvalidValueException)
+                        {
+                            _logger.LogInformation($"[{typeof(SensorCode)}:{typeof(XRayMachineStatusManager)}]: Invalid value: {sensorCode}");
+                        }
+                        else
+                        {
+                            throw new ArgumentException($"[{typeof(SensorCode)}:{typeof(XRayMachineStatusManager)}]: Invalid value: {sensorCode}");
+                        }
+
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error processing status: {ex.Message}");
+            }
+        }
+
+        public void DecideStatus(SensorCode sensorCode)
+        {
+            try
+            {
+
+                Console.WriteLine($"[DECIDE_STATUS:-----> {Thread.CurrentThread.ManagedThreadId}]");
+
+                SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
+
+                if (!IsValid(newSensorRecord))
+                    return;
+
+                switch (sensorCode)
+                {
+                    case SensorCode.S1_ON_FWD:
+                        if (IsSourceOn)
+                        {
+                            _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: Source Already ON.");
+                            nBagsPartiallyInsideTunnel += 1;
+                            LogBagData();
+                            break;
+                        }
+                        else
+                        {
+                            IsSourceOn = true;
+                            nBagsPartiallyInsideTunnel += 1;
+                            _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]:Source is Turning ON ...");
+                            LogBagData();
+                            TurnOnSource?.Invoke(this, sensorCode);
+                            break;
+                        }
+
+                    case SensorCode.S1_OFF_FWD:
+                        {
+                            nBagsPartiallyInsideTunnel -= 1;
+                            nBagsFullyInsideTunnel += 1;
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
+                            break;
+                        }
+
+                    case SensorCode.S2_ON_FWD:
                         {
                             if (IsDetector1_On)
                             {
-                                _logger.LogInformation($"[S2_ON:{sensorCode}]: Detector 1 is already ON.");
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is already ON.");
                             }
                             else
                             {
                                 IsDetector1_On = true;
-                                _logger.LogInformation($"[S2_ON:{sensorCode}]: Detector 1 is turned ON.");
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
                                 TurnOnDetector1?.Invoke(this, sensorCode);
                             }
                             break;
                         }
 
-                    case 5841://FWD:S2_OFF
+                    case SensorCode.S2_OFF_FWD:
                         //Todo: Add fully/partially inside for detection.
-                        _logger.LogInformation($"[S2_OFF:{sensorCode}]: Noted Un-used Sensor Signal.");
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Noted Un-used Sensor Signal.");
                         break;
 
-                    case 4844://FWD:S3_ON
+                    case SensorCode.S3_ON_FWD:
                         if (IsDetector2_On)
                         {
-                            _logger.LogInformation($"[S3_ON:{sensorCode}]: Detector 2 is already ON.");
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is already ON.");
                         }
                         else
                         {
-                            IsDetector1_On = true;
-                            _logger.LogInformation($"[S3_ON:{sensorCode}]: Detector 2 is turned ON.");
-                            TurnOnDetector1?.Invoke(this, sensorCode);
+                            IsDetector2_On = true;
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
+                            TurnOnDetector2?.Invoke(this, sensorCode);
                         }
                         break;
 
-                    case 4843://FWD:S3_OFF
+                    case SensorCode.S3_OFF_FWD:
                         //Todo: Add fully/partially inside for detection.
-                        _logger.LogInformation($"[S3_OFF:{sensorCode}]: Un-used Sensor Signal.");
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
                         break;
 
-                    case 5845://FWD:S4_ON
+                    case SensorCode.S4_ON_FWD:
                         //Todo: Add fully/partially inside for detection.
-                        _logger.LogInformation($"[S4_ON:{sensorCode}]: Un-used Sensor Signal.");
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
                         break;
 
-                    case 4845://FWD:S4_OFF
+                    case SensorCode.S4_OFF_FWD:
                         {
                             if (IsDetector1_On)
                             {
                                 IsDetector1_On = false;
-                                _logger.LogInformation($"[S4_OFF:{sensorCode}]: Detector 1 is turned OFF.");
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
                                 TurnOffDetector1?.Invoke(this, sensorCode);
                             }
                             if (IsDetector2_On)
                             {
                                 IsDetector2_On = false;
-                                _logger.LogInformation($"[S4_OFF:{sensorCode}]: Detector 2 is turned OFF.");
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
                                 TurnOffDetector2?.Invoke(this, sensorCode);
                             }
 
                             break;
                         }
 
+                    case SensorCode.S5_ON_FWD:
+                        {
+                            nBagsPartiallyInsideTunnel += 1;
+                            nBagsFullyInsideTunnel -= 1;
+                            LogBagData();
+                            break;
+                        }
+
+                    case SensorCode.S5_OFF_FWD:
+                        {
+                            if (IsSourceOff)
+                            {
+                                _logger.LogWarning($"[{sensorCode}:{(int)sensorCode}]: Source SHOULD NOT have been already OFF at this state. This state is alarming.");
+                                if (IsBagInTunnel)
+                                {
+                                    _logger.LogCritical($"[{sensorCode}:{(int)sensorCode}]: Source is Off but the bag(s) is/are partially or fully inside the tunnel.");
+                                    LogBagData();
+                                    throw new Exception("Source is off but bag(s) is/are partially or fully inside the tunnel");
+                                }
+
+                                nBagsPartiallyInsideTunnel -= 1;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: {TotalBagsInsideTunnel} Bag(s) inside the tunnel.");
+                                break;
+                            }
+                            else
+                            {
+                                if (IsBagFullyInsideTunnel)
+                                {
+                                    nBagsPartiallyInsideTunnel -= 1;
+                                    LogBagData();
+                                }
+                                else
+                                {
+                                    IsSourceOn = false;
+                                    nBagsPartiallyInsideTunnel -= 1;
+                                    LogBagData();
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
+                                    TurnOffSource?.Invoke(this, sensorCode);
+                                }
+                                break;
+                            }
+                        }
+
                     default:
                         if (_suppressInvalidValueException)
                         {
-                            _logger.LogInformation($"Invalid value: {sensorCode}");
+                            _logger.LogInformation($"[{typeof(SensorCode)}:{typeof(XRayMachineStatusManager)}]: Invalid value: {sensorCode}");
                         }
                         else
                         {
-                            throw new ArgumentException($"Invalid value: {sensorCode}", nameof(sensorCode));
+                            throw new ArgumentException($"[{typeof(SensorCode)}:{typeof(XRayMachineStatusManager)}]: Invalid value: {sensorCode}");
                         }
+
                         break;
                 }
             }
@@ -184,6 +404,7 @@ namespace XRayMachineStatusManagement
 
         private void LogBagData()
         {
+
             _logger.LogInformation($"Bags Fully Inside: {nBagsFullyInsideTunnel}");
             _logger.LogInformation($"Bags Partially Inside: {nBagsPartiallyInsideTunnel}");
         }

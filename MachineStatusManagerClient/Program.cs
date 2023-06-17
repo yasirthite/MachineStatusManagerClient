@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using XRayMachineStatusManagement;
 
 namespace MachineStatusManagerClient
 {
@@ -6,21 +8,12 @@ namespace MachineStatusManagerClient
     {
         static void Main(string[] args)
         {
-            XRayMachineStatusManagement.XRayMachineStatusManager manager = new XRayMachineStatusManagement.XRayMachineStatusManager();
-            manager.TurnOnSource += Manager_TurnOnSource;
-            manager.TurnOffSource += Manager_TurnOffSource;
-            manager.DecideStatusAsync(4849).Wait();
-            Console.ReadLine();
-        }
+            Console.WriteLine($"[MAIN:-----> {Thread.CurrentThread.ManagedThreadId}]");
+            //new LoginFormSimulator(false).Start();
+            new LoginFormSimulator(true).StartAsync();
+            Console.WriteLine($"[MAIN:-----> {Thread.CurrentThread.ManagedThreadId}]");
 
-        private static void Manager_TurnOffSource(object sender, int e)
-        {
-            Console.WriteLine("Source Turned Off");
-        }
-
-        private static void Manager_TurnOnSource(object sender, int e)
-        {
-            Console.WriteLine("Source Turned On");
-        }
+            Console.ReadKey();
+        }     
     }
 }

@@ -89,10 +89,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleLogger.cs" />
-    <Compile Include="FileLogger.cs" />
-    <Compile Include="SensorCodeBackward.cs" />
-    <Compile Include="SensorCodeForward.cs" />
+    <Compile Include="Loggers\ConsoleLogger.cs" />
+    <Compile Include="Loggers\FileLogger.cs" />
+    <Compile Include="Common\SensorCode.cs" />
+    <Compile Include="Common\SensorRecord.cs" />
+    <Compile Include="Sensors\SensorS1.cs" />
+    <Compile Include="Sensors\SensorS2.cs" />
+    <Compile Include="Sensors\SensorS3.cs" />
+    <Compile Include="Sensors\SensorS4.cs" />
+    <Compile Include="Sensors\SensorS5.cs" />
     <Compile Include="XRayMachineStatusManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
