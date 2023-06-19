@@ -1,30 +1,20 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-
+using XRayMachineStatusManagement.Sensors;
 
 namespace XRayMachineStatusManagement
 {
     public class XRayMachineStatusManager
     {
         private readonly ConsoleLogger _logger;
-
         private readonly bool _suppressInvalidValueException;
 
-        /// <summary>
-        /// Delay in milliseconds of two endpoint sensors that control source.
-        /// </summary>
-        private TimeSpan SourceSensorsWaitTime = TimeSpan.FromMilliseconds(500);
-        /// <summary>
-        /// Delay in milliseconds of all sensors that control detectors.
-        /// </summary>
-        private TimeSpan DetectorSensorsWaitTime = TimeSpan.FromMilliseconds(200);
-
-        private SensorRecord Prev_SensorRecord_S1 = default;
-        private SensorRecord Prev_SensorRecord_S2;
-        private SensorRecord Prev_SensorRecord_S3;
-        private SensorRecord Prev_SensorRecord_S4;
-        private SensorRecord Prev_SensorRecord_S5;
+        private SensorS1 sensorS1;
+        private SensorS2 sensorS2;
+        private SensorS3 sensorS3;
+        private SensorS4 sensorS4;
+        private SensorS5 sensorS5;
 
         public event EventHandler<SensorCode> TurnOnSource;
         public event EventHandler<SensorCode> TurnOffSource;
@@ -38,45 +28,15 @@ namespace XRayMachineStatusManagement
         {
             _suppressInvalidValueException = true;
             _logger = new ConsoleLogger();
+
+            sensorS1 = new SensorS1(_logger);
+            sensorS2 = new SensorS2(_logger);
+            sensorS3 = new SensorS3(_logger);
+            sensorS4 = new SensorS4(_logger);
+            sensorS5 = new SensorS5(_logger);
         }
 
-        private bool IsValid(SensorRecord currentSensorRecord)
-        {
-            TimeSpan timeStampDifference = currentSensorRecord.timeStamp - Prev_SensorRecord_S1.timeStamp;
-
-            switch (currentSensorRecord.sensorCode)
-            {
-                case SensorCode.S1_ON_FWD:
-                    if (Prev_SensorRecord_S1.timeStamp == DateTime.MinValue)
-                    {
-                        _logger.LogInformation($"Prev_SensorRecord_S1 {Prev_SensorRecord_S1.timeStamp.Millisecond} ms ===============> 0 (VALID)");
-                        
-                        Prev_SensorRecord_S1 = currentSensorRecord; 
-                        
-                        return true;
-                    }
-                    else if (timeStampDifference > SourceSensorsWaitTime)
-                    {
-                        _logger.LogInformation($"Difference in prev and current SensorRecord_S1 => " +
-                            $"{timeStampDifference.TotalMilliseconds} ms ================> (IN-VALID)");
-                        
-                        Prev_SensorRecord_S1 = currentSensorRecord;
-
-                        return false;
-                    }
-                    else
-                    {
-                        _logger.LogInformation($"{timeStampDifference.TotalMilliseconds} ms ================> (VALID)");
-                        
-                        Prev_SensorRecord_S1 = currentSensorRecord;
-                        
-                        return true;
-                    }
-                    break;
-            }
-            return true;
-        }
-
+       
         public async Task DecideStatusAsync(SensorCode sensorCode)
         {
             try
@@ -85,12 +45,13 @@ namespace XRayMachineStatusManagement
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
 
-                if (!IsValid(newSensorRecord))
-                    return;
-
                 switch (sensorCode)
                 {
                     case SensorCode.S1_ON_FWD:
+                        
+                        if (!sensorS1.HasValid(newSensorRecord))
+                            return;
+
                         if (IsSourceOn)
                         {
                             _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: Source Already ON.");

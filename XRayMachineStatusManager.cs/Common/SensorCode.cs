@@ -18,6 +18,10 @@
         S4_OFF_FWD = 4845,
 
         S5_ON_FWD = 4865,
-        S5_OFF_FWD = 5865
+        S5_OFF_FWD = 5865,
+
+        BELT_FWD = 4168,
+        BELT_STOP = 4169,
+        BELT_REV = 4170,
     }
 }

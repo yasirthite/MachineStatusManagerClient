@@ -77,42 +77,42 @@ namespace MachineStatusManagerClient
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Detector 2.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn OFF Detector 2.");
         }
 
         private async Task Manager_TurnOnDetector2Async(object sender, SensorCode e)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Detector 2.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn ON Detector 2.");
         }
 
         private async Task Manager_TurnOffDetector1Async(object sender, SensorCode e)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Detector 1.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn OFF Detector 1.");
         }
 
         private async Task Manager_TurnOnDetector1Async(object sender, SensorCode e)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Detector 1.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn ON Detector 1.");
         }
 
         private async Task Manager_TurnOffSourceAsync(object sender, SensorCode e)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Source.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn OFF Source.");
         }
 
         private async Task Manager_TurnOnSourceAsync(object sender, SensorCode e)
         {
             Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
                 $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Source.");
+                $"[{e}:{(int)e}]: Async Event Handled => Turn ON Source.");
         }
 
         private void Manager_TurnOffDetector2(object sender, SensorCode e)

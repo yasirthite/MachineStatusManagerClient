@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Threading;
+using XRayMachineStatusManagement.Loggers;
 
 namespace XRayMachineStatusManagement
 {
-    internal class ConsoleLogger
+    internal class ConsoleLogger: IMachineStatusLogger
     {
         public ConsoleLogger() 
         {

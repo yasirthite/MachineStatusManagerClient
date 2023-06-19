@@ -1,13 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using XRayMachineStatusManagement.Loggers;
 
 namespace XRayMachineStatusManagement.Sensors
 {
     internal class SensorS5
     {
         private SensorRecord Prev_SensorRecord = default;
+        IMachineStatusLogger machineStatusLogger = default;
+
+        /// <summary>
+        /// Sensor's Wait Time Window in milliseconds.
+        /// </summary>
+        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(500);
+
+        internal SensorS5(IMachineStatusLogger logger)
+        {
+            this.machineStatusLogger = logger;
+        }
     }
 }

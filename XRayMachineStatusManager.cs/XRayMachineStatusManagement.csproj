@@ -93,6 +93,7 @@
     <Compile Include="Loggers\FileLogger.cs" />
     <Compile Include="Common\SensorCode.cs" />
     <Compile Include="Common\SensorRecord.cs" />
+    <Compile Include="Loggers\IMachineStatusLogger.cs" />
     <Compile Include="Sensors\SensorS1.cs" />
     <Compile Include="Sensors\SensorS2.cs" />
     <Compile Include="Sensors\SensorS3.cs" />
