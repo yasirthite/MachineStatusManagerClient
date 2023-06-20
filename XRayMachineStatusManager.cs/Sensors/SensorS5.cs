@@ -44,6 +44,7 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool CheckValidityForForwardDirection(SensorRecord newSensorRecord)
         {
+            //Todo: No Check Required.
             return true;
         }
 

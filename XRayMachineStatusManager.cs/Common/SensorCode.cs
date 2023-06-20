@@ -6,7 +6,7 @@
     public enum SensorCode
     {
         Empty = -1,
-        SourceContinuousOnCircuitBreaker = -2,
+        SourceOnCircuitBreaker = -2,
 
         S1_ON_FWD = 4849,
         S1_OFF_FWD = 5849,

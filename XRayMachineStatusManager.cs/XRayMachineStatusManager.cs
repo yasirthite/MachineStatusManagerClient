@@ -33,9 +33,11 @@ namespace XRayMachineStatusManagement
             sensorS1 = SensorS1.Instance;
             sensorS1.CanStopSource += SensorS1_CanStopSourceHandler; ;
 
-            sensorS2 = new SensorS2(_logger);
-            sensorS3 = new SensorS3(_logger);
-            sensorS4 = new SensorS4(_logger);
+            sensorS2 = SensorS2.Instance;
+
+            sensorS3 = SensorS3.Instance;
+
+            sensorS4 = SensorS4.Instance;
 
             sensorS5 = SensorS5.Instance;
             sensorS5.CanStopSource += SensorS5_CanStopSourceHandler;
@@ -51,7 +53,7 @@ namespace XRayMachineStatusManagement
 
                 _logger.LogInformation($"[{nameof(SensorS5_CanStopSourceHandler)}]: Source is turning OFF ...");
 
-                TurnOffSource?.Invoke(this, SensorCode.SourceContinuousOnCircuitBreaker);
+                TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
                 LogBagData();
             }
@@ -67,7 +69,7 @@ namespace XRayMachineStatusManagement
 
                 _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
 
-                TurnOffSource?.Invoke(this, SensorCode.SourceContinuousOnCircuitBreaker);
+                TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
                 LogBagData();
             }
@@ -127,24 +129,31 @@ namespace XRayMachineStatusManagement
 
                     case SensorCode.S2_ON_FWD:
                         {
+
+                            if (!this.sensorS2.HasValid(newSensorRecord))
+                                return;
+
                             nBagsPartiallyInsideTunnel++;
 
-                            if (IsDetector1_On)
-                            {
-                                nBagsPartiallyInsideTunnel++;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is already ON.");
-                            }
-                            else
+                            if (!IsDetector1_On)
                             {
                                 IsDetector1_On = true;
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
                                 TurnOnDetector1?.Invoke(this, sensorCode);
                             }
+                            else
+                            {
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 1 is already ON.");
+                            }
+
                             break;
                         }
 
                     case SensorCode.S2_OFF_FWD:
-                        //Todo: Add fully/partially inside for detection.
+
+                        if (!sensorS2.HasValid(newSensorRecord))
+                            return;
+
                         nBagsPartiallyInsideTunnel--;
                         nBagsFullyInsideTunnel++;
 
@@ -152,30 +161,52 @@ namespace XRayMachineStatusManagement
                         break;
 
                     case SensorCode.S3_ON_FWD:
-                        if (IsDetector2_On)
-                        {
-                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is already ON.");
-                        }
-                        else
+
+                        if (!sensorS3.HasValid(newSensorRecord))
+                            return;
+
+                        if (!IsDetector2_On)
                         {
                             IsDetector2_On = true;
                             _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
                             TurnOnDetector2?.Invoke(this, sensorCode);
                         }
+                        else
+                        {
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 2 is already ON.");
+                        }
                         break;
 
                     case SensorCode.S3_OFF_FWD:
-                        //Todo: Add fully/partially inside for detection.
-                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                        
+                        if (!sensorS3.HasValid(newSensorRecord))
+                            return;
+
+                        if(!IsBagInTunnel)
+                        {
+                            if (IsDetector1_On)
+                            {
+                                IsDetector1_On = false;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
+                                TurnOffDetector1?.Invoke(this, sensorCode);
+                            }
+                        }
+                        
                         break;
 
                     case SensorCode.S4_ON_FWD:
-                        //Todo: Add fully/partially inside for detection.
-                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                        
+                        if (!sensorS4.HasValid(newSensorRecord))
+                            return;
+
+                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Un-used Sensor Signal.");
                         break;
 
                     case SensorCode.S4_OFF_FWD:
                         {
+                            if (!sensorS4.HasValid(newSensorRecord))
+                                return;
+
                             nBagsFullyInsideTunnel--;
 
                             if (IsDetector1_On)
@@ -196,12 +227,18 @@ namespace XRayMachineStatusManagement
 
                     case SensorCode.S5_ON_FWD:
                         {
+                            if (!sensorS5.HasValid(newSensorRecord))
+                                return;
+
                             _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
                             break;
                         }
 
                     case SensorCode.S5_OFF_FWD:
                         {
+                            if (!sensorS5.HasValid(newSensorRecord))
+                                return;
+
                             if (IsBagInTunnel)
                                 return;
 
