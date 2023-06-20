@@ -33,7 +33,6 @@ namespace MachineStatusManagerClient
             }
         }
 
-
         public void StartAsync()
         {
             Console.WriteLine($"[LOGIN_FORM_START_ASYNC:-----> {Thread.CurrentThread.ManagedThreadId}]");
@@ -60,16 +59,16 @@ namespace MachineStatusManagerClient
             manager.DecideStatusAsync(SensorCode.S1_ON_FWD).Wait(); Task.Delay(400).Wait();
             manager.DecideStatusAsync(SensorCode.S1_ON_FWD).Wait(); Task.Delay(200).Wait();
 
-            manager.DecideStatus(SensorCode.S1_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S1_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S2_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S2_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S3_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S3_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S4_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S4_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S5_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
-            manager.DecideStatus(SensorCode.S5_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S1_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S1_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S2_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S2_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S3_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S3_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S4_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S4_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S5_ON_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
+            //manager.DecideStatus(SensorCode.S5_OFF_FWD); Task.Delay(new Random().Next(350, 1000)).Wait();
         }
 
 
