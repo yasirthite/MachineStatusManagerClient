@@ -69,17 +69,11 @@ namespace XRayMachineStatusManagement
         {
             CanTurnOffSource = true;
 
-            if(!IsBagInTunnel && IsSourceOn)
+            if (!IsBagInTunnel && IsSourceOn)
             {
                 IsSourceOn = false;
 
                 _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
-
-                if(nBagsFullyInsideTunnel < 0)
-                nBagsFullyInsideTunnel = 0;
-
-                if(nBagsPartiallyInsideTunnel < 0)
-                nBagsPartiallyInsideTunnel = 0;
 
                 TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
@@ -87,20 +81,20 @@ namespace XRayMachineStatusManagement
             }
         }
 
-        public async Task DecideStatusAsync(SensorCode sensorCode)
+        public void DecideStatus(SensorCode sensorCode)
         {
             try
             {
-                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][DECIDE_STATUS_ASYNC: -----> [{sensorCode}]");
+                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][DECIDE_STATUS: -----> [{sensorCode}]");
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
 
                 switch (sensorCode)
                 {
                     case SensorCode.S1_ON_FWD:
+
+                        if (sensorS1.HasValid(newSensorRecord))
                         {
-                            if (!sensorS1.HasValid(newSensorRecord))
-                                return;
 
                             if (!IsSourceOn)
                             {
@@ -114,37 +108,34 @@ namespace XRayMachineStatusManagement
                             }
                             else
                             {
-                                _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: SKIP -> Source Already ON.");
-                                break;
+                               // _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: SKIP -> Source Already ON.");
                             }
                         }
+                        else
+                        {
+                            //_logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                            break;
+                        }
+
+                        break;
 
                     case SensorCode.S1_OFF_FWD:
+
+                        if (sensorS1.HasValid(newSensorRecord))
                         {
-                            if (!sensorS1.HasValid(newSensorRecord))
-                                return;
-
-                            if (!IsSourceOn)
-                            {
-                                _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]: Source Already OFF.");
-
-                                break;
-                            }
-                            else
-                            {
-                                CanTurnOffSource = true;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: This State is Hardly Possible. Can Safely Turn Off Source Now at S5_OFF.");
-
-                                break;
-                            }
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                        }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
                         }
 
+                        break;
+
                     case SensorCode.S2_ON_FWD:
+
+                        if (sensorS2.HasValid(newSensorRecord))
                         {
-
-                            if (!this.sensorS2.HasValid(newSensorRecord))
-                                return;
-
                             nBagsPartiallyInsideTunnel++;
 
                             if (!IsDetector1_On)
@@ -155,73 +146,122 @@ namespace XRayMachineStatusManagement
                             }
                             else
                             {
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 1 is already ON.");
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 1 is already ON.");
                             }
-
-                            break;
                         }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
+                        break;
 
                     case SensorCode.S2_OFF_FWD:
 
-                        if (!sensorS2.HasValid(newSensorRecord))
-                            return;
+                        if (sensorS2.HasValid(newSensorRecord))
+                        {
 
-                        nBagsPartiallyInsideTunnel--;
-                        nBagsFullyInsideTunnel++;
+                            if (nBagsPartiallyInsideTunnel > 0)
+                                nBagsPartiallyInsideTunnel--;
 
-                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Noted.");
+                            nBagsFullyInsideTunnel++;
+
+                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
+                            LogBagData();
+                        }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
                         break;
 
                     case SensorCode.S3_ON_FWD:
 
-                        if (!sensorS3.HasValid(newSensorRecord))
-                            return;
-
-                        if (!IsDetector2_On)
+                        if (sensorS3.HasValid(newSensorRecord))
                         {
-                            IsDetector2_On = true;
-                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
-                            TurnOnDetector2?.Invoke(this, sensorCode);
+                            if (!IsDetector2_On)
+                            {
+                                IsDetector2_On = true;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
+                                TurnOnDetector2?.Invoke(this, sensorCode);
+                            }
+                            else
+                            {
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 2 is already ON.");
+                            }
                         }
                         else
                         {
-                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 2 is already ON.");
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
                         }
+
                         break;
 
                     case SensorCode.S3_OFF_FWD:
-                        
-                        if (!sensorS3.HasValid(newSensorRecord))
-                            return;
 
-                        if(!IsBagInTunnel)
+                        if (sensorS3.HasValid(newSensorRecord))
                         {
-                            if (IsDetector1_On)
+                            if (!IsBagInTunnel)
                             {
-                                IsDetector1_On = false;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
-                                TurnOffDetector1?.Invoke(this, sensorCode);
+                                if (IsDetector1_On)
+                                {
+                                    IsDetector1_On = false;
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
+                                    TurnOffDetector1?.Invoke(this, sensorCode);
+                                }
+                                else
+                                {
+                                    //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 1 is already OFF.");
+                                }
+                            }
+                            else
+                            {
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Bag is still in tunnel.");
                             }
                         }
-                        
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
                         break;
 
                     case SensorCode.S4_ON_FWD:
-                        
-                        if (!sensorS4.HasValid(newSensorRecord))
-                            return;
 
-                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Un-used Sensor Signal.");
+                        if (sensorS4.HasValid(newSensorRecord))
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Un-used Sensor Signal.");
+                        }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
                         break;
 
                     case SensorCode.S4_OFF_FWD:
+                        if (sensorS4.HasValid(newSensorRecord))
                         {
-                            if (!sensorS4.HasValid(newSensorRecord))
-                                return;
+                            if (nBagsFullyInsideTunnel > 0)
+                            {
+                                nBagsFullyInsideTunnel--;
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
+                                LogBagData();
+                            }
 
-                            nBagsFullyInsideTunnel--;
+                            if (IsDetector1_On && IsDetector2_On)
+                            {
+                                IsDetector1_On = false;
+                                IsDetector2_On = false;
 
-                            if (IsDetector1_On)
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 & 2 are turning OFF ...");
+
+                                Task.Run(() => TurnOffDetector1?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => TurnOffDetector2?.Invoke(this, sensorCode))
+                                    .Wait();
+                            }
+                            else if (IsDetector1_On)
                             {
                                 IsDetector1_On = false;
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
@@ -233,16 +273,25 @@ namespace XRayMachineStatusManagement
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
                                 TurnOffDetector2?.Invoke(this, sensorCode);
                             }
-
-                            break;
                         }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
+                        break;
 
                     case SensorCode.S5_ON_FWD:
                         {
-                            if (!sensorS5.HasValid(newSensorRecord))
-                                return;
+                            if (sensorS5.HasValid(newSensorRecord))
+                            {
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
+                            }
+                            else
+                            {
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                            }
 
-                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Un-used Sensor Signal.");
                             break;
                         }
 
@@ -250,28 +299,49 @@ namespace XRayMachineStatusManagement
                         {
                             if (sensorS5.HasValid(newSensorRecord))
                             {
-                                if (!IsBagInTunnel && CanTurnOffSource && IsSourceOn)
+                                if (!IsBagInTunnel)
                                 {
-                                    IsSourceOn = false;
+                                    if (CanTurnOffSource)
+                                    {
+                                        if (IsSourceOn)
+                                        {
+                                            IsSourceOn = false;
 
-                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
+                                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
 
-                                    TurnOffSource?.Invoke(this, sensorCode);
+                                            TurnOffSource?.Invoke(this, sensorCode);
 
-                                    LogBagData();
+                                            LogBagData();
 
-                                    return;
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Source if OFF.");
+                                            //LogBagData();
+
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        /////////Condition: (!IsBagInTunnel && !CanTurnOffSource) Indicates Bag has just entered the tunnel for processing. 
+                                        //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag has just entered the tunnel and not reached S2_ON");
+                                    }
                                 }
                                 else
                                 {
-                                    //Condition: (!IsBagInTunnel && !CanTurnOffSource) Indicates Bag has just entered the tunnel for processing. 
-                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag is in for processing.");
-
-                                    return;
+                                    ///////indicates bag(s) in tunnel
+                                    //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Bags are in tunnel: Total Bags = {TotalBagsInsideTunnel}.");
+                                    //LogBagData();
                                 }
                             }
+                            else
+                            {
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                            }
 
-                            return;
+                            break;
                         }
 
                     default:
