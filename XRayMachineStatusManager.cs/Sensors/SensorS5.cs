@@ -23,7 +23,7 @@ namespace XRayMachineStatusManagement.Sensors
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
         /// </summary>
-        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(50);
+        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(0);
         private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(4000);
 
         private SensorS5(IMachineStatusLogger logger)

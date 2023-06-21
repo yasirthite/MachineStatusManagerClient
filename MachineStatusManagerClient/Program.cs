@@ -14,6 +14,6 @@ namespace MachineStatusManagerClient
             Console.WriteLine($"[MAIN:-----> {Thread.CurrentThread.ManagedThreadId}]");
 
             Console.ReadKey();
-        }     
+        }
     }
 }

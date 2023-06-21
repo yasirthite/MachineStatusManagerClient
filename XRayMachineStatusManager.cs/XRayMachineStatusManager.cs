@@ -248,7 +248,7 @@ namespace XRayMachineStatusManagement
 
                     case SensorCode.S5_OFF_FWD:
                         {
-                            if (!sensorS5.HasValid(newSensorRecord))
+                            if (sensorS5.HasValid(newSensorRecord))
                             {
                                 if (!IsBagInTunnel && CanTurnOffSource && IsSourceOn)
                                 {
