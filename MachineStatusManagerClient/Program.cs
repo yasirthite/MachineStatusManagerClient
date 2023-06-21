@@ -9,8 +9,8 @@ namespace MachineStatusManagerClient
         static void Main(string[] args)
         {
             Console.WriteLine($"[MAIN:-----> {Thread.CurrentThread.ManagedThreadId}]");
-            //new LoginFormSimulator(false).Start();
-            new LoginFormSimulator(true).StartAsync();
+            new LoginFormSimulator().Start();
+            //new LoginFormSimulator(true).StartAsync();
             Console.WriteLine($"[MAIN:-----> {Thread.CurrentThread.ManagedThreadId}]");
 
             Console.ReadKey();
