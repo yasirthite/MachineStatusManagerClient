@@ -98,13 +98,12 @@ namespace XRayMachineStatusManagement
 
                             if (!IsSourceOn)
                             {
-                                IsSourceOn = true;
 
                                 _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]: Source is Turning ON ...");
 
-                                TurnOnSource?.Invoke(this, sensorCode);
-
-                                break;
+                                Task.Run(() =>
+                                TurnOnSource?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsSourceOn = true).Wait();
                             }
                             else
                             {
@@ -140,9 +139,12 @@ namespace XRayMachineStatusManagement
 
                             if (!IsDetector1_On)
                             {
-                                IsDetector1_On = true;
+                                
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
-                                TurnOnDetector1?.Invoke(this, sensorCode);
+
+                                Task.Run(() =>
+                                TurnOnDetector1?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsDetector1_On = true).Wait();
                             }
                             else
                             {
@@ -182,9 +184,12 @@ namespace XRayMachineStatusManagement
                         {
                             if (!IsDetector2_On)
                             {
-                                IsDetector2_On = true;
+                                
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
-                                TurnOnDetector2?.Invoke(this, sensorCode);
+
+                                Task.Run(() =>
+                                TurnOnDetector2?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsDetector2_On = true).Wait();
                             }
                             else
                             {
@@ -206,9 +211,10 @@ namespace XRayMachineStatusManagement
                             {
                                 if (IsDetector1_On)
                                 {
-                                    IsDetector1_On = false;
                                     _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
-                                    TurnOffDetector1?.Invoke(this, sensorCode);
+                                    Task.Run(() =>
+                                    TurnOffDetector1?.Invoke(this, sensorCode))
+                                        .ContinueWith(_ => IsDetector1_On = false).Wait();
                                 }
                                 else
                                 {
@@ -252,26 +258,30 @@ namespace XRayMachineStatusManagement
 
                             if (IsDetector1_On && IsDetector2_On)
                             {
-                                IsDetector1_On = false;
-                                IsDetector2_On = false;
-
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 & 2 are turning OFF ...");
 
                                 Task.Run(() => TurnOffDetector1?.Invoke(this, sensorCode))
                                     .ContinueWith(_ => TurnOffDetector2?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsDetector1_On = false)
+                                    .ContinueWith(_ => IsDetector2_On = false)
                                     .Wait();
                             }
                             else if (IsDetector1_On)
                             {
-                                IsDetector1_On = false;
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
-                                TurnOffDetector1?.Invoke(this, sensorCode);
+                                
+                                Task.Run(() =>
+                                TurnOffDetector1?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsDetector1_On = false).Wait();
+                                   
                             }
                             if (IsDetector2_On)
                             {
-                                IsDetector2_On = false;
+                                
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
-                                TurnOffDetector2?.Invoke(this, sensorCode);
+                                Task.Run(() =>
+                                TurnOffDetector2?.Invoke(this, sensorCode))
+                                    .ContinueWith(_ => IsDetector2_On = false).Wait();
                             }
                         }
                         else
@@ -305,11 +315,11 @@ namespace XRayMachineStatusManagement
                                     {
                                         if (IsSourceOn)
                                         {
-                                            IsSourceOn = false;
-
                                             _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
 
-                                            TurnOffSource?.Invoke(this, sensorCode);
+                                            Task.Run(() =>
+                                            TurnOffSource?.Invoke(this, sensorCode))
+                                                .ContinueWith(_ => IsSourceOn = false).Wait();
 
                                             LogBagData();
 
