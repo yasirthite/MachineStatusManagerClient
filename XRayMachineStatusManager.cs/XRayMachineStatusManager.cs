@@ -53,6 +53,12 @@ namespace XRayMachineStatusManagement
 
                 _logger.LogInformation($"[{nameof(SensorS5_CanStopSourceHandler)}]: Source is turning OFF ...");
 
+                if (nBagsFullyInsideTunnel < 0)
+                    nBagsFullyInsideTunnel = 0;
+
+                if (nBagsPartiallyInsideTunnel < 0)
+                    nBagsPartiallyInsideTunnel = 0;
+
                 TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
                 LogBagData();
@@ -68,6 +74,12 @@ namespace XRayMachineStatusManagement
                 IsSourceOn = false;
 
                 _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
+
+                if(nBagsFullyInsideTunnel < 0)
+                nBagsFullyInsideTunnel = 0;
+
+                if(nBagsPartiallyInsideTunnel < 0)
+                nBagsPartiallyInsideTunnel = 0;
 
                 TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
@@ -237,30 +249,29 @@ namespace XRayMachineStatusManagement
                     case SensorCode.S5_OFF_FWD:
                         {
                             if (!sensorS5.HasValid(newSensorRecord))
-                                return;
-
-                            if (IsBagInTunnel)
-                                return;
-
-                            if (CanTurnOffSource)
                             {
-                                IsSourceOn = false;
+                                if (!IsBagInTunnel && CanTurnOffSource && IsSourceOn)
+                                {
+                                    IsSourceOn = false;
 
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
 
-                                TurnOffSource?.Invoke(this, sensorCode);
+                                    TurnOffSource?.Invoke(this, sensorCode);
 
-                                LogBagData();
-                                
-                                break;
+                                    LogBagData();
+
+                                    return;
+                                }
+                                else
+                                {
+                                    //Condition: (!IsBagInTunnel && !CanTurnOffSource) Indicates Bag has just entered the tunnel for processing. 
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag is in for processing.");
+
+                                    return;
+                                }
                             }
-                            else
-                            {
-                                //Condition: (!IsBagInTunnel && !CanTurnOffSource) Indicates Bag has just entered the tunnel for processing. 
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag is in for processing.");
 
-                                break;
-                            }
+                            return;
                         }
 
                     default:
