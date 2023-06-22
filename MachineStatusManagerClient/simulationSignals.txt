@@ -1,0 +1,212 @@
+﻿Task.Delay(10809).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[6][DECIDE_STATUS: -----> [S1_ON_FWD]
+[6][54794218.9265][6][S1_ON_FWD:4849]: Source is Turning ON ...
+[6] [Manager_TurnOnSource] EventHandled -->> Source is On
+[6][54794218.9265]Bags Fully Inside: 0
+[6][54794218.9265]Bags Partially Inside: 0
+[6][54794218.9265]CanTurnOffSource: False
+[6][54794218.9265]IsSourceON: True
+[6][54794218.9265]IsDetector1 ON: False
+[6][54794218.9265]IsDetector2 ON: False
+Task.Delay(10809).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[6][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(78).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+[7][DECIDE_STATUS: -----> [S1_OFF_FWD]
+Task.Delay(78).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[7][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[10][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(1343).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+[7][DECIDE_STATUS: -----> [S2_ON_FWD]
+[7][54795577.9865][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[7] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[7][54795577.9865]Bags Fully Inside: 0
+[7][54795577.9865]Bags Partially Inside: 1
+[7][54795577.9865]CanTurnOffSource: False
+[7][54795577.9865]IsSourceON: True
+[7][54795577.9865]IsDetector1 ON: True
+[7][54795577.9865]IsDetector2 ON: False
+Task.Delay(921).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[6][54796499.6389][S2_OFF_FWD:5841]: Updated bag's data.
+[6][54796499.6389]Bags Fully Inside: 1
+[6][54796515.2608]Bags Partially Inside: 0
+[6][54796515.2608]CanTurnOffSource: False
+[6][54796515.2608]IsSourceON: True
+[6][54796515.2608]IsDetector1 ON: True
+[6][54796515.2608]IsDetector2 ON: False
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+[10][DECIDE_STATUS: -----> [S3_ON_FWD]
+[10][54796530.8814][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[10] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+Task.Delay(937).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S3_OFF_FWD]
+Task.Delay(937).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+[6][DECIDE_STATUS: -----> [S4_ON_FWD]
+Task.Delay(937).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[6][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(187).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+[10][DECIDE_STATUS: -----> [S2_ON_FWD]
+Task.Delay(749).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[6][54798405.4414][S4_OFF_FWD:4845]: Updated bag's data.
+[6][54798405.4414]Bags Fully Inside: 0
+[6][54798405.4414]Bags Partially Inside: 1
+[6][54798405.4414]CanTurnOffSource: False
+[6][54798405.4414]IsSourceON: True
+[6][54798405.4414]IsDetector1 ON: True
+[6][54798405.4414]IsDetector2 ON: True
+Task.Delay(156).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[10][54798561.6513][S2_OFF_FWD:5841]: Updated bag's data.
+[10][54798561.6513]Bags Fully Inside: 1
+[10][54798561.6513]Bags Partially Inside: 0
+[10][54798561.6513]CanTurnOffSource: False
+[10][54798561.6513]IsSourceON: True
+[10][54798561.6513]IsDetector1 ON: True
+[10][54798592.8967]IsDetector2 ON: True
+Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+[9][DECIDE_STATUS: -----> [S2_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+[13][DECIDE_STATUS: -----> [S3_ON_FWD]
+Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[6][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[6][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(896).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+[6][DECIDE_STATUS: -----> [S4_ON_FWD]
+Task.Delay(896).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[6][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+[9][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[9][54799661.0706][S2_OFF_FWD:5841]: Updated bag's data.
+[9][54799661.0706]Bags Fully Inside: 2
+[9][54799661.0706]Bags Partially Inside: 0
+[9][54799661.0706]CanTurnOffSource: False
+[9][54799661.0706]IsSourceON: True
+[9][54799661.0706]IsDetector1 ON: True
+[9][54799661.0706]IsDetector2 ON: True
+Task.Delay(156).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+[14][DECIDE_STATUS: -----> [S1_OFF_FWD]
+Task.Delay(156).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[14][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+[10][DECIDE_STATUS: -----> [S2_ON_FWD]
+Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[12][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[10][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(109).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S1_OFF_FWD]
+Task.Delay(187).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[9][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+[7][DECIDE_STATUS: -----> [S1_OFF_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[10][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[10][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(406).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+[14][DECIDE_STATUS: -----> [S3_OFF_FWD]
+Task.Delay(140).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[7][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(140).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[7][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+[10][DECIDE_STATUS: -----> [S3_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+[14][DECIDE_STATUS: -----> [S3_OFF_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+[12][DECIDE_STATUS: -----> [S3_ON_FWD]
+Task.Delay(93).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[10][54800957.6406][S2_OFF_FWD:5841]: Updated bag's data.
+[10][54800957.6406]Bags Fully Inside: 3
+[10][54800957.6406]Bags Partially Inside: 0
+[10][54800957.6406]CanTurnOffSource: False
+[10][54800957.6406]IsSourceON: True
+[10][54800957.6406]IsDetector1 ON: True
+[10][54800973.2619]IsDetector2 ON: True
+Task.Delay(374).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+[12][DECIDE_STATUS: -----> [S1_ON_FWD]
+Task.Delay(374).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+[12][DECIDE_STATUS: -----> [S1_OFF_FWD]
+Task.Delay(171).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+[10][DECIDE_STATUS: -----> [S2_ON_FWD]
+Task.Delay(109).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+[13][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[13][54801613.7373][S4_OFF_FWD:4845]: Updated bag's data.
+[13][54801613.7373]Bags Fully Inside: 2
+[13][54801613.7373]Bags Partially Inside: 1
+[13][54801613.7373]CanTurnOffSource: False
+[13][54801613.7373]IsSourceON: True
+[13][54801613.7373]IsDetector1 ON: True
+[13][54801613.7373]IsDetector2 ON: True
+Task.Delay(156).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+[9][DECIDE_STATUS: -----> [S4_ON_FWD]
+Task.Delay(140).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+[7][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[13][54802230.6173][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+Task.Delay(471).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+[7][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[7][54802381.6896][S2_OFF_FWD:5841]: Updated bag's data.
+[7][54802381.6896]Bags Fully Inside: 3
+[7][54802381.6896]Bags Partially Inside: 0
+[7][54802381.6896]CanTurnOffSource: True
+[7][54802397.3133]IsSourceON: True
+[7][54802397.3133]IsDetector1 ON: True
+[7][54802397.3133]IsDetector2 ON: True
+Task.Delay(78).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+[13][DECIDE_STATUS: -----> [S3_ON_FWD]
+Task.Delay(374).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(35).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+[13][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[13][54802841.0172][S4_OFF_FWD:4845]: Updated bag's data.
+[13][54802841.5976]Bags Fully Inside: 2
+[13][54802841.5976]Bags Partially Inside: 0
+[13][54802841.5976]CanTurnOffSource: True
+[13][54802841.5976]IsSourceON: True
+[13][54802841.5976]IsDetector1 ON: True
+[13][54802841.5976]IsDetector2 ON: True
+Task.Delay(81).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[6][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(381).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S3_OFF_FWD]
+Task.Delay(93).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+[7][DECIDE_STATUS: -----> [S4_ON_FWD]
+Task.Delay(1520).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+[6][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[6][54804947.1248][S4_OFF_FWD:4845]: Updated bag's data.
+[6][54804947.1248]Bags Fully Inside: 1
+[6][54804947.1248]Bags Partially Inside: 0
+[6][54804947.1248]CanTurnOffSource: True
+[6][54804947.1248]IsSourceON: True
+[6][54804947.1248]IsDetector1 ON: True
+[6][54804962.7436]IsDetector2 ON: True
+Task.Delay(1218).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[12][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(437).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[7][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(140).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[12][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[10][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[9][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[10][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[12][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(218).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[13][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[12][DECIDE_STATUS: -----> [S5_OFF_FWD]
+Task.Delay(81).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+[13][DECIDE_STATUS: -----> [S5_ON_FWD]
+Task.Delay(37).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+[10][DECIDE_STATUS: -----> [S5_OFF_FWD]

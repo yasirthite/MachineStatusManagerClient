@@ -56,5 +56,8 @@
       <Name>XRayMachineStatusManagement</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="simulationSignals.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

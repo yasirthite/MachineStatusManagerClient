@@ -19,12 +19,12 @@ namespace XRayMachineStatusManagement.Sensors
 
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
+        private const int SensorWaitTimeInMilliseconds = 4000;
 
-        
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
         /// </summary>
-        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(4000);
+        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(SensorWaitTimeInMilliseconds);
 
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
@@ -84,6 +84,9 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
         {
+            if(SensorWaitTimeInMilliseconds <= 0)
+                return false;
+
             TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;
             return timeStampDifference < SensorWaitTimeWindow;
         }

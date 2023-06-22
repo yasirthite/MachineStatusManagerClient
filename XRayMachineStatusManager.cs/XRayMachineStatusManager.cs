@@ -60,7 +60,7 @@ namespace XRayMachineStatusManagement
                     nBagsPartiallyInsideTunnel = 0;
 
                 TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
-                
+
                 CanTurnOffSource = false;
 
                 LogBagData();
@@ -109,16 +109,16 @@ namespace XRayMachineStatusManagement
                                 _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{(int)sensorCode}]: Source is Turning ON ...");
 
                                 TurnOnSource?.Invoke(this, sensorCode);
-                                
+
                                 IsSourceOn = true;
-                                
+
                                 LogBagData();
 
                                 break;
                             }
                             else
                             {
-                               // _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: SKIP -> Source Already ON.");
+                                // _logger.LogInformation($"[{Thread.CurrentThread.ManagedThreadId}][{sensorCode}:{((int)sensorCode)}]: SKIP -> Source Already ON.");
                             }
                         }
                         else
@@ -146,7 +146,7 @@ namespace XRayMachineStatusManagement
 
                         if (sensorS2.HasValid(newSensorRecord))
                         {
-                            nBagsPartiallyInsideTunnel++;
+                            nS2BagsPartial++;
 
                             if (!IsDetector1_On)
                             {
@@ -171,13 +171,11 @@ namespace XRayMachineStatusManagement
 
                         if (sensorS2.HasValid(newSensorRecord))
                         {
-
-                            if (nBagsPartiallyInsideTunnel > 0)
-                                nBagsPartiallyInsideTunnel--;
-
-                            nBagsFullyInsideTunnel++;
+                            nS2BagsPartial--;
+                            nS2BagsFull++;
 
                             _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
+
                             LogBagData();
                         }
                         else
@@ -191,11 +189,23 @@ namespace XRayMachineStatusManagement
 
                         if (sensorS3.HasValid(newSensorRecord))
                         {
+                            {
+                                nS3BagsPartial++;
+
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
+                                
+                                LogBagData();
+                            }
+
                             if (!IsDetector2_On)
                             {
-                                IsDetector2_On = true;
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
+                                
                                 TurnOnDetector2?.Invoke(this, sensorCode);
+
+                                IsDetector2_On = true;
+
+                                LogBagData();
                             }
                             else
                             {
@@ -213,13 +223,26 @@ namespace XRayMachineStatusManagement
 
                         if (sensorS3.HasValid(newSensorRecord))
                         {
-                            if (!IsBagInTunnel)
+                            {
+                                nS2BagsFull--;
+
+                                nS3BagsPartial--;
+                                nS3BagsFull++;
+
+                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
+
+                                LogBagData();
+                            }
+
+                            if (CanTurnOffDetector1)
                             {
                                 if (IsDetector1_On)
                                 {
                                     IsDetector1_On = false;
                                     _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
                                     TurnOffDetector1?.Invoke(this, sensorCode);
+
+                                    LogBagData();
                                 }
                                 else
                                 {
@@ -228,7 +251,7 @@ namespace XRayMachineStatusManagement
                             }
                             else
                             {
-                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Bag is still in tunnel.");
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> New Bag is ready for Detector 1. Hence not turning it OFF.");
                             }
                         }
                         else
@@ -254,41 +277,33 @@ namespace XRayMachineStatusManagement
                     case SensorCode.S4_OFF_FWD:
                         if (sensorS4.HasValid(newSensorRecord))
                         {
-                            if (nBagsFullyInsideTunnel > 0)
                             {
-                                nBagsFullyInsideTunnel--;
+                                nS3BagsFull--;
+
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
                                 LogBagData();
                             }
 
-                            if (IsBagInTunnel)
-                                return;
-
-                            if (IsDetector1_On && IsDetector2_On)
+                            if (CanTurnOffDetector2)
                             {
-                                IsDetector1_On = false;
-                                IsDetector2_On = false;
+                                if (IsDetector2_On)
+                                {
+                                    IsDetector2_On = false;
 
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 & 2 are turning OFF ...");
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
+                                    TurnOffDetector2?.Invoke(this, sensorCode);
 
-                                Task.Run(() => TurnOffDetector1?.Invoke(this, sensorCode))
-                                    .ContinueWith(_ => TurnOffDetector2?.Invoke(this, sensorCode))
-                                    .Wait();
+                                    LogBagData();
+                                }
+                                else
+                                {
+                                    //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Detector 2 is already OFF.");
+                                }
                             }
-                            else if (IsDetector1_On)
+                            else
                             {
-                                IsDetector1_On = false;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning OFF ...");
-                                TurnOffDetector1?.Invoke(this, sensorCode);
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> New Bag is ready for Detector 2. Hence NOT turning it OFF.");
                             }
-                            if (IsDetector2_On)
-                            {
-                                IsDetector2_On = false;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning OFF ...");
-                                TurnOffDetector2?.Invoke(this, sensorCode);
-                            }
-
-                            LogBagData();
                         }
                         else
                         {
@@ -312,55 +327,54 @@ namespace XRayMachineStatusManagement
                         }
 
                     case SensorCode.S5_OFF_FWD:
+
+                        if (sensorS5.HasValid(newSensorRecord))
                         {
-                            if (sensorS5.HasValid(newSensorRecord))
+                            if (!IsAnyDetectorOn)
                             {
-                                if (!IsBagInTunnel)
+                                if (CanTurnOffSource)
                                 {
-                                    if (CanTurnOffSource)
+                                    if (IsSourceOn)
                                     {
-                                        if (IsSourceOn)
-                                        {
-                                            IsSourceOn = false;
+                                        IsSourceOn = false;
 
-                                            _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
+                                        _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Source is turning OFF ...");
 
-                                            TurnOffSource?.Invoke(this, sensorCode);
+                                        TurnOffSource?.Invoke(this, sensorCode);
 
-                                            CanTurnOffSource = false;
+                                        CanTurnOffSource = false;
 
-                                            LogBagData();
+                                        LogBagData();
 
-                                            return;
-                                        }
-                                        else
-                                        {
-                                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Source if OFF.");
-                                            //LogBagData();
-
-                                            return;
-                                        }
                                     }
                                     else
                                     {
-                                        /////////Condition: (!IsBagInTunnel && !CanTurnOffSource) Indicates Bag has just entered the tunnel for processing. 
-                                        //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag has just entered the tunnel and not reached S2_ON");
+                                        //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Source is already OFF.");
+                                        //LogBagData();
+
+
                                     }
                                 }
                                 else
                                 {
-                                    ///////indicates bag(s) in tunnel
-                                    //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Bags are in tunnel: Total Bags = {TotalBagsInsideTunnel}.");
-                                    //LogBagData();
+                                    /////////Indicates Bag has just entered the tunnel for processing. 
+                                    //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Indicates Bag has just entered the tunnel and not reached S2_ON");
                                 }
                             }
                             else
                             {
-                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                                ///////indicates detection is ON.
+                                //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector(s) are ON.");
+                                //LogBagData();
                             }
-
-                            break;
                         }
+                        else
+                        {
+                            //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Invalid Sensor Signal Sequence");
+                        }
+
+                        break;
+
 
                     default:
                         if (_suppressInvalidValueException)
@@ -383,33 +397,23 @@ namespace XRayMachineStatusManagement
 
         private void LogBagData()
         {
-
-            _logger.LogInformation($"Bags Fully Inside: {nBagsFullyInsideTunnel}");
-            _logger.LogInformation($"Bags Partially Inside: {nBagsPartiallyInsideTunnel}");
+            _logger.LogInformation($"Total Bags In For Detector 1: {nS2BagsFull + nS2BagsPartial}");
+            _logger.LogInformation($"Total Bags In For Detector 2: {nS3BagsFull + nS3BagsPartial}");
             _logger.LogInformation($"CanTurnOffSource: {CanTurnOffSource}");
             _logger.LogInformation($"IsSourceON: {IsSourceOn}");
             _logger.LogInformation($"IsDetector1 ON: {IsDetector1_On}");
             _logger.LogInformation($"IsDetector2 ON: {IsDetector2_On}");
         }
 
+        private int nS2BagsPartial = 0;
+        private int nS2BagsFull = 0;
+        private int nS3BagsPartial = 0;
+        private int nS3BagsFull = 0;
 
-        private bool IsBagFullyInsideTunnel =>
-            nBagsFullyInsideTunnel > 0;
+        private bool CanTurnOffDetector1 => !(nS2BagsPartial > 0 || nS2BagsFull > 0);
+        private bool CanTurnOffDetector2 => !(nS3BagsPartial > 0 || nS3BagsFull > 0);
+        private bool IsAnyDetectorOn => (IsDetector1_On || IsDetector2_On);
 
-        private bool IsBagPartiallyInsideTunnel =>
-            nBagsPartiallyInsideTunnel > 0;
-
-        private bool IsBagInTunnel =>
-            (IsBagFullyInsideTunnel || IsBagPartiallyInsideTunnel);
-
-        private bool IsSourceOff =>
-            !IsSourceOn;
-
-        private int TotalBagsInsideTunnel =>
-            nBagsFullyInsideTunnel + nBagsPartiallyInsideTunnel;
-
-        private int nBagsFullyInsideTunnel = 0;
-        private int nBagsPartiallyInsideTunnel = 0;
         private bool IsSourceOn = false;
         private bool IsDetector1_On = false;
         private bool IsDetector2_On = false;
