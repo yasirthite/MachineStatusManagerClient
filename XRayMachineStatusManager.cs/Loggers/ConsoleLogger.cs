@@ -14,10 +14,10 @@ namespace XRayMachineStatusManagement
         {
             lock (this) 
             {
-                
-                //Console.ForegroundColor = ConsoleColor.Green;
-                //Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][{DateTime.Now.TimeOfDay.TotalMilliseconds}]" + message);
-                //Console.ResetColor();
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][{DateTime.Now.TimeOfDay.TotalMilliseconds}]" + message);
+                Console.ResetColor();
             }
         }
 

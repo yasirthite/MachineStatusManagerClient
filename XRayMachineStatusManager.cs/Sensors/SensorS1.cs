@@ -19,16 +19,17 @@ namespace XRayMachineStatusManagement.Sensors
 
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
+
         
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
         /// </summary>
-        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(0);
+        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(4000);
 
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
         /// </summary>
-        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(6000);
+        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(8000);
         
         private SensorS1(IMachineStatusLogger logger)
         {
