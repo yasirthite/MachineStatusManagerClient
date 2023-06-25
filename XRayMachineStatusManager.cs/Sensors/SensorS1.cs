@@ -19,7 +19,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
-        private const int SensorWaitTimeInMilliseconds = 4000;
+        private const int SensorWaitTimeInMilliseconds = 0;
+        private bool IsSourceONCircuitBreakerPutToTrigger = false;
 
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
@@ -29,12 +30,12 @@ namespace XRayMachineStatusManagement.Sensors
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
         /// </summary>
-        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(8000);
-        
+        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(3000);
+
         private SensorS1(IMachineStatusLogger logger)
         {
             this.machineStatusLogger = logger;
-            Prev_SensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue};
+            Prev_SensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
         }
 
         private static readonly Lazy<SensorS1> lazySensor = new Lazy<SensorS1>(() => new SensorS1(new ConsoleLogger()));
@@ -42,7 +43,7 @@ namespace XRayMachineStatusManagement.Sensors
         internal bool HasValid(SensorRecord newSensorRecord)
         {
             if (newSensorRecord.sensorCode.IsS1_ON_FWD() || newSensorRecord.sensorCode.IsS1_OFF_FWD())
-                return CheckValidityForForwardDirection(newSensorRecord);
+                return NewCheckValidityForForwardDirection(newSensorRecord);
             else
                 return CheckValidityForReverseDirection(newSensorRecord);
         }
@@ -57,34 +58,71 @@ namespace XRayMachineStatusManagement.Sensors
             if (Prev_SensorRecord.sensorCode.IsEmpty())
             {
                 Prev_SensorRecord = newSensorRecord;
-                Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
+
+                if (!IsSourceONCircuitBreakerPutToTrigger)
+                {
+                    IsSourceONCircuitBreakerPutToTrigger = true;
+
+                    Task.Delay(SourceStopTimeWindow)
+                        .ContinueWith(_ => CanStopSource?.Invoke())
+                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
+                }
+
                 return true;
             }
             else if (IsProhibitedTimeWindowOpenFor(newSensorRecord))
             {
-                if (Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_OFF_FWD())
-                    Prev_SensorRecord = newSensorRecord;
-                else
-                    Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
-
+                //if (Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_OFF_FWD())
+                //    Prev_SensorRecord = newSensorRecord;
+                //else
+                //    Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                Prev_SensorRecord = newSensorRecord;
                 return false;
             }
             else if (PrevSensorRecordHasInvalidSequenceWith(newSensorRecord))
             {
-                Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                Prev_SensorRecord = newSensorRecord;
                 return false;
             }
             else
             {
                 Prev_SensorRecord = newSensorRecord;
-                Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
+
+                if (!IsSourceONCircuitBreakerPutToTrigger)
+                {
+                    IsSourceONCircuitBreakerPutToTrigger = true;
+
+                    Task.Delay(SourceStopTimeWindow)
+                        .ContinueWith(_ => CanStopSource?.Invoke())
+                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
+                }
+
                 return true;
             }
         }
 
+        private bool NewCheckValidityForForwardDirection(SensorRecord newSensorRecord)
+        {
+            Prev_SensorRecord = newSensorRecord;
+
+            if (newSensorRecord.sensorCode.IsS1_ON_FWD())
+            {
+                if (!IsSourceONCircuitBreakerPutToTrigger)
+                {
+                    IsSourceONCircuitBreakerPutToTrigger = true;
+
+                    Task.Delay(SourceStopTimeWindow)
+                        .ContinueWith(_ => CanStopSource?.Invoke())
+                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
+                }
+            }
+
+            return true;
+        }
+
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
         {
-            if(SensorWaitTimeInMilliseconds <= 0)
+            if (SensorWaitTimeInMilliseconds <= 0)
                 return false;
 
             TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;

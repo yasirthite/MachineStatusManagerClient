@@ -1,5 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------
+// Copyright (c) WebEngineers Software India LLP, All rights reserved.
+// Licensed under the MIT License.
+// Source-Code modification requires explicit permission by the licensee
+// -----------------------------------------------------------------------
+
+using System;
 using XRayMachineStatusManagement.Common;
 using XRayMachineStatusManagement.Loggers;
 
@@ -7,6 +12,7 @@ namespace XRayMachineStatusManagement.Sensors
 {
     internal sealed class SensorS2
     {
+        public event Action FaultySensorData;
         public static SensorS2 Instance
         {
             get
@@ -17,12 +23,12 @@ namespace XRayMachineStatusManagement.Sensors
 
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
-        private const int SensorWaitTimeInMilliseconds = 0;
+        public const int SensorProhibitedtimeInMilliseconds = 150;
 
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
         /// </summary>
-        private TimeSpan SensorWaitTimeWindow = TimeSpan.FromMilliseconds(SensorWaitTimeInMilliseconds);
+        private TimeSpan SensorProhibitedTimeWindow = TimeSpan.FromMilliseconds(SensorProhibitedtimeInMilliseconds);
 
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
@@ -52,46 +58,53 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool CheckValidityForForwardDirection(SensorRecord newSensorRecord)
         {
-            if (Prev_SensorRecord.sensorCode.IsEmpty())
+            if (HasValidSequence(newSensorRecord))
             {
-                Prev_SensorRecord = newSensorRecord;
-                //Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
-                return true;
-            }
-            else if (IsProhibitedTimeWindowOpenFor(newSensorRecord))
-            {
-                if (Prev_SensorRecord.sensorCode.IsS2_ON_FWD() && newSensorRecord.sensorCode.IsS2_OFF_FWD())
-                    Prev_SensorRecord = newSensorRecord;
+                if (IsTurningOFF(newSensorRecord))
+                {
+                    if (IsProhibitedTimeWindowOpenFor(newSensorRecord))
+                    {
+                        //Todo: decrement nS2PartiallBags due to previous faulty sensor data. Use event for time being.
+                        FaultySensorData?.Invoke();
+                        Prev_SensorRecord = newSensorRecord;
+                        return false;
+                    }
+                    else
+                    {
+                        //Indicates: Prohibited Window is NOT open. You can safely take the value.
+                        Prev_SensorRecord = newSensorRecord;
+                        return true;
+                    }
+                }
                 else
-                    Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
-
-                return false;
-            }
-            else if (PrevSensorRecordHasInvalidSequenceWith(newSensorRecord))
-            {
-                Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
-                return false;
+                {
+                    //Indicates: Sensor is Turning ON.
+                    Prev_SensorRecord = newSensorRecord;
+                    return true;
+                }
             }
             else
             {
-                Prev_SensorRecord = newSensorRecord;
-                //Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
-                return true;
+                //Indicates: Sensor Data Sequence is Invalid. i:e, Receiving two consecutive ONs or OFFs.
+                Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                return false;
             }
+        }
+
+        private bool IsTurningOFF(SensorRecord newSensorRecord)
+        {
+            return Prev_SensorRecord.sensorCode.IsS2_ON_FWD() && newSensorRecord.sensorCode.IsS2_OFF_FWD();
         }
 
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
         {
-            if(SensorWaitTimeInMilliseconds <= 0)
-            return false;
-
             TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;
-            return timeStampDifference < SensorWaitTimeWindow;
+            return timeStampDifference < SensorProhibitedTimeWindow;
         }
 
-        private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
+        private bool HasValidSequence(SensorRecord newSensorRecord)
         {
-            return (Prev_SensorRecord.sensorCode.IsS2_ON_FWD() && newSensorRecord.sensorCode.IsS2_ON_FWD()) ||
+            return !(Prev_SensorRecord.sensorCode.IsS2_ON_FWD() && newSensorRecord.sensorCode.IsS2_ON_FWD()) ||
                             (Prev_SensorRecord.sensorCode.IsS2_OFF_FWD() && newSensorRecord.sensorCode.IsS2_OFF_FWD());
         }
     }

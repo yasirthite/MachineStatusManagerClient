@@ -7,6 +7,7 @@
     {
         Empty = -1,
         SourceOnCircuitBreaker = -2,
+        FaultySensorBlink = -3,
 
         S1_ON_FWD = 4849,
         S1_OFF_FWD = 5849,

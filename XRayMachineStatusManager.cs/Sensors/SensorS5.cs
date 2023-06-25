@@ -37,6 +37,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         internal bool HasValid(SensorRecord newSensorRecord)
         {
+            return true;
+
             if (newSensorRecord.sensorCode.IsS5_ON_FWD() || newSensorRecord.sensorCode.IsS5_OFF_FWD())
                 return CheckValidityForForwardDirection(newSensorRecord);
             else
