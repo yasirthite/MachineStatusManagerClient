@@ -1,6 +1,11 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------
+// Copyright (c) WebEngineers Software India LLP, All rights reserved.
+// Licensed under the MIT License.
+// Source-Code modification requires explicit permission by the licensee
+// -----------------------------------------------------------------------
+
+using System;
 using System.Threading;
-using System.Threading.Tasks;
 using XRayMachineStatusManagement.Sensors;
 
 namespace XRayMachineStatusManagement
@@ -61,7 +66,7 @@ namespace XRayMachineStatusManagement
                 {
                     IsDetector2_On = false;
                     _logger.LogInformation($"[{nameof(SensorS3_FaultySensorDataHandler)}]: Detector 2 is turning OFF ...");
-                    TurnOffDetector1?.Invoke(this, SensorCode.FaultySensorBlink);
+                    TurnOffDetector2?.Invoke(this, SensorCode.FaultySensorBlink);
 
                     LogBagData();
                 }
@@ -200,7 +205,6 @@ namespace XRayMachineStatusManagement
                         {
                             nS2BagsPartial++;
                             LogBagData();
-
 
                             if (!IsDetector1_On)
                             {
@@ -381,6 +385,8 @@ namespace XRayMachineStatusManagement
                         }
 
                     case SensorCode.S5_OFF_FWD:
+
+                        LogBagData();
 
                         if (sensorS5.HasValid(newSensorRecord))
                         {

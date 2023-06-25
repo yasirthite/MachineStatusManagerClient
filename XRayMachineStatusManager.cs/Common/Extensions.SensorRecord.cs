@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------
+// Copyright (c) WebEngineers Software India LLP, All rights reserved.
+// Licensed under the MIT License.
+// Source-Code modification requires explicit permission by the licensee
+// -----------------------------------------------------------------------
+
 
 namespace XRayMachineStatusManagement.Common
 {
