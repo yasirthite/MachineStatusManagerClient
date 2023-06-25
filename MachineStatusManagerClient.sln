@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineStatusManagerClient"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRayMachineStatusManagement", "XRayMachineStatusManager.cs\XRayMachineStatusManagement.csproj", "{8F326191-91B6-4C4B-84F2-E716F7413856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorData", "..\SensorData\SensorData\SensorData.csproj", "{B3311263-1046-4F58-BE36-87DB9EF6FFC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorData", "SensorData\SensorData.csproj", "{B3311263-1046-4F58-BE36-87DB9EF6FFC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
