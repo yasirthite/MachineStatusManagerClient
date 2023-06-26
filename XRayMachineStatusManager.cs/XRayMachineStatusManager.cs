@@ -84,7 +84,7 @@ namespace XRayMachineStatusManagement
         private void SensorS2_FaultySensorDataHandler()
         {
             nS2BagsPartial--; //Decrement it beacuase previous S2_ON had made nS2BagsPartial++.
-            _logger.LogCritical($"[{nameof(SensorS2_FaultySensorDataHandler)}]: Sensor Blinked within {SensorS2.SensorProhibitedtimeInMilliseconds} ms.");
+            _logger.LogCritical($"[{nameof(SensorS2_FaultySensorDataHandler)}]: Sensor Blinked within {SensorS2.SensorBlinkTimeInMilliseconds} ms.");
 
             if (CanTurnOffDetector1)
             {

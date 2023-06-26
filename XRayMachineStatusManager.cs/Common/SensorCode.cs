@@ -6,6 +6,7 @@
 
 namespace XRayMachineStatusManagement
 {
+
     /// <summary>
     /// Enum representing a 4-Digit sensor signal.
     /// </summary>
@@ -22,16 +23,16 @@ namespace XRayMachineStatusManagement
         S2_OFF_FWD = 5841,
 
         S3_ON_FWD = 4844,
-        S3_OFF_FWD = 4843,
+        S3_OFF_FWD = 5844,
 
-        S4_ON_FWD = 5845,
-        S4_OFF_FWD = 4845,
+        S4_ON_FWD = 4845,
+        S4_OFF_FWD = 5845,
 
-        S5_ON_FWD = 4865,
-        S5_OFF_FWD = 5865,
+        S5_ON_FWD = 4846,
+        S5_OFF_FWD = 5846,
 
-        BELT_FWD = 4168,
-        BELT_STOP = 4169,
-        BELT_REV = 4170,
+        BELT_FWD = 2168,
+        BELT_STOP = 2169,
+        BELT_REV = 2170
     }
 }

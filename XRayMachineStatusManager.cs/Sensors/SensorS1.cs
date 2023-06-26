@@ -37,7 +37,7 @@ namespace XRayMachineStatusManagement.Sensors
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
         /// </summary>
-        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(3000);
+        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(4500);
 
         private SensorS1(IMachineStatusLogger logger)
         {

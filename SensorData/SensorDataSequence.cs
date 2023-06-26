@@ -28,7 +28,7 @@ namespace SensorData
         public SensorDataSequence()
         {
             manager = new XRayMachineStatusManagement.XRayMachineStatusManager();
-
+            
             manager.TurnOnSource += Manager_TurnOnSource;
             manager.TurnOffSource += Manager_TurnOffSource;
             manager.TurnOnDetector1 += Manager_TurnOnDetector1;

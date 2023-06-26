@@ -24,7 +24,7 @@ namespace XRayMachineStatusManagement.Sensors
 
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
-        public const int SensorProhibitedtimeInMilliseconds = 150;
+        public const int SensorProhibitedtimeInMilliseconds = 200;
 
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
@@ -105,8 +105,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool HasValidSequence(SensorRecord newSensorRecord)
         {
-            return !(Prev_SensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_ON_FWD()) ||
-                            (Prev_SensorRecord.sensorCode.IsS3_OFF_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD());
+            return !((Prev_SensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_ON_FWD()) ||
+                            (Prev_SensorRecord.sensorCode.IsS3_OFF_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD()));
         }
     }
 }
