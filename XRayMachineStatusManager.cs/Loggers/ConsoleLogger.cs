@@ -13,17 +13,17 @@ namespace XRayMachineStatusManagement
 {
     internal class ConsoleLogger: IMachineStatusLogger
     {
+        public static readonly string MESSAGE_HEADER = $"[WESI][{Thread.CurrentThread.ManagedThreadId}][{DateTime.Now}][{DateTime.Now.TimeOfDay.TotalMilliseconds}]";
         public ConsoleLogger() 
         {
         }
 
         public void LogInformation(string message)
         {
-            lock (this) 
+            lock (this)
             {
-
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][{DateTime.Now.TimeOfDay.TotalMilliseconds}]" + message);
+                Console.WriteLine(MESSAGE_HEADER + message);
                 Console.ResetColor();
             }
         }
@@ -33,7 +33,7 @@ namespace XRayMachineStatusManagement
             lock (this)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"[{DateTime.Now.ToLongTimeString()}]" + message);
+                Console.WriteLine(MESSAGE_HEADER + message);
                 Console.ResetColor();
             }
         }
@@ -43,7 +43,7 @@ namespace XRayMachineStatusManagement
             lock (this)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"[{DateTime.Now.ToLongTimeString()}]" + message);
+                Console.WriteLine(MESSAGE_HEADER + message);
                 Console.ResetColor();
             }
         }
@@ -53,7 +53,7 @@ namespace XRayMachineStatusManagement
             //lock (this)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"[{DateTime.Now.ToLongTimeString()}]" + message);
+                Console.WriteLine(MESSAGE_HEADER + message);
                 Console.ResetColor();
             }
         }

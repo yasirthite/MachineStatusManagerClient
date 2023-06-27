@@ -16,6 +16,9 @@ namespace XRayMachineStatusManagement
         private readonly bool _suppressInvalidValueException;
         private bool CanTurnOffSource = false;
 
+        DateTime prevSensorTimeStamp = DateTime.Now;
+        DateTime newsensorTimeStamp = DateTime.Now;
+
         private SensorS1 sensorS1;
         private SensorS2 sensorS2;
         private SensorS3 sensorS3;
@@ -145,11 +148,21 @@ namespace XRayMachineStatusManagement
             //}
         }
 
+        private void LogSimulationData()
+        {
+            //Todo: Log Simulation Data (Time Required To Complete: 3-4 Working days).
+
+            //newsensorTimeStamp = DateTime.Now;
+            //TimeSpan delayDuration = newsensorTimeStamp - prevSensorTimeStamp;
+            //prevSensorTimeStamp = newsensorTimeStamp;
+            //Console.WriteLine($"Task.Delay({(int)delayDuration.TotalMilliseconds}).Wait(); manager.DecideStatus({sensorCode});");
+        }
+
         public void DecideStatus(SensorCode sensorCode)
         {
             try
             {
-                Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}][{DateTime.Now.TimeOfDay.TotalMilliseconds}][DECIDE_STATUS: -----> [{sensorCode}]");
+                Console.WriteLine($"{ConsoleLogger.MESSAGE_HEADER}[DECIDE_STATUS: -----> [{sensorCode}]");
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
 
@@ -434,7 +447,6 @@ namespace XRayMachineStatusManagement
                         }
 
                         break;
-
 
                     default:
                         if (_suppressInvalidValueException)
