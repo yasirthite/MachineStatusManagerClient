@@ -100,7 +100,7 @@ namespace XRayMachineStatusManagement.Sensors
         private bool HasValidSequence(SensorRecord newSensorRecord)
         {
             return ! ((Prev_SensorRecord.sensorCode.IsS2_ON_FWD() && newSensorRecord.sensorCode.IsS2_ON_FWD()) ||
-                            (Prev_SensorRecord.sensorCode.IsS2_OFF_FWD() && newSensorRecord.sensorCode.IsS2_OFF_FWD()));
+                            ((Prev_SensorRecord.sensorCode.IsS2_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS2_OFF_FWD()));
         }
     }
 }

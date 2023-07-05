@@ -60,54 +60,6 @@ namespace XRayMachineStatusManagement.Sensors
             return true;
         }
 
-        private bool CheckValidityForForwardDirection(SensorRecord newSensorRecord)
-        {
-            if (Prev_SensorRecord.sensorCode.IsEmpty())
-            {
-                Prev_SensorRecord = newSensorRecord;
-
-                if (!IsSourceONCircuitBreakerPutToTrigger)
-                {
-                    IsSourceONCircuitBreakerPutToTrigger = true;
-
-                    Task.Delay(SourceStopTimeWindow)
-                        .ContinueWith(_ => CanStopSource?.Invoke())
-                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
-                }
-
-                return true;
-            }
-            else if (IsProhibitedTimeWindowOpenFor(newSensorRecord))
-            {
-                //if (Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_OFF_FWD())
-                //    Prev_SensorRecord = newSensorRecord;
-                //else
-                //    Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
-                Prev_SensorRecord = newSensorRecord;
-                return false;
-            }
-            else if (PrevSensorRecordHasInvalidSequenceWith(newSensorRecord))
-            {
-                Prev_SensorRecord = newSensorRecord;
-                return false;
-            }
-            else
-            {
-                Prev_SensorRecord = newSensorRecord;
-
-                if (!IsSourceONCircuitBreakerPutToTrigger)
-                {
-                    IsSourceONCircuitBreakerPutToTrigger = true;
-
-                    Task.Delay(SourceStopTimeWindow)
-                        .ContinueWith(_ => CanStopSource?.Invoke())
-                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
-                }
-
-                return true;
-            }
-        }
-
         private bool NewCheckValidityForForwardDirection(SensorRecord newSensorRecord)
         {
             Prev_SensorRecord = newSensorRecord;
@@ -138,8 +90,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
         {
-            return (Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
-                            (Prev_SensorRecord.sensorCode.IsS1_OFF_FWD() && newSensorRecord.sensorCode.IsS1_OFF_FWD());
+            return ((Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
+                            ((Prev_SensorRecord.sensorCode.IsS1_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS1_OFF_FWD()));
         }
     }
 }

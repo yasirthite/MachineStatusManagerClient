@@ -25,8 +25,9 @@ namespace MachineStatusManagerClient
         {
             Console.WriteLine($"[LOGIN_FORM_START:-----> {Thread.CurrentThread.ManagedThreadId}]");
 
-            manager.DecideStatus(SensorCode.S2_OFF_FWD);
-            Task.Delay(94).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+            manager.DecideStatus(SensorCode.S4_ON_FWD);
+            Task.Delay(94).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+            Task.Delay(194).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
         }
 
         private void Manager_TurnOffDetector2(object sender, SensorCode e)

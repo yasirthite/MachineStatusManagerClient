@@ -99,8 +99,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
         {
-            return (Prev_SensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_ON_FWD()) ||
-                            (Prev_SensorRecord.sensorCode.IsS5_OFF_FWD() && newSensorRecord.sensorCode.IsS5_OFF_FWD());
+            return ((Prev_SensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_ON_FWD()) ||
+                            ((Prev_SensorRecord.sensorCode.IsS5_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS5_OFF_FWD()));
         }
     }
 }

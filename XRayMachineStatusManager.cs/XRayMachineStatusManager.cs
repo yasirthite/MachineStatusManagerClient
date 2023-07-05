@@ -162,7 +162,7 @@ namespace XRayMachineStatusManagement
         {
             try
             {
-                Console.WriteLine($"{ConsoleLogger.MESSAGE_HEADER}[DECIDE_STATUS: -----> [{sensorCode}]");
+                Console.WriteLine($"{ConsoleLogger.GetMessageHeader}[DECIDE_STATUS: -----> [{sensorCode}]");
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
 
