@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRayMachineStatusManagement
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorData", "SensorData\SensorData.csproj", "{B3311263-1046-4F58-BE36-87DB9EF6FFC3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sensor Data Logs", "Sensor Data Logs", "{56E409DA-2B2D-4720-8B2D-632004C361C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source OFF Before D1 ON", "Source OFF Before D1 ON", "{40A90FC5-D112-4C8A-89EF-F29D963FCA2C}"
+	ProjectSection(SolutionItems) = preProject
+		Raw - 12 Bags Data.txt = Raw - 12 Bags Data.txt
+		SMDT.txt = SMDT.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40A90FC5-D112-4C8A-89EF-F29D963FCA2C} = {56E409DA-2B2D-4720-8B2D-632004C361C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E76793C7-2EDF-4B02-A7F7-F1685190EEAC}

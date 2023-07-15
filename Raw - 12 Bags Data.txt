@@ -1,0 +1,1764 @@
+*************------------------------------------*************
+*** RAW data for 3 sequence of 4 objects = Total Readings 12 objects
+*** Object Sequence: Trolley, Small Box, CTP, Medium Box
+*************------------------------------------*************
+
+[WESI][7][15-07-2023 2.18.55 PM][51535063.4481][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(72127).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.18.55 PM][51535075.4158][7][S1_ON_FWD:4849]: Source is Turning ON ...
+[7] [Manager_TurnOnSource] EventHandled -->> Source is On
+[WESI][7][15-07-2023 2.18.55 PM][51535076.4141]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.18.55 PM][51535076.4141]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.18.55 PM][51535077.4105]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.18.55 PM][51535077.4105]IsSourceON: True
+[WESI][7][15-07-2023 2.18.55 PM][51535077.4105]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.18.55 PM][51535077.4105]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.18.55 PM][51535541.1733][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(475).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.18.56 PM][51536180.4631][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(640).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.18.57 PM][51537623.6068][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(1443).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.18.57 PM][51537628.594]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.18.57 PM][51537628.594]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.18.57 PM][51537629.5911]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.18.57 PM][51537629.5911]IsSourceON: True
+[WESI][6][15-07-2023 2.18.57 PM][51537630.5885]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.18.57 PM][51537630.5885]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.18.57 PM][51537631.5881][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.18.57 PM][51537632.5837]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.18.57 PM][51537632.5837]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.18.57 PM][51537633.586]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.18.57 PM][51537633.586]IsSourceON: True
+[WESI][6][15-07-2023 2.18.57 PM][51537634.5809]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.18.57 PM][51537634.5809]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.18.58 PM][51538600.9943][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(977).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][10][15-07-2023 2.18.58 PM][51538604.9836][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][10][15-07-2023 2.18.58 PM][51538605.9819]Detector 1: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.18.58 PM][51538605.9819]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.18.58 PM][51538606.9793]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.18.58 PM][51538607.9779]IsSourceON: True
+[WESI][10][15-07-2023 2.18.58 PM][51538607.9779]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.18.58 PM][51538608.9798]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.18.58 PM][51538608.9798][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[10] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][10][15-07-2023 2.18.58 PM][51538609.9714]Detector 1: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.18.58 PM][51538610.9682]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.18.58 PM][51538610.9682]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.18.58 PM][51538611.9654]IsSourceON: True
+[WESI][10][15-07-2023 2.18.58 PM][51538616.9538]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.18.58 PM][51538616.9538]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.18.58 PM][51538729.6515][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(127).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][10][15-07-2023 2.18.59 PM][51539499.5927][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(770).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.18.59 PM][51539541.4808][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(41).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.18.59 PM][51539553.4489][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(11).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][6][15-07-2023 2.18.59 PM][51539586.364][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][7][15-07-2023 2.18.59 PM][51539924.4572][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(371).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 1] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 2299.8545 ms.
+[WESI][7][15-07-2023 2.18.59 PM][51539926.4532][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.18.59 PM][51539927.4506]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.18.59 PM][51539927.4506]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.18.59 PM][51539928.4478]CanTurnOffSource: True, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.18.59 PM][51539930.4415]IsSourceON: True
+[WESI][7][15-07-2023 2.18.59 PM][51539931.4393]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.18.59 PM][51539935.4283]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.00 PM][51540177.7818][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(252).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.00 PM][51540377.2471][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(200).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.00 PM][51540469.9991][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(92).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.00 PM][51540626.5819][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(155).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.00 PM][51540749.253][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(122).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.00 PM][51540880.9009][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(131).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 1] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 2286.8873 ms.
+[WESI][7][15-07-2023 2.19.00 PM][51540891.8716][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.00 PM][51540893.8666]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.00 PM][51540894.8639]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.00 PM][51540896.8584]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.00 PM][51540898.8533]IsSourceON: True
+[WESI][7][15-07-2023 2.19.00 PM][51540900.848]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.00 PM][51540902.8426]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.00 PM][51540911.8185][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[7] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][7][15-07-2023 2.19.00 PM][51540917.8049]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.00 PM][51540918.7995]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.00 PM][51540922.7885]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.00 PM][51540923.7855]IsSourceON: True
+[WESI][7][15-07-2023 2.19.00 PM][51540924.7872]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.00 PM][51540925.7796]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.01 PM][51541237.9463][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(358).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.01 PM][51541844.3285][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(605).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 1] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 2294.8653 ms.
+[WESI][6][15-07-2023 2.19.01 PM][51541857.297][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.01 PM][51541866.2699]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.01 PM][51541879.2321]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.01 PM][51541880.2553]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.01 PM][51541884.2194]IsSourceON: True
+[WESI][6][15-07-2023 2.19.01 PM][51541885.2161]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.01 PM][51541890.2029]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.01 PM][51541890.2029][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[6] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][6][15-07-2023 2.19.01 PM][51541898.1811]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.01 PM][51541899.1787]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.01 PM][51541900.2118]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.01 PM][51541901.1734]IsSourceON: True
+[WESI][6][15-07-2023 2.19.01 PM][51541906.1597]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.01 PM][51541906.1597]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.02 PM][51542931.4231][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(1087).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.02 PM][51542940.3973]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.02 PM][51542942.392]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.02 PM][51542948.3764]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.02 PM][51542959.3464]IsSourceON: True
+[WESI][6][15-07-2023 2.19.02 PM][51542962.3373]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.02 PM][51542963.3348]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.02 PM][51542967.3233][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.02 PM][51542972.3102]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.02 PM][51542973.3082]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.02 PM][51542974.3053]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.02 PM][51542974.3053]IsSourceON: True
+[WESI][6][15-07-2023 2.19.02 PM][51542975.303]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.02 PM][51542980.289]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.02 PM][51542997.2452][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(65).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.03 PM][51543922.7734][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(925).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 2] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 989.3364 ms.
+[WESI][7][15-07-2023 2.19.03 PM][51543936.7348][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.03 PM][51543938.7308]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.03 PM][51543941.7202]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.03 PM][51543943.7161]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.03 PM][51543945.71]IsSourceON: True
+[WESI][7][15-07-2023 2.19.03 PM][51543954.6852]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.03 PM][51543955.6825]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.03 PM][51543959.6711][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(36).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][7][15-07-2023 2.19.03 PM][51543961.6667][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.03 PM][51543962.6639]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.03 PM][51543966.6546]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.03 PM][51543975.6283]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.03 PM][51543976.626]IsSourceON: True
+[WESI][7][15-07-2023 2.19.03 PM][51543977.6234]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.03 PM][51543978.6208]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.03 PM][51543981.6135][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[7] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][7][15-07-2023 2.19.03 PM][51543993.6304]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.03 PM][51543994.5781]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.03 PM][51543998.5707]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.03 PM][51543999.5651]IsSourceON: True
+[WESI][7][15-07-2023 2.19.03 PM][51543999.5651]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.04 PM][51544009.5386]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.04 PM][51544144.1792][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(185).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.04 PM][51544155.1495]Detector 1: Partial = 0, Full = 1
+[WESI][9][15-07-2023 2.19.04 PM][51544158.1422]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.04 PM][51544160.1369]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.04 PM][51544162.1314]IsSourceON: True
+[WESI][9][15-07-2023 2.19.04 PM][51544164.1547]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.04 PM][51544165.1237]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.04 PM][51544693.7127][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(548).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.04 PM][51544705.6788][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][6][15-07-2023 2.19.04 PM][51544796.4388][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(102).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.04 PM][51544881.2104][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(85).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 2] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 947.4705 ms.
+[WESI][12][15-07-2023 2.19.04 PM][51544910.1331][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][12][15-07-2023 2.19.04 PM][51544914.1215]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.04 PM][51544917.1151]Detector 2: Partial = 0, Full = 1
+[WESI][12][15-07-2023 2.19.04 PM][51544919.1093]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.04 PM][51544921.1039]IsSourceON: True
+[WESI][12][15-07-2023 2.19.04 PM][51544928.0856]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.04 PM][51544932.1004]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.04 PM][51544935.0666][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[12] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][12][15-07-2023 2.19.04 PM][51544941.0493]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.04 PM][51544942.0462]Detector 2: Partial = 0, Full = 1
+[WESI][12][15-07-2023 2.19.04 PM][51544946.0349]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.04 PM][51544947.0328]IsSourceON: True
+[WESI][12][15-07-2023 2.19.04 PM][51544948.0302]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.04 PM][51544949.0385]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.04 PM][51544950.0245][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(67).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][7][15-07-2023 2.19.05 PM][51545425.754][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(475).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.05 PM][51545432.7356]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.05 PM][51545437.7223]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.05 PM][51545439.7169]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.05 PM][51545441.7321]IsSourceON: True
+[WESI][7][15-07-2023 2.19.05 PM][51545448.693]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.05 PM][51545449.6902]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.05 PM][51545717.9757][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(292).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.05 PM][51545839.6478][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(122).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 2] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 893.6128 ms.
+[WESI][7][15-07-2023 2.19.05 PM][51545850.629][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.05 PM][51545852.6134]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.05 PM][51545859.5948]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.05 PM][51545861.5896]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.05 PM][51545865.579]IsSourceON: True
+[WESI][7][15-07-2023 2.19.05 PM][51545867.5742]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.05 PM][51545868.5696]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.05 PM][51545874.5536][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[7] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][7][15-07-2023 2.19.05 PM][51545879.54]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.05 PM][51545880.5375]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.05 PM][51545881.5779]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.05 PM][51545882.5321]IsSourceON: True
+[WESI][7][15-07-2023 2.19.05 PM][51545883.5301]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.05 PM][51545884.5273]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546021.1627][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(180).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.06 PM][51546028.1535]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546032.1344]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546034.1288]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.06 PM][51546036.1258]IsSourceON: True
+[WESI][6][15-07-2023 2.19.06 PM][51546040.1127]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546042.1076]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546044.1022][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(22).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.06 PM][51546055.0715]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546060.0577]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546060.0577]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.06 PM][51546061.0555]IsSourceON: True
+[WESI][6][15-07-2023 2.19.06 PM][51546062.0894]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546063.0501]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546064.1023][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.06 PM][51546066.042]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546067.0396]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546068.0379]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.06 PM][51546072.0258]IsSourceON: True
+[WESI][6][15-07-2023 2.19.06 PM][51546073.0235]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.06 PM][51546074.0207]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.06 PM][51546075.0181][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(30).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.06 PM][51546724.286][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(649).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][10][15-07-2023 2.19.06 PM][51546729.2706][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(8).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.06 PM][51546906.7972][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(173).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.06 PM][51546984.5895][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(77).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][6][15-07-2023 2.19.06 PM][51546993.5638][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.06 PM][51546995.5593]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.06 PM][51546998.5516]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.07 PM][51547000.5456]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.07 PM][51547007.5281]IsSourceON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547008.5234]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547013.5096]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.07 PM][51547013.5096][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[6] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][6][15-07-2023 2.19.07 PM][51547015.5047]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.07 PM][51547016.5022]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.07 PM][51547025.4774]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.07 PM][51547027.4724]IsSourceON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547028.4699]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547029.4674]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.07 PM][51547039.4405][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(54).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.07 PM][51547448.3483][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(409).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.07 PM][51547459.3196]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.07 PM][51547461.3145]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.07 PM][51547470.2947]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.07 PM][51547472.2887]IsSourceON: True
+[WESI][12][15-07-2023 2.19.07 PM][51547477.2718]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.07 PM][51547479.2659]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.07 PM][51547651.8048][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(202).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.07 PM][51547875.2151][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(223).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 3] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1836.0912 ms.
+[WESI][6][15-07-2023 2.19.07 PM][51547889.172][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.07 PM][51547892.1666]Detector 1: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.07 PM][51547898.1469]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.07 PM][51547900.1428]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.07 PM][51547911.111]IsSourceON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547912.1081]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.07 PM][51547916.0968]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.07 PM][51547943.0251][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(67).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.07 PM][51547952.9982][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(9).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][13][15-07-2023 2.19.08 PM][51548147.481][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(194).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][13][15-07-2023 2.19.08 PM][51548156.4562]Detector 1: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.08 PM][51548158.4507]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.08 PM][51548160.4454]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.08 PM][51548162.44]IsSourceON: True
+[WESI][13][15-07-2023 2.19.08 PM][51548164.4349]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.08 PM][51548173.4108]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.08 PM][51548176.4032][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(29).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.08 PM][51548484.5813][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(307).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.08 PM][51548494.5544]Detector 1: Partial = 0, Full = 1
+[WESI][12][15-07-2023 2.19.08 PM][51548497.5504]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.08 PM][51548506.523]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.08 PM][51548507.5204]IsSourceON: True
+[WESI][12][15-07-2023 2.19.08 PM][51548512.5032]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.08 PM][51548513.5012]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.08 PM][51548514.4986][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(29).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][9][15-07-2023 2.19.08 PM][51548752.8618][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(238).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.08 PM][51548762.8358]Detector 1: Partial = 0, Full = 1
+[WESI][9][15-07-2023 2.19.08 PM][51548764.8527]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.08 PM][51548765.8274]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.08 PM][51548767.822]IsSourceON: True
+[WESI][9][15-07-2023 2.19.08 PM][51548769.8168]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.08 PM][51548779.7892]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.08 PM][51548855.5872][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(103).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 3] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1871.9961 ms.
+[WESI][6][15-07-2023 2.19.08 PM][51548865.5617][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.08 PM][51548870.5483]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.08 PM][51548872.5429]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.08 PM][51548874.5369]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.08 PM][51548876.532]IsSourceON: True
+[WESI][6][15-07-2023 2.19.08 PM][51548878.5266]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.08 PM][51548880.5213]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.08 PM][51548889.4982][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[6] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][6][15-07-2023 2.19.08 PM][51548895.4817]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.08 PM][51548897.476]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.08 PM][51548900.4671]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.08 PM][51548909.4572]IsSourceON: True
+[WESI][6][15-07-2023 2.19.08 PM][51548910.4399]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.08 PM][51548911.4372]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.09 PM][51549134.8408][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(278).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.09 PM][51549834.9683][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(700).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 3] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1882.968 ms.
+[WESI][10][15-07-2023 2.19.09 PM][51549842.9472][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][10][15-07-2023 2.19.09 PM][51549842.9472]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.09 PM][51549842.9472]Detector 2: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.09 PM][51549843.9443]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][10][15-07-2023 2.19.09 PM][51549843.9443]IsSourceON: True
+[WESI][10][15-07-2023 2.19.09 PM][51549844.9417]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.09 PM][51549844.9417]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.09 PM][51549845.9394][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[10] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][10][15-07-2023 2.19.09 PM][51549846.9365]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.09 PM][51549846.9365]Detector 2: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.09 PM][51549847.9334]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][10][15-07-2023 2.19.09 PM][51549847.9334]IsSourceON: True
+[WESI][10][15-07-2023 2.19.09 PM][51549848.9321]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.09 PM][51549848.9321]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.10 PM][51550225.9266][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(390).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.10 PM][51550233.9167]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.10 PM][51550235.8993]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.10 PM][51550237.8952]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.10 PM][51550239.8887]IsSourceON: True
+[WESI][6][15-07-2023 2.19.10 PM][51550242.8797]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.10 PM][51550244.88]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.10 PM][51550246.8701][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.10 PM][51550259.8573]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.10 PM][51550260.8314]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.10 PM][51550261.8296]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.10 PM][51550266.8162]IsSourceON: True
+[WESI][6][15-07-2023 2.19.10 PM][51550275.8173]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.10 PM][51550277.7857]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.10 PM][51550277.7857][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(51).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.10 PM][51550279.7798][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(2).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.10 PM][51550429.3833][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(148).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.10 PM][51550517.1473][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(87).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.10 PM][51550700.6572][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(183).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.10 PM][51550789.4271][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(88).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][13][15-07-2023 2.19.10 PM][51550794.4085][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(8).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.11 PM][51551180.3739][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(382).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.11 PM][51551190.3482]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.11 PM][51551193.3469]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.11 PM][51551196.3336]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.11 PM][51551207.3109]IsSourceON: True
+[WESI][12][15-07-2023 2.19.11 PM][51551208.2992]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.11 PM][51551212.2873]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.11 PM][51551214.2826][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(32).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][9][15-07-2023 2.19.11 PM][51551215.2821][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][9][15-07-2023 2.19.11 PM][51551219.2691]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.11 PM][51551226.2501]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.11 PM][51551227.2473]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.11 PM][51551228.2447]IsSourceON: True
+[WESI][9][15-07-2023 2.19.11 PM][51551229.2422]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.11 PM][51551230.2394]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.11 PM][51551230.2394][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[9] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][9][15-07-2023 2.19.11 PM][51551238.2186]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.11 PM][51551243.2049]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.11 PM][51551244.2021]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.11 PM][51551244.2021]IsSourceON: True
+[WESI][9][15-07-2023 2.19.11 PM][51551245.1994]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.11 PM][51551246.2194]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.11 PM][51551254.1754][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][7][15-07-2023 2.19.11 PM][51551288.0857][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(73).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][9][15-07-2023 2.19.11 PM][51551377.8475][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(89).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.11 PM][51551382.8345][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(10).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.11 PM][51551419.7344][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(30).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 4] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1196.801 ms.
+[WESI][7][15-07-2023 2.19.11 PM][51551432.6997][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.11 PM][51551434.6945]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.11 PM][51551436.6895]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.11 PM][51551444.6678]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.11 PM][51551446.6631]IsSourceON: True
+[WESI][7][15-07-2023 2.19.11 PM][51551456.6362]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.11 PM][51551457.6323]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.11 PM][51551495.5304][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(75).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.11 PM][51551788.747][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(294).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.11 PM][51551796.7258]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.11 PM][51551797.7247]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.11 PM][51551799.7194]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.11 PM][51551800.7171]IsSourceON: True
+[WESI][7][15-07-2023 2.19.11 PM][51551801.7132]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.11 PM][51551809.6919]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.11 PM][51551814.6791][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(24).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.11 PM][51551827.6437][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(12).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.12 PM][51552008.1614][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(180).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.12 PM][51552017.1397]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.12 PM][51552019.1333]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.12 PM][51552024.1211]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.12 PM][51552027.112]IsSourceON: True
+[WESI][7][15-07-2023 2.19.12 PM][51552036.089]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.12 PM][51552039.0807]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.12 PM][51552043.0686][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(34).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.12 PM][51552215.607][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(173).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][13][15-07-2023 2.19.12 PM][51552225.5811]Detector 1: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.12 PM][51552227.5767]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.12 PM][51552229.5696]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.12 PM][51552232.562]IsSourceON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552235.5567]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552244.532]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552249.5163][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(32).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][6][15-07-2023 2.19.12 PM][51552305.3674][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(55).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.12 PM][51552404.1032][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(98).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 4] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1192.8116 ms.
+[WESI][13][15-07-2023 2.19.12 PM][51552414.0777][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.12 PM][51552417.0704]Detector 1: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.12 PM][51552419.0637]Detector 2: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.12 PM][51552420.0614]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.12 PM][51552423.0532]IsSourceON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552425.0473]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552438.013]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552439.0115][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[13] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][13][15-07-2023 2.19.12 PM][51552443.9962]Detector 1: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.12 PM][51552444.9938]Detector 2: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.12 PM][51552445.9924]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.12 PM][51552446.9883]IsSourceON: True
+[WESI][13][15-07-2023 2.19.12 PM][51552447.9855]IsDetector 1 ON: False
+[WESI][13][15-07-2023 2.19.12 PM][51552448.9829]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.12 PM][51552620.5261][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(216).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.12 PM][51552934.6851][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(314).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.12 PM][51552944.66]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.12 PM][51552946.6611]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.12 PM][51552948.6482]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.12 PM][51552950.6427]IsSourceON: True
+[WESI][6][15-07-2023 2.19.12 PM][51552958.6217]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.12 PM][51552960.6164]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.12 PM][51552965.6029][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(31).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.12 PM][51552968.5961][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(8).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.13 PM][51553355.5605][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(379).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 4] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1110.0325 ms.
+[WESI][7][15-07-2023 2.19.13 PM][51553366.5323][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.13 PM][51553371.518]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.13 PM][51553373.5125]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.13 PM][51553378.5037]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.13 PM][51553380.4938]IsSourceON: True
+[WESI][7][15-07-2023 2.19.13 PM][51553382.4885]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.13 PM][51553390.4674]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.13 PM][51553392.462][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[7] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][7][15-07-2023 2.19.13 PM][51553397.449]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.13 PM][51553398.4482]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.13 PM][51553401.4368]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.13 PM][51553408.4177]IsSourceON: True
+[WESI][7][15-07-2023 2.19.13 PM][51553409.4152]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.13 PM][51553410.4125]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.13 PM][51553410.4125][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(55).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.13 PM][51553885.1473][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(473).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.13 PM][51553931.0233][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(45).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.13 PM][51553943.0179][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(15).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.13 PM][51553956.0008][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(9).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.15 PM][51555803.019][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][7][15-07-2023 2.19.15 PM][51555810.0011][SensorS1_CanStopSourceHandler]: Source is turning OFF ...
+[7] [Manager_TurnOffSource] EventHandled -->> Source is Off
+[WESI][7][15-07-2023 2.19.15 PM][51555815.9847]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.15 PM][51555817.9802]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.15 PM][51555824.9616]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.15 PM][51555826.9553]IsSourceON: False
+[WESI][7][15-07-2023 2.19.15 PM][51555830.9447]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.15 PM][51555832.9393]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.16 PM][51556060.3316][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(2103).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.16 PM][51556066.3158]Detector 1: Partial = 0, Full = 0
+[WESI][9][15-07-2023 2.19.16 PM][51556072.3003]Detector 2: Partial = 0, Full = 0
+[WESI][9][15-07-2023 2.19.16 PM][51556078.2839]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][9][15-07-2023 2.19.16 PM][51556080.2788]IsSourceON: False
+[WESI][9][15-07-2023 2.19.16 PM][51556084.268]IsDetector 1 ON: False
+[WESI][9][15-07-2023 2.19.16 PM][51556086.2624]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.16 PM][51556096.236][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(35).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.16 PM][51556108.2038]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.16 PM][51556109.2002]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.16 PM][51556114.1866]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.16 PM][51556114.1866]IsSourceON: False
+[WESI][6][15-07-2023 2.19.16 PM][51556115.1841]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.16 PM][51556117.1786]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.16 PM][51556118.1762][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.16 PM][51556129.1459]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.16 PM][51556130.1445]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.16 PM][51556131.141]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.16 PM][51556132.1382]IsSourceON: False
+[WESI][6][15-07-2023 2.19.16 PM][51556133.136]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.16 PM][51556134.1336]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.17 PM][51557037.7191][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(941).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][9][15-07-2023 2.19.17 PM][51557046.6954][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][9][15-07-2023 2.19.17 PM][51557048.6902]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.17 PM][51557050.6852]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.17 PM][51557052.6794]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.17 PM][51557056.6691]IsSourceON: False
+[WESI][9][15-07-2023 2.19.17 PM][51557057.6662]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.17 PM][51557058.6624]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.17 PM][51557059.6596][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[9] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][9][15-07-2023 2.19.17 PM][51557073.6225]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.17 PM][51557075.617]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.17 PM][51557078.6096]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.17 PM][51557079.6065]IsSourceON: False
+[WESI][9][15-07-2023 2.19.17 PM][51557083.5959]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.17 PM][51557085.5903]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.17 PM][51557088.5817][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(50).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.17 PM][51557180.3379][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(92).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][13][15-07-2023 2.19.17 PM][51557189.3152][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(8).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.17 PM][51557193.3037][13][S1_ON_FWD:4849]: Source is Turning ON ...
+[13] [Manager_TurnOnSource] EventHandled -->> Source is On
+[WESI][13][15-07-2023 2.19.17 PM][51557197.2929]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.17 PM][51557198.2904]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.17 PM][51557201.2824]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.17 PM][51557202.2798]IsSourceON: True
+[WESI][13][15-07-2023 2.19.17 PM][51557209.2601]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.17 PM][51557214.2473]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.17 PM][51557745.8266][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(556).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.17 PM][51557756.7984]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.17 PM][51557758.7924]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.17 PM][51557760.7913]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.17 PM][51557766.7728]IsSourceON: True
+[WESI][6][15-07-2023 2.19.17 PM][51557776.7448]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.17 PM][51557777.7423]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.17 PM][51557949.2828][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(203).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.17 PM][51557989.1762][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(39).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][12][15-07-2023 2.19.18 PM][51558016.1042][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(26).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.18 PM][51558027.0755][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(13).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.18 PM][51558331.2638][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(300).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.18 PM][51558534.718][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(203).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.18 PM][51558544.6923]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.18 PM][51558545.6891]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.18 PM][51558547.684]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.18 PM][51558549.6784]IsSourceON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558551.6734]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558553.6678]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558556.6601][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(21).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][9][15-07-2023 2.19.18 PM][51558557.6573][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(1).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 5] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 2469.3983 ms.
+[WESI][9][15-07-2023 2.19.18 PM][51558572.6161][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][9][15-07-2023 2.19.18 PM][51558573.6134]Detector 1: Partial = 0, Full = 1
+[WESI][9][15-07-2023 2.19.18 PM][51558577.603]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.18 PM][51558578.6008]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.18 PM][51558582.5893]IsSourceON: True
+[WESI][9][15-07-2023 2.19.18 PM][51558583.5868]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.18 PM][51558584.5846]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.18 PM][51558588.5728][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(29).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.18 PM][51558736.1797][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(148).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.18 PM][51558746.1532]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.18 PM][51558748.1473]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.18 PM][51558760.1164]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.18 PM][51558762.1109]IsSourceON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558767.0979]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558776.0943]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.18 PM][51558777.0696][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(39).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.18 PM][51558938.6387][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(161).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.18 PM][51558947.6149]Detector 1: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.18 PM][51558949.61]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.18 PM][51558951.6052]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.18 PM][51558953.5998]IsSourceON: True
+[WESI][6][15-07-2023 2.19.18 PM][51558961.5822]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.18 PM][51558962.5757]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.19 PM][51559184.9802][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(247).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.19 PM][51559340.5645][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(154).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 5] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 2302.8449 ms.
+[WESI][6][15-07-2023 2.19.19 PM][51559350.602][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.19 PM][51559353.5305]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.19 PM][51559355.5249]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.19 PM][51559357.52]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.19 PM][51559359.5145]IsSourceON: True
+[WESI][6][15-07-2023 2.19.19 PM][51559361.5096]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.19 PM][51559363.5042]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.19 PM][51559366.4967][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[6] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][6][15-07-2023 2.19.19 PM][51559379.461]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.19 PM][51559381.4567]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.19 PM][51559383.4509]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.19 PM][51559393.4236]IsSourceON: True
+[WESI][6][15-07-2023 2.19.19 PM][51559395.4184]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.19 PM][51559399.4077]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.19 PM][51559687.6378][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(347).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.19 PM][51559691.6282][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(8).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.19 PM][51559800.3371][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(103).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][10][15-07-2023 2.19.19 PM][51559810.3094]Detector 1: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.19 PM][51559812.3067]Detector 2: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.19 PM][51559818.2898]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.19 PM][51559826.2998]IsSourceON: True
+[WESI][10][15-07-2023 2.19.19 PM][51559828.2622]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.19 PM][51559836.2411]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.19 PM][51559843.2212][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[10] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][10][15-07-2023 2.19.19 PM][51559848.2075]Detector 1: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.19 PM][51559858.1801]Detector 2: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.19 PM][51559859.1778]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.19 PM][51559860.175]IsSourceON: True
+[WESI][10][15-07-2023 2.19.19 PM][51559864.1646]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.19 PM][51559865.1621]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560324.9344][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(525).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 5] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 2336.7554 ms.
+[WESI][13][15-07-2023 2.19.20 PM][51560343.8857][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.20 PM][51560345.8794]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.20 PM][51560349.8664]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.20 PM][51560351.8619]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.20 PM][51560358.8423]IsSourceON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560359.8398]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560364.8296]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560365.8233][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[13] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][13][15-07-2023 2.19.20 PM][51560366.8217]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.20 PM][51560367.8185]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.20 PM][51560374.7994]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.20 PM][51560379.8]IsSourceON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560380.7832]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.20 PM][51560381.7806]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.20 PM][51560769.7454][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(443).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 6] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 969.4111 ms.
+[WESI][10][15-07-2023 2.19.20 PM][51560780.717][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][10][15-07-2023 2.19.20 PM][51560782.7107]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.20 PM][51560789.6925]Detector 2: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.20 PM][51560791.6865]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][10][15-07-2023 2.19.20 PM][51560796.6729]IsSourceON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560798.6692]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560805.649]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.20 PM][51560807.6455][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(37).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][10][15-07-2023 2.19.20 PM][51560812.6292][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][10][15-07-2023 2.19.20 PM][51560812.6292]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.20 PM][51560813.6266]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.20 PM][51560814.6237]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.20 PM][51560815.6444]IsSourceON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560815.6444]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560826.5914]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.20 PM][51560827.5893][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[10] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][10][15-07-2023 2.19.20 PM][51560828.5865]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.20 PM][51560829.5839]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.20 PM][51560829.5839]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.20 PM][51560830.5812]IsSourceON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560831.5786]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.20 PM][51560837.563]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.21 PM][51561708.2363][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][10][15-07-2023 2.19.21 PM][51561736.1612][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(928).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 6] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 926.5268 ms.
+[WESI][10][15-07-2023 2.19.21 PM][51561746.1364][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][10][15-07-2023 2.19.21 PM][51561750.1264]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.21 PM][51561752.1203]Detector 2: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.21 PM][51561760.0982]CanTurnOffSource: True, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.21 PM][51561762.0944]IsSourceON: True
+[WESI][10][15-07-2023 2.19.21 PM][51561766.082]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.21 PM][51561767.081]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.21 PM][51561768.0756][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[10] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][10][15-07-2023 2.19.21 PM][51561776.0541]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.21 PM][51561780.044]Detector 2: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.21 PM][51561781.0412]CanTurnOffSource: True, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.21 PM][51561782.0383]IsSourceON: True
+[WESI][10][15-07-2023 2.19.21 PM][51561783.052]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.21 PM][51561784.0327]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.21 PM][51561785.0315][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(48).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][6][15-07-2023 2.19.22 PM][51562379.4445][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(594).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.22 PM][51562388.4187]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.22 PM][51562390.4135]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.22 PM][51562394.4039]CanTurnOffSource: True, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.22 PM][51562397.3972]IsSourceON: True
+[WESI][6][15-07-2023 2.19.22 PM][51562399.4131]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.22 PM][51562401.3848]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.22 PM][51562646.7265][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(267).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.22 PM][51562685.6224][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(38).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 6] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 897.6007 ms.
+[WESI][7][15-07-2023 2.19.22 PM][51562693.6014][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.22 PM][51562693.6014]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.22 PM][51562694.5987]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.22 PM][51562694.5987]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.22 PM][51562695.5961]IsSourceON: True
+[WESI][7][15-07-2023 2.19.22 PM][51562695.5961]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.22 PM][51562696.5934]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.22 PM][51562696.5934][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[7] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][7][15-07-2023 2.19.22 PM][51562697.5907]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.22 PM][51562698.588]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.22 PM][51562698.588]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.22 PM][51562699.5854]IsSourceON: True
+[WESI][7][15-07-2023 2.19.22 PM][51562699.5854]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.22 PM][51562705.5691]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.22 PM][51562919.0039][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(233).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.24 PM][51564043.9964][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(1124).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.24 PM][51564054.9665]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564056.9601]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564059.9558]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.24 PM][51564069.9259]IsSourceON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564071.92]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.24 PM][51564076.9061]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.24 PM][51564078.9001][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(34).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.24 PM][51564079.8968]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564080.8942]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564081.9113]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.24 PM][51564081.9113]IsSourceON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564082.8887]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.24 PM][51564083.8863]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.24 PM][51564088.8814][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.24 PM][51564089.9178]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564090.8675]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564091.8648]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.24 PM][51564095.8539]IsSourceON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564100.8417]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564100.8417]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.24 PM][51564109.817][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(30).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.24 PM][51564358.1521][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(248).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.24 PM][51564364.1369]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.24 PM][51564364.1369]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.24 PM][51564365.1336]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.24 PM][51564365.1336]IsSourceON: True
+[WESI][7][15-07-2023 2.19.24 PM][51564365.1336]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.24 PM][51564366.1308]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.24 PM][51564366.1308][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(7).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.24 PM][51564672.3163][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(307).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.24 PM][51564684.2897]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564687.2767]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.24 PM][51564690.2742]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.24 PM][51564692.2617]IsSourceON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564694.2572]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.24 PM][51564696.2515]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.24 PM][51564707.2232][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(33).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][13][15-07-2023 2.19.24 PM][51564711.2093][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.24 PM][51564901.7015][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(190).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][12][15-07-2023 2.19.24 PM][51564911.6752][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][12][15-07-2023 2.19.24 PM][51564913.6696]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.24 PM][51564914.6671]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.24 PM][51564917.6592]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.24 PM][51564918.6555]IsSourceON: True
+[WESI][12][15-07-2023 2.19.24 PM][51564925.637]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.24 PM][51564930.6236]IsDetector 2 ON: False
+[WESI][12][15-07-2023 2.19.24 PM][51564931.6215][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[12] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][12][15-07-2023 2.19.24 PM][51564934.6143]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.24 PM][51564942.5923]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.24 PM][51564943.5895]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.24 PM][51564947.578]IsSourceON: True
+[WESI][12][15-07-2023 2.19.24 PM][51564948.5748]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.24 PM][51564949.5755]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.24 PM][51564995.4494][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(93).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.25 PM][51565083.2165][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(88).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.25 PM][51565154.0297][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(69).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.25 PM][51565285.6732][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(131).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.25 PM][51565333.5456][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(48).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.25 PM][51565368.4521][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(34).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.25 PM][51565402.3628][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(32).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.25 PM][51565422.3094][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(19).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.25 PM][51565638.7328][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(217).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.25 PM][51565645.7138]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.25 PM][51565649.7283]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.25 PM][51565651.6978]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.25 PM][51565659.677]IsSourceON: True
+[WESI][7][15-07-2023 2.19.25 PM][51565660.6739]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.25 PM][51565665.6603]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.25 PM][51565667.6559][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(27).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.25 PM][51565874.1039][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(206).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 7] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1800.1892 ms.
+[WESI][7][15-07-2023 2.19.25 PM][51565884.0763][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.25 PM][51565886.0705]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.25 PM][51565889.0633]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.25 PM][51565897.0414]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.25 PM][51565899.0362]IsSourceON: True
+[WESI][7][15-07-2023 2.19.25 PM][51565910.0059]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.25 PM][51565911.0048]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.25 PM][51565914.9929][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(40).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][6][15-07-2023 2.19.26 PM][51566842.5142][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(927).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 7] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1940.8137 ms.
+[WESI][6][15-07-2023 2.19.26 PM][51566854.4827][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.26 PM][51566856.4777]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.26 PM][51566858.4789]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.26 PM][51566860.4717]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.26 PM][51566862.4698]IsSourceON: True
+[WESI][6][15-07-2023 2.19.26 PM][51566870.4384]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.26 PM][51566871.4363]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.26 PM][51566876.4286][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[6] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][6][15-07-2023 2.19.26 PM][51566878.4174]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.26 PM][51566878.4174]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.26 PM][51566879.4148]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.26 PM][51566887.393]IsSourceON: True
+[WESI][6][15-07-2023 2.19.26 PM][51566888.3909]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.26 PM][51566893.3772]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.27 PM][51567054.9464][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(213).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.27 PM][51567118.7778][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(62).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][7][15-07-2023 2.19.27 PM][51567127.752]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.27 PM][51567129.7467]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.27 PM][51567131.7414]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.27 PM][51567133.7451]IsSourceON: True
+[WESI][7][15-07-2023 2.19.27 PM][51567139.7199]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.27 PM][51567141.7141]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.27 PM][51567145.7032][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[7] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][7][15-07-2023 2.19.27 PM][51567148.6955]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.27 PM][51567149.7156]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.27 PM][51567150.6907]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.27 PM][51567156.6764]IsSourceON: True
+[WESI][7][15-07-2023 2.19.27 PM][51567162.659]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.27 PM][51567164.6535]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.27 PM][51567167.645][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(49).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][9][15-07-2023 2.19.27 PM][51567169.6394][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][10][15-07-2023 2.19.27 PM][51567169.6394][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(7).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.27 PM][51567434.9308][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(259).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.27 PM][51567499.756][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(63).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.27 PM][51567593.5079][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(93).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.27 PM][51567635.3975][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(41).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.27 PM][51567793.9712][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(159).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 7] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1882.9684 ms.
+[WESI][6][15-07-2023 2.19.27 PM][51567807.935][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.27 PM][51567810.9267]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.27 PM][51567812.9219]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.27 PM][51567814.9161]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.27 PM][51567816.9185]IsSourceON: True
+[WESI][6][15-07-2023 2.19.27 PM][51567818.9057]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.27 PM][51567826.8838]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.27 PM][51567830.8717][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[6] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][6][15-07-2023 2.19.27 PM][51567832.8751]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.27 PM][51567833.866]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.27 PM][51567840.8455]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.27 PM][51567841.8428]IsSourceON: True
+[WESI][6][15-07-2023 2.19.27 PM][51567846.829]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.27 PM][51567847.8268]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.28 PM][51568088.1862][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(293).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][13][15-07-2023 2.19.28 PM][51568095.1665][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.28 PM][51568099.156]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.28 PM][51568101.1508]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.28 PM][51568103.1451]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.28 PM][51568106.1377]IsSourceON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568114.1158]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568123.0925]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.28 PM][51568128.0773][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[13] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][13][15-07-2023 2.19.28 PM][51568132.0665]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.28 PM][51568133.0634]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.28 PM][51568134.0621]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.28 PM][51568141.0429]IsSourceON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568142.0403]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568147.0265]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.28 PM][51568270.6971][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(183).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.28 PM][51568334.5265][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(63).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 8] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1216.748 ms.
+[WESI][13][15-07-2023 2.19.28 PM][51568345.4973][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.28 PM][51568352.4787]Detector 1: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.28 PM][51568359.4623]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.28 PM][51568361.4546]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.28 PM][51568367.4393]IsSourceON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568376.4134]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.28 PM][51568376.4134]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.28 PM][51568719.4972][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(384).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][10][15-07-2023 2.19.29 PM][51569147.3566][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(426).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.29 PM][51569156.3304]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.29 PM][51569158.3249]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.29 PM][51569160.3197]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.29 PM][51569162.3143]IsSourceON: True
+[WESI][10][15-07-2023 2.19.29 PM][51569164.309]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.29 PM][51569166.34]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.29 PM][51569168.2983][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(20).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][7][15-07-2023 2.19.29 PM][51569304.9328][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(136).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 8] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1216.748 ms.
+[WESI][7][15-07-2023 2.19.29 PM][51569315.9041][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.29 PM][51569321.8917]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.29 PM][51569323.8831]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.29 PM][51569328.868]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.29 PM][51569329.9138]IsSourceON: True
+[WESI][7][15-07-2023 2.19.29 PM][51569330.8632]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.29 PM][51569331.8606]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.29 PM][51569332.8578][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[7] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][7][15-07-2023 2.19.29 PM][51569342.8306]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.29 PM][51569343.8279]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.29 PM][51569344.8253]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.29 PM][51569345.8227]IsSourceON: True
+[WESI][7][15-07-2023 2.19.29 PM][51569346.82]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.29 PM][51569347.8668]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.29 PM][51569490.4408][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(185).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.29 PM][51569758.7201][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(269).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.29 PM][51569764.7055][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(9).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][9][15-07-2023 2.19.29 PM][51569820.5548][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(51).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.30 PM][51570270.3565][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(448).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 8] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1106.0453 ms.
+[WESI][12][15-07-2023 2.19.30 PM][51570282.3213][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][12][15-07-2023 2.19.30 PM][51570284.316]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.30 PM][51570286.3117]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.30 PM][51570292.2934]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.30 PM][51570293.2914]IsSourceON: True
+[WESI][12][15-07-2023 2.19.30 PM][51570297.2797]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.30 PM][51570298.2776]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.30 PM][51570300.2722][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[12] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][12][15-07-2023 2.19.30 PM][51570308.2514]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.30 PM][51570313.2372]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.30 PM][51570314.2647]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.30 PM][51570315.2312]IsSourceON: True
+[WESI][12][15-07-2023 2.19.30 PM][51570316.2334]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.30 PM][51570317.2272]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.31 PM][51571942.8825][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][7][15-07-2023 2.19.31 PM][51571947.8694][SensorS1_CanStopSourceHandler]: Source is turning OFF ...
+[7] [Manager_TurnOffSource] EventHandled -->> Source is Off
+[WESI][7][15-07-2023 2.19.31 PM][51571954.8511]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.31 PM][51571956.8455]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.31 PM][51571958.84]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.31 PM][51571964.8243]IsSourceON: False
+[WESI][7][15-07-2023 2.19.31 PM][51571973.8002]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.31 PM][51571979.7845]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.32 PM][51572200.197][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(1929).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.32 PM][51572209.1708][6][S1_ON_FWD:4849]: Source is Turning ON ...
+[6] [Manager_TurnOnSource] EventHandled -->> Source is On
+[WESI][6][15-07-2023 2.19.32 PM][51572213.1611]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.32 PM][51572221.14]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.32 PM][51572223.1348]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.32 PM][51572228.1197]IsSourceON: True
+[WESI][6][15-07-2023 2.19.32 PM][51572234.1053]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.32 PM][51572243.079]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.33 PM][51573509.6973][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(1309).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.33 PM][51573515.681]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.33 PM][51573521.6643]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.33 PM][51573523.6588]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.33 PM][51573525.6569]IsSourceON: True
+[WESI][6][15-07-2023 2.19.33 PM][51573527.6476]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.33 PM][51573528.6443]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.33 PM][51573529.6729][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.33 PM][51573532.6335]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.33 PM][51573533.6307]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.33 PM][51573534.6283]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.33 PM][51573543.6037]IsSourceON: True
+[WESI][6][15-07-2023 2.19.33 PM][51573548.5903]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.33 PM][51573549.5884]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.33 PM][51573958.4955][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(448).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][13][15-07-2023 2.19.33 PM][51573965.4772]Detector 1: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.33 PM][51573970.464]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.33 PM][51573972.4584]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.33 PM][51573974.4615]IsSourceON: True
+[WESI][13][15-07-2023 2.19.33 PM][51573975.4506]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.33 PM][51573977.4451]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.34 PM][51574482.0961][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(524).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][7][15-07-2023 2.19.34 PM][51574489.0779][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.34 PM][51574495.0621]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.34 PM][51574497.0556]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.34 PM][51574498.0539]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.34 PM][51574501.046]IsSourceON: True
+[WESI][7][15-07-2023 2.19.34 PM][51574503.0405]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.34 PM][51574506.0327]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.34 PM][51574508.027][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[7] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][7][15-07-2023 2.19.34 PM][51574520.9917]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.34 PM][51574525.9773]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.34 PM][51574526.9752]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.34 PM][51574527.9723]IsSourceON: True
+[WESI][7][15-07-2023 2.19.34 PM][51574528.9784]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.34 PM][51574528.9784]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.34 PM][51574588.8129][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(105).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.34 PM][51574660.6205][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(71).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.34 PM][51574665.6059][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(10).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.34 PM][51574902.9712][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(232).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.34 PM][51574909.9555]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.34 PM][51574914.9408]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.34 PM][51574916.9346]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.34 PM][51574918.9295]IsSourceON: True
+[WESI][6][15-07-2023 2.19.34 PM][51574920.9247]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.34 PM][51574922.9295]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.34 PM][51574931.895][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(28).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.35 PM][51575174.2462][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(242).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.35 PM][51575181.2291]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.35 PM][51575186.2141]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.35 PM][51575189.2077]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.35 PM][51575191.2023]IsSourceON: True
+[WESI][6][15-07-2023 2.19.35 PM][51575193.1966]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.35 PM][51575204.1662]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.35 PM][51575206.1622][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(31).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.35 PM][51575210.1502][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][9][15-07-2023 2.19.35 PM][51575443.5274][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(233).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.35 PM][51575455.4954]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.35 PM][51575457.4918]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.35 PM][51575459.5045]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.35 PM][51575461.4791]IsSourceON: True
+[WESI][9][15-07-2023 2.19.35 PM][51575463.4737]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.35 PM][51575465.4685]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.35 PM][51575472.45][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(28).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][12][15-07-2023 2.19.35 PM][51575517.329][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(44).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.35 PM][51575521.3179][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.35 PM][51575532.2886][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(10).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.35 PM][51575824.5082][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(291).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.35 PM][51575831.491]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.35 PM][51575836.4768]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.35 PM][51575838.4713]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.35 PM][51575840.4658]IsSourceON: True
+[WESI][12][15-07-2023 2.19.35 PM][51575842.4596]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.35 PM][51575843.4581]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.35 PM][51575856.4259][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(31).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 9] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 2345.7323 ms.
+[WESI][13][15-07-2023 2.19.35 PM][51575865.404][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.35 PM][51575868.3907]Detector 1: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.35 PM][51575869.3899]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.35 PM][51575872.3793]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.35 PM][51575873.3771]IsSourceON: True
+[WESI][13][15-07-2023 2.19.35 PM][51575874.3939]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.35 PM][51575875.3716]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.35 PM][51575972.1155][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(115).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.36 PM][51576149.6622][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(177).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.36 PM][51576219.452][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(70).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.36 PM][51576297.2449][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(76).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.36 PM][51576443.8529][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(147).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.36 PM][51576449.8377][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(9).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.36 PM][51576718.1199][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][12][15-07-2023 2.19.36 PM][51576768.984][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(314).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.36 PM][51576774.9681]Detector 1: Partial = 0, Full = 1
+[WESI][12][15-07-2023 2.19.36 PM][51576779.9553]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.36 PM][51576785.9392]CanTurnOffSource: True, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.36 PM][51576792.9203]IsSourceON: True
+[WESI][12][15-07-2023 2.19.36 PM][51576794.915]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.36 PM][51576796.9094]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576800.8979][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(31).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 9] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 2321.7929 ms.
+[WESI][6][15-07-2023 2.19.36 PM][51576810.8715][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.36 PM][51576811.91]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.36 PM][51576812.8664]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.36 PM][51576815.8586]CanTurnOffSource: True, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.36 PM][51576825.8336]IsSourceON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576825.8336]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576826.8284]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576827.8259][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[6] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][6][15-07-2023 2.19.36 PM][51576828.8231]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.36 PM][51576840.7908]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.36 PM][51576841.7886]CanTurnOffSource: True, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.36 PM][51576842.7919]IsSourceON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576843.7832]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.36 PM][51576844.7807]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.36 PM][51576844.7807][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(43).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.37 PM][51577168.9152][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(324).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.37 PM][51577438.1972][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(269).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.37 PM][51577443.1825][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(5).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.37 PM][51577784.2704][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(341).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 9] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 2312.82 ms.
+[WESI][12][15-07-2023 2.19.37 PM][51577796.2408][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][12][15-07-2023 2.19.37 PM][51577798.2345]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.37 PM][51577800.2289]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.37 PM][51577802.2239]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.37 PM][51577806.2126]IsSourceON: True
+[WESI][12][15-07-2023 2.19.37 PM][51577808.225]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.37 PM][51577809.2048]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.37 PM][51577821.1709][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[12] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][12][15-07-2023 2.19.37 PM][51577826.1777]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.37 PM][51577827.1574]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.37 PM][51577828.1523]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.37 PM][51577829.1493]IsSourceON: True
+[WESI][12][15-07-2023 2.19.37 PM][51577829.1493]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.37 PM][51577830.1466]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.38 PM][51578162.2626][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(377).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.39 PM][51579426.8814][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(1263).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.39 PM][51579436.8542]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.39 PM][51579442.8383]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.39 PM][51579444.8326]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.39 PM][51579448.8222]IsSourceON: True
+[WESI][6][15-07-2023 2.19.39 PM][51579450.8166]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.39 PM][51579452.8111]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.39 PM][51579460.79][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.39 PM][51579466.7743]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.39 PM][51579467.7714]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.39 PM][51579473.7549]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.39 PM][51579474.7516]IsSourceON: True
+[WESI][6][15-07-2023 2.19.39 PM][51579479.7378]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.39 PM][51579479.7378]IsDetector 2 ON: False
+[WESI][13][15-07-2023 2.19.39 PM][51579583.4642][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(156).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.40 PM][51580097.089][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(513).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.40 PM][51580106.066]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580110.0558]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580112.0498]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.40 PM][51580114.0444]IsSourceON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580116.0392]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580118.0338]IsDetector 2 ON: False
+[WESI][12][15-07-2023 2.19.40 PM][51580127.0109][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(30).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.40 PM][51580380.3334][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(252).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][6][15-07-2023 2.19.40 PM][51580390.3176][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.40 PM][51580392.3095]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580398.2856]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580412.2477]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.40 PM][51580414.2434]IsSourceON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580424.2171]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580428.2039]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.40 PM][51580430.1982][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[6] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][6][15-07-2023 2.19.40 PM][51580434.188]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580439.1741]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.40 PM][51580440.1718]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.40 PM][51580441.169]IsSourceON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580446.1552]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.40 PM][51580450.1461]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.40 PM][51580452.1419][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(71).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 10] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1024.2627 ms.
+[WESI][7][15-07-2023 2.19.40 PM][51580457.1297][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.40 PM][51580462.1125]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.40 PM][51580466.1019]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.40 PM][51580467.1]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.40 PM][51580472.086]IsSourceON: True
+[WESI][7][15-07-2023 2.19.40 PM][51580473.0838]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.40 PM][51580477.073]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.40 PM][51580840.1045][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(387).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.41 PM][51581086.4466][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(247).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.41 PM][51581096.4208]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.41 PM][51581098.4141]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.41 PM][51581100.4096]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.41 PM][51581102.4035]IsSourceON: True
+[WESI][10][15-07-2023 2.19.41 PM][51581106.3935]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.41 PM][51581108.387]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.41 PM][51581131.3238][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(43).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.41 PM][51581401.6028][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(270).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.41 PM][51581407.5875]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.41 PM][51581412.5733]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.41 PM][51581414.5685]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.41 PM][51581423.5457]IsSourceON: True
+[WESI][10][15-07-2023 2.19.41 PM][51581425.5392]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.41 PM][51581429.5279]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581438.5041][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(36).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 10] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1052.1893 ms.
+[WESI][6][15-07-2023 2.19.41 PM][51581446.4838][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.41 PM][51581448.4767]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.41 PM][51581458.4494]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.41 PM][51581459.4473]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.41 PM][51581460.4446]IsSourceON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581461.442]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581462.4393]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581466.4284][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[6] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][6][15-07-2023 2.19.41 PM][51581476.402]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.41 PM][51581477.4278]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.41 PM][51581480.3917]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.41 PM][51581481.3898]IsSourceON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581491.3618]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.41 PM][51581492.3595]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581496.3487][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(57).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][6][15-07-2023 2.19.41 PM][51581497.3462][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(10).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][6][15-07-2023 2.19.41 PM][51581508.3168]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.41 PM][51581512.3062]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.41 PM][51581513.3033]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.41 PM][51581517.2941]IsSourceON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581518.2903]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.41 PM][51581522.2791]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581523.2769][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[6] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][6][15-07-2023 2.19.41 PM][51581527.2669]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.41 PM][51581532.2523]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.41 PM][51581533.2753]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.41 PM][51581534.2476]IsSourceON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581539.2362]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.41 PM][51581540.2309]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.41 PM][51581684.8454][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][13][15-07-2023 2.19.41 PM][51581694.824][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(187).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.42 PM][51582369.0163][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(674).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.42 PM][51582378.9906]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.42 PM][51582380.9852]Detector 2: Partial = 0, Full = 1
+[WESI][6][15-07-2023 2.19.42 PM][51582382.9794]CanTurnOffSource: True, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.42 PM][51582388.9644]IsSourceON: True
+[WESI][6][15-07-2023 2.19.42 PM][51582390.9594]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.42 PM][51582395.9453]IsDetector 2 ON: True
+[WESI][9][15-07-2023 2.19.42 PM][51582397.9397][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(28).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.42 PM][51582400.9322][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(9).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][9][15-07-2023 2.19.42 PM][51582413.8969][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][9][15-07-2023 2.19.42 PM][51582414.8948]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.42 PM][51582415.8909]Detector 2: Partial = 1, Full = 1
+[WESI][9][15-07-2023 2.19.42 PM][51582418.8846]CanTurnOffSource: True, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.42 PM][51582419.881]IsSourceON: True
+[WESI][9][15-07-2023 2.19.42 PM][51582426.8618]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.42 PM][51582427.859]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.42 PM][51582428.8563][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(20).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 10] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 932.525 ms.
+[WESI][10][15-07-2023 2.19.42 PM][51582430.8509][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][10][15-07-2023 2.19.42 PM][51582431.8613]Detector 1: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.42 PM][51582432.8461]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.42 PM][51582442.8181]CanTurnOffSource: True, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.42 PM][51582443.8153]IsSourceON: True
+[WESI][10][15-07-2023 2.19.42 PM][51582443.8153]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.42 PM][51582444.813]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.42 PM][51582444.813][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(15).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.42 PM][51582496.6741][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(51).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.42 PM][51582499.6667][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(7).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.42 PM][51582526.5968][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(21).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.43 PM][51583198.8013][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(673).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.43 PM][51583331.4429][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(131).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 11] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1830.1079 ms.
+[WESI][7][15-07-2023 2.19.43 PM][51583338.4244][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.43 PM][51583338.4244]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.43 PM][51583339.4216]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.43 PM][51583339.4216]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.43 PM][51583340.419]IsSourceON: True
+[WESI][7][15-07-2023 2.19.43 PM][51583340.419]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.43 PM][51583341.4171]IsDetector 2 ON: True
+[WESI][8][15-07-2023 2.19.43 PM][51583350.3932][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(18).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][12][15-07-2023 2.19.43 PM][51583559.8325][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(209).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][13][15-07-2023 2.19.43 PM][51583579.7792][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(19).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.43 PM][51583785.2327][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(205).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.43 PM][51583790.2185]Detector 1: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.43 PM][51583792.2138]Detector 2: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.43 PM][51583793.2552]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.43 PM][51583794.2292]IsSourceON: True
+[WESI][7][15-07-2023 2.19.43 PM][51583795.2059]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.43 PM][51583796.2024]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.43 PM][51583942.8107][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(158).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][8][15-07-2023 2.19.44 PM][51584302.8484][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(359).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][8][15-07-2023 2.19.44 PM][51584308.8327]Detector 1: Partial = 0, Full = 1
+[WESI][8][15-07-2023 2.19.44 PM][51584310.8554]Detector 2: Partial = 1, Full = 0
+[WESI][8][15-07-2023 2.19.44 PM][51584312.8446]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][8][15-07-2023 2.19.44 PM][51584315.8197]IsSourceON: True
+[WESI][8][15-07-2023 2.19.44 PM][51584317.8087]IsDetector 1 ON: True
+[WESI][8][15-07-2023 2.19.44 PM][51584320.8015]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.44 PM][51584322.7963][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(19).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 11] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1911.8464 ms.
+[WESI][7][15-07-2023 2.19.44 PM][51584327.783][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][7][15-07-2023 2.19.44 PM][51584329.7766]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.44 PM][51584335.7608]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.44 PM][51584336.7577]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.44 PM][51584338.7623]IsSourceON: True
+[WESI][7][15-07-2023 2.19.44 PM][51584339.7499]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.44 PM][51584341.7445]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.44 PM][51584342.7419][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[7] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][7][15-07-2023 2.19.44 PM][51584344.7364]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.44 PM][51584351.7175]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.44 PM][51584352.7158]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.44 PM][51584354.7102]IsSourceON: True
+[WESI][7][15-07-2023 2.19.44 PM][51584355.7086]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.44 PM][51584356.7053]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.44 PM][51584441.4772][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(118).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.44 PM][51584527.2487][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(86).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.44 PM][51584554.1788][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(25).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.44 PM][51584556.1725][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][12][15-07-2023 2.19.44 PM][51584559.1645][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][8][15-07-2023 2.19.44 PM][51584619.0062][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(57).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][6][15-07-2023 2.19.45 PM][51585256.3016][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(637).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 11] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1910.8947 ms.
+[WESI][6][15-07-2023 2.19.45 PM][51585264.2796][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.45 PM][51585266.2788]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.45 PM][51585268.2693]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.45 PM][51585276.2487]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.45 PM][51585278.2425]IsSourceON: True
+[WESI][6][15-07-2023 2.19.45 PM][51585279.2401]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.45 PM][51585281.2343]IsDetector 2 ON: True
+[WESI][6][15-07-2023 2.19.45 PM][51585283.2302][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[6] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][6][15-07-2023 2.19.45 PM][51585289.2114]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.45 PM][51585290.2086]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.45 PM][51585291.2545]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.45 PM][51585292.2047]IsSourceON: True
+[WESI][6][15-07-2023 2.19.45 PM][51585292.2047]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.45 PM][51585293.2007]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.45 PM][51585294.198][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(37).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.46 PM][51586618.6592][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(1324).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.46 PM][51586625.6418]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.46 PM][51586627.6386]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.46 PM][51586629.6387]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.46 PM][51586631.6267]IsSourceON: True
+[WESI][6][15-07-2023 2.19.46 PM][51586632.6227]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.46 PM][51586634.6188]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.46 PM][51586956.7589][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(338).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.46 PM][51586960.7459][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][12][15-07-2023 2.19.46 PM][51586964.7352][SensorS1_CanStopSourceHandler]: Source is turning OFF ...
+[12] [Manager_TurnOffSource] EventHandled -->> Source is Off
+[WESI][12][15-07-2023 2.19.46 PM][51586967.727]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.46 PM][51586969.7212]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.46 PM][51586971.7149]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.46 PM][51586978.6985]IsSourceON: False
+[WESI][12][15-07-2023 2.19.46 PM][51586980.6919]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.46 PM][51586982.7103]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587248.9744][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(292).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.47 PM][51587254.9591]Detector 1: Partial = 0, Full = 0
+[WESI][9][15-07-2023 2.19.47 PM][51587256.952]Detector 2: Partial = 0, Full = 0
+[WESI][9][15-07-2023 2.19.47 PM][51587258.9497]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][9][15-07-2023 2.19.47 PM][51587260.9428]IsSourceON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587262.9374]IsDetector 1 ON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587264.9413]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587265.9293][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(17).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.47 PM][51587421.516][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(154).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][7][15-07-2023 2.19.47 PM][51587426.5022][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(5).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.47 PM][51587430.4903][7][S1_ON_FWD:4849]: Source is Turning ON ...
+[7] [Manager_TurnOnSource] EventHandled -->> Source is On
+[WESI][7][15-07-2023 2.19.47 PM][51587436.4749]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587438.4691]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587440.4637]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.47 PM][51587441.4618]IsSourceON: True
+[WESI][7][15-07-2023 2.19.47 PM][51587443.4567]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.47 PM][51587445.4512]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.47 PM][51587451.4325][DECIDE_STATUS: -----> [S2_ON_FWD]
+[SMDT]Task.Delay(23).Wait(); manager.DecideStatus(S2_ON_FWD);
+[WESI][7][15-07-2023 2.19.47 PM][51587453.4272]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587454.4388]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587454.4388]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.47 PM][51587455.4215]IsSourceON: True
+[WESI][7][15-07-2023 2.19.47 PM][51587456.4188]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.47 PM][51587457.4162]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.47 PM][51587458.4136][S2_ON_FWD:4841]: Detector 1 is turning ON ...
+[7] [Manager_TurnOnDetector1] EventHandled -->> Detector 1 is On
+[WESI][7][15-07-2023 2.19.47 PM][51587459.4105]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587460.4082]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.47 PM][51587461.4059]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.47 PM][51587462.4029]IsSourceON: True
+[WESI][7][15-07-2023 2.19.47 PM][51587462.4029]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.47 PM][51587468.3871]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587812.4684][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(362).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.47 PM][51587819.4506]Detector 1: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.47 PM][51587821.4446]Detector 2: Partial = 0, Full = 0
+[WESI][9][15-07-2023 2.19.47 PM][51587823.4398]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][9][15-07-2023 2.19.47 PM][51587825.4343]IsSourceON: True
+[WESI][9][15-07-2023 2.19.47 PM][51587827.4282]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.47 PM][51587829.4237]IsDetector 2 ON: False
+[WESI][9][15-07-2023 2.19.47 PM][51587836.4048][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(23).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][9][15-07-2023 2.19.47 PM][51587837.4045][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(0).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.48 PM][51588058.8117][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(220).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.48 PM][51588064.7956]Detector 1: Partial = 1, Full = 0
+[WESI][7][15-07-2023 2.19.48 PM][51588066.7896]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.48 PM][51588071.7767]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.48 PM][51588073.7718]IsSourceON: True
+[WESI][7][15-07-2023 2.19.48 PM][51588075.7654]IsDetector 1 ON: True
+[WESI][7][15-07-2023 2.19.48 PM][51588077.7599]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.48 PM][51588078.7565][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(19).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.48 PM][51588210.4047][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(131).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][12][15-07-2023 2.19.48 PM][51588213.3967][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(3).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][6][15-07-2023 2.19.48 PM][51588379.9569][DECIDE_STATUS: -----> [S3_ON_FWD]
+[SMDT]Task.Delay(165).Wait(); manager.DecideStatus(S3_ON_FWD);
+[WESI][6][15-07-2023 2.19.48 PM][51588386.9354][S3_ON_FWD:4844]: Updated bag's data.
+[WESI][6][15-07-2023 2.19.48 PM][51588388.9285]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.48 PM][51588390.9338]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.48 PM][51588392.9175]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.48 PM][51588394.9133]IsSourceON: True
+[WESI][6][15-07-2023 2.19.48 PM][51588396.9065]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.48 PM][51588397.9047]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.48 PM][51588399.8989][S3_ON_FWD:4844]: Detector 2 is turning ON ...
+[6] [Manager_TurnOnDetector2] EventHandled -->> Detector 2 is On
+[WESI][6][15-07-2023 2.19.48 PM][51588409.886]Detector 1: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.48 PM][51588410.873]Detector 2: Partial = 1, Full = 0
+[WESI][6][15-07-2023 2.19.48 PM][51588410.873]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][6][15-07-2023 2.19.48 PM][51588411.8656]IsSourceON: True
+[WESI][6][15-07-2023 2.19.48 PM][51588412.8633]IsDetector 1 ON: True
+[WESI][6][15-07-2023 2.19.48 PM][51588413.8603]IsDetector 2 ON: True
+[WESI][12][15-07-2023 2.19.48 PM][51588665.1893][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(285).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.48 PM][51588672.1864]Detector 1: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.48 PM][51588675.1693]Detector 2: Partial = 1, Full = 0
+[WESI][12][15-07-2023 2.19.48 PM][51588677.1581]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][12][15-07-2023 2.19.48 PM][51588679.1609]IsSourceON: True
+[WESI][12][15-07-2023 2.19.48 PM][51588681.1477]IsDetector 1 ON: True
+[WESI][12][15-07-2023 2.19.48 PM][51588683.1509]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.48 PM][51588686.1368][DECIDE_STATUS: -----> [S2_OFF_FWD]
+[SMDT]Task.Delay(20).Wait(); manager.DecideStatus(S2_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 12] Time to pass through S2(S2_OFF_FWD - S2_ON_FWD) = 1235.7194 ms.
+[WESI][13][15-07-2023 2.19.48 PM][51588698.1019][S2_OFF_FWD:5841]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.48 PM][51588699.0989]Detector 1: Partial = 0, Full = 1
+[WESI][13][15-07-2023 2.19.48 PM][51588701.0935]Detector 2: Partial = 1, Full = 0
+[WESI][13][15-07-2023 2.19.48 PM][51588703.0885]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][13][15-07-2023 2.19.48 PM][51588709.0714]IsSourceON: True
+[WESI][13][15-07-2023 2.19.48 PM][51588710.0696]IsDetector 1 ON: True
+[WESI][13][15-07-2023 2.19.48 PM][51588712.0635]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.48 PM][51588713.061][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(26).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][7][15-07-2023 2.19.48 PM][51588912.5298][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(199).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][9][15-07-2023 2.19.49 PM][51589113.9913][DECIDE_STATUS: -----> [S1_OFF_FWD]
+[SMDT]Task.Delay(201).Wait(); manager.DecideStatus(S1_OFF_FWD);
+[WESI][9][15-07-2023 2.19.49 PM][51589119.9756][DECIDE_STATUS: -----> [S1_ON_FWD]
+[SMDT]Task.Delay(6).Wait(); manager.DecideStatus(S1_ON_FWD);
+[WESI][10][15-07-2023 2.19.49 PM][51589408.2035][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(288).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.49 PM][51589417.1811]Detector 1: Partial = 0, Full = 1
+[WESI][10][15-07-2023 2.19.49 PM][51589419.1751]Detector 2: Partial = 1, Full = 0
+[WESI][10][15-07-2023 2.19.49 PM][51589421.1698]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][10][15-07-2023 2.19.49 PM][51589423.1646]IsSourceON: True
+[WESI][10][15-07-2023 2.19.49 PM][51589425.1586]IsDetector 1 ON: True
+[WESI][10][15-07-2023 2.19.49 PM][51589427.1538]IsDetector 2 ON: True
+[WESI][10][15-07-2023 2.19.49 PM][51589428.1493][DECIDE_STATUS: -----> [S4_ON_FWD]
+[SMDT]Task.Delay(18).Wait(); manager.DecideStatus(S4_ON_FWD);
+[WESI][10][15-07-2023 2.19.49 PM][51589429.1467][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(0).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][9][15-07-2023 2.19.49 PM][51589654.5451][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(225).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][9][15-07-2023 2.19.49 PM][51589663.5214]Detector 1: Partial = 0, Full = 1
+[WESI][9][15-07-2023 2.19.49 PM][51589665.5162]Detector 2: Partial = 1, Full = 0
+[WESI][9][15-07-2023 2.19.49 PM][51589667.5111]CanTurnOffSource: False, CanTurnOffDetector 1 = False, CanTurnOffDetector 2 = False
+[WESI][9][15-07-2023 2.19.49 PM][51589669.5063]IsSourceON: True
+[WESI][9][15-07-2023 2.19.49 PM][51589678.4819]IsDetector 1 ON: True
+[WESI][9][15-07-2023 2.19.49 PM][51589680.4791]IsDetector 2 ON: True
+[WESI][8][15-07-2023 2.19.49 PM][51589685.4631][DECIDE_STATUS: -----> [S3_OFF_FWD]
+[SMDT]Task.Delay(30).Wait(); manager.DecideStatus(S3_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 12] Time to pass through S3(S3_OFF_FWD - S3_ON_FWD) = 1302.5186 ms.
+[WESI][8][15-07-2023 2.19.49 PM][51589695.4366][S3_OFF_FWD:5844]: Updated bag's data.
+[WESI][8][15-07-2023 2.19.49 PM][51589699.4243]Detector 1: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.49 PM][51589700.4223]Detector 2: Partial = 0, Full = 1
+[WESI][8][15-07-2023 2.19.49 PM][51589701.4202]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][8][15-07-2023 2.19.49 PM][51589707.4032]IsSourceON: True
+[WESI][8][15-07-2023 2.19.49 PM][51589708.4007]IsDetector 1 ON: True
+[WESI][8][15-07-2023 2.19.49 PM][51589712.3894]IsDetector 2 ON: True
+[WESI][8][15-07-2023 2.19.49 PM][51589713.3869][S3_OFF_FWD:5844]: Detector 1 is turning OFF ...
+[8] [Manager_TurnOffDetector1] EventHandled -->> Detector 1 is Off
+[WESI][8][15-07-2023 2.19.49 PM][51589715.3814]Detector 1: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.49 PM][51589716.3793]Detector 2: Partial = 0, Full = 1
+[WESI][8][15-07-2023 2.19.49 PM][51589717.376]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][8][15-07-2023 2.19.49 PM][51589718.3741]IsSourceON: True
+[WESI][8][15-07-2023 2.19.49 PM][51589725.355]IsDetector 1 ON: False
+[WESI][8][15-07-2023 2.19.49 PM][51589730.3415]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.50 PM][51590081.4043][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(395).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][7][15-07-2023 2.19.50 PM][51590351.6819][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(271).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][7][15-07-2023 2.19.50 PM][51590361.6557]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.50 PM][51590363.6608]Detector 2: Partial = 0, Full = 1
+[WESI][7][15-07-2023 2.19.50 PM][51590364.6478]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = False
+[WESI][7][15-07-2023 2.19.50 PM][51590366.6415]IsSourceON: True
+[WESI][7][15-07-2023 2.19.50 PM][51590368.6369]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.50 PM][51590372.6264]IsDetector 2 ON: True
+[WESI][7][15-07-2023 2.19.50 PM][51590379.6076][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(26).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.50 PM][51590523.2238][DECIDE_STATUS: -----> [S4_OFF_FWD]
+[SMDT]Task.Delay(143).Wait(); manager.DecideStatus(S4_OFF_FWD);
+>>------------------------------------------->>[WESI][BAG Number: 12] Time to pass through S2(S4_OFF_FWD - S4_ON_FWD) = 1099.0641 ms.
+[WESI][13][15-07-2023 2.19.50 PM][51590534.1948][S4_OFF_FWD:5845]: Updated bag's data.
+[WESI][13][15-07-2023 2.19.50 PM][51590536.19]Detector 1: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.50 PM][51590539.1805]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.50 PM][51590541.2042]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.50 PM][51590543.1713]IsSourceON: True
+[WESI][13][15-07-2023 2.19.50 PM][51590545.1659]IsDetector 1 ON: False
+[WESI][13][15-07-2023 2.19.50 PM][51590547.1606]IsDetector 2 ON: True
+[WESI][13][15-07-2023 2.19.50 PM][51590556.1358][S4_OFF_FWD:5845]: Detector 2 is turning OFF ...
+[13] [Manager_TurnOffDetector2] EventHandled -->> Detector 2 is Off
+[WESI][13][15-07-2023 2.19.50 PM][51590562.1205]Detector 1: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.50 PM][51590564.1152]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.50 PM][51590569.1002]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.50 PM][51590570.0976]IsSourceON: True
+[WESI][13][15-07-2023 2.19.50 PM][51590576.081]IsDetector 1 ON: False
+[WESI][13][15-07-2023 2.19.50 PM][51590577.0789]IsDetector 2 ON: False
+[WESI][7][15-07-2023 2.19.51 PM][51591933.4545][SensorS1_CanStopSourceHandler]: CanTurnOffSource = True.
+[WESI][7][15-07-2023 2.19.51 PM][51591939.4388][SensorS1_CanStopSourceHandler]: Source is turning OFF ...
+[7] [Manager_TurnOffSource] EventHandled -->> Source is Off
+[WESI][7][15-07-2023 2.19.51 PM][51591945.4223]Detector 1: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.51 PM][51591947.4166]Detector 2: Partial = 0, Full = 0
+[WESI][7][15-07-2023 2.19.51 PM][51591949.4144]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][7][15-07-2023 2.19.51 PM][51591955.3965]IsSourceON: False
+[WESI][7][15-07-2023 2.19.51 PM][51591960.3826]IsDetector 1 ON: False
+[WESI][7][15-07-2023 2.19.51 PM][51591962.3773]IsDetector 2 ON: False
+[WESI][8][15-07-2023 2.19.52 PM][51592533.8495][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(2010).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][8][15-07-2023 2.19.52 PM][51592540.8331]Detector 1: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.52 PM][51592545.8188]Detector 2: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.52 PM][51592546.8159]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][8][15-07-2023 2.19.52 PM][51592548.8097]IsSourceON: False
+[WESI][8][15-07-2023 2.19.52 PM][51592550.8065]IsDetector 1 ON: False
+[WESI][8][15-07-2023 2.19.52 PM][51592551.8018]IsDetector 2 ON: False
+[WESI][12][15-07-2023 2.19.52 PM][51592622.6124][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(89).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][13][15-07-2023 2.19.52 PM][51592825.0727][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(201).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][13][15-07-2023 2.19.52 PM][51592834.0478]Detector 1: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.52 PM][51592835.0451]Detector 2: Partial = 0, Full = 0
+[WESI][13][15-07-2023 2.19.52 PM][51592837.0396]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][13][15-07-2023 2.19.52 PM][51592839.0343]IsSourceON: False
+[WESI][13][15-07-2023 2.19.52 PM][51592845.0184]IsDetector 1 ON: False
+[WESI][13][15-07-2023 2.19.52 PM][51592847.0129]IsDetector 2 ON: False
+[WESI][12][15-07-2023 2.19.52 PM][51592914.8308][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(89).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][6][15-07-2023 2.19.53 PM][51593454.3894][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(539).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][6][15-07-2023 2.19.53 PM][51593463.4064]Detector 1: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.53 PM][51593466.3576]Detector 2: Partial = 0, Full = 0
+[WESI][6][15-07-2023 2.19.53 PM][51593468.3546]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][6][15-07-2023 2.19.53 PM][51593470.3473]IsSourceON: False
+[WESI][6][15-07-2023 2.19.53 PM][51593472.3414]IsDetector 1 ON: False
+[WESI][6][15-07-2023 2.19.53 PM][51593474.3377]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.53 PM][51593477.33][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(22).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.53 PM][51593747.6084][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(270).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.53 PM][51593757.5801]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.53 PM][51593760.5714]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.53 PM][51593763.6196]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.53 PM][51593774.5351]IsSourceON: False
+[WESI][12][15-07-2023 2.19.53 PM][51593776.5303]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.53 PM][51593780.5166]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.53 PM][51593814.4283][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(66).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][8][15-07-2023 2.19.54 PM][51594466.6868][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(653).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][8][15-07-2023 2.19.54 PM][51594476.6568]Detector 1: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.54 PM][51594478.6522]Detector 2: Partial = 0, Full = 0
+[WESI][8][15-07-2023 2.19.54 PM][51594485.6338]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][8][15-07-2023 2.19.54 PM][51594493.6124]IsSourceON: False
+[WESI][8][15-07-2023 2.19.54 PM][51594495.6068]IsDetector 1 ON: False
+[WESI][8][15-07-2023 2.19.54 PM][51594500.5938]IsDetector 2 ON: False
+[WESI][10][15-07-2023 2.19.54 PM][51594961.3618][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(493).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.55 PM][51595299.4597][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(338).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.55 PM][51595305.4434]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.55 PM][51595310.428]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.55 PM][51595312.4254]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.55 PM][51595314.4201]IsSourceON: False
+[WESI][12][15-07-2023 2.19.55 PM][51595316.4147]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.55 PM][51595318.4093]IsDetector 2 ON: False
+[WESI][12][15-07-2023 2.19.55 PM][51595328.3817][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(28).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.55 PM][51595500.9197][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(173).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.55 PM][51595506.905]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.55 PM][51595511.8898]Detector 2: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.55 PM][51595514.8842]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][10][15-07-2023 2.19.55 PM][51595516.8971]IsSourceON: False
+[WESI][10][15-07-2023 2.19.55 PM][51595518.8728]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.55 PM][51595522.8616]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.56 PM][51596085.3576][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(584).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][12][15-07-2023 2.19.56 PM][51596400.5154][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(314).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][12][15-07-2023 2.19.56 PM][51596407.499]Detector 1: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.56 PM][51596412.4835]Detector 2: Partial = 0, Full = 0
+[WESI][12][15-07-2023 2.19.56 PM][51596414.4785]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][12][15-07-2023 2.19.56 PM][51596416.4734]IsSourceON: False
+[WESI][12][15-07-2023 2.19.56 PM][51596418.469]IsDetector 1 ON: False
+[WESI][12][15-07-2023 2.19.56 PM][51596426.4462]IsDetector 2 ON: False
+[WESI][6][15-07-2023 2.19.57 PM][51597187.4164][DECIDE_STATUS: -----> [S5_ON_FWD]
+[SMDT]Task.Delay(786).Wait(); manager.DecideStatus(S5_ON_FWD);
+[WESI][10][15-07-2023 2.19.57 PM][51597524.5116][DECIDE_STATUS: -----> [S5_OFF_FWD]
+[SMDT]Task.Delay(338).Wait(); manager.DecideStatus(S5_OFF_FWD);
+[WESI][10][15-07-2023 2.19.57 PM][51597533.4881]Detector 1: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.57 PM][51597535.4835]Detector 2: Partial = 0, Full = 0
+[WESI][10][15-07-2023 2.19.57 PM][51597543.4609]CanTurnOffSource: False, CanTurnOffDetector 1 = True, CanTurnOffDetector 2 = True
+[WESI][10][15-07-2023 2.19.57 PM][51597545.4561]IsSourceON: False
+[WESI][10][15-07-2023 2.19.57 PM][51597549.462]IsDetector 1 ON: False
+[WESI][10][15-07-2023 2.19.57 PM][51597551.4407]IsDetector 2 ON: False
