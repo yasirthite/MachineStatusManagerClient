@@ -12,65 +12,52 @@ namespace MachineStatusManagerClient
         public LoginFormSimulator()
         {
             manager = new XRayMachineStatusManagement.XRayMachineStatusManager();
-           
-                manager.TurnOnSource += Manager_TurnOnSource;
-                manager.TurnOffSource += Manager_TurnOffSource;
-                manager.TurnOnDetector1 += Manager_TurnOnDetector1;
-                manager.TurnOffDetector1 += Manager_TurnOffDetector1;
-                manager.TurnOnDetector2 += Manager_TurnOnDetector2;
-                manager.TurnOffDetector2 += Manager_TurnOffDetector2;
+
+            manager.TurnOnSource += Manager_TurnOnSource;
+            manager.TurnOffSource += Manager_TurnOffSource;
+            manager.TurnOnDetector1 += Manager_TurnOnDetector1;
+            manager.TurnOffDetector1 += Manager_TurnOffDetector1;
+            manager.TurnOnDetector2 += Manager_TurnOnDetector2;
+            manager.TurnOffDetector2 += Manager_TurnOffDetector2;
         }
 
         public void StartSimulation()
         {
             Console.WriteLine($"[LOGIN_FORM_START:-----> {Thread.CurrentThread.ManagedThreadId}]");
 
-            manager.DecideStatus(SensorCode.S4_ON_FWD);
-            Task.Delay(94).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
-            Task.Delay(194).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
-        }
-
-        private void Manager_TurnOffDetector2(object sender, SensorCode e)
-        {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Detector 2.");
+            //manager.DecideStatus(SensorCode.S4_ON_FWD);
+            //Task.Delay(94).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+            //Task.Delay(194).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
         }
 
         private void Manager_TurnOnDetector2(object sender, SensorCode e)
         {
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOnDetector2)}] EventHandled -->> Detector 2 is On");
+        }
 
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Detector 2.");
+        private void Manager_TurnOffDetector2(object sender, SensorCode e)
+        {
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOffDetector2)}] EventHandled -->> Detector 2 is Off");
         }
 
         private void Manager_TurnOffDetector1(object sender, SensorCode e)
         {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Detector 1.");
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOffDetector1)}] EventHandled -->> Detector 1 is Off");
         }
 
         private void Manager_TurnOnDetector1(object sender, SensorCode e)
         {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Detector 1.");
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOnDetector1)}] EventHandled -->> Detector 1 is On");
         }
 
         private void Manager_TurnOffSource(object sender, SensorCode e)
         {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn OFF Source.");
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOffSource)}] EventHandled -->> Source is Off");
         }
 
         private void Manager_TurnOnSource(object sender, SensorCode e)
         {
-            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}]" +
-                $"[{DateTime.Now.TimeOfDay.TotalMilliseconds}]" +
-                $"[{e}:{(int)e}]: Event Handled => Turn ON Source.");
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOnSource)}] EventHandled -->> Source is On");
         }
     }
 }
