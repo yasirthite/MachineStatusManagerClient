@@ -70,7 +70,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MachineStatusManagerClient\XRayMachineStatusManager.cs\XRayMachineStatusManagement.csproj">
+    <ProjectReference Include="..\XRayMachineStatusManager.cs\XRayMachineStatusManagement.csproj">
       <Project>{8f326191-91b6-4c4b-84f2-e716f7413856}</Project>
       <Name>XRayMachineStatusManagement</Name>
     </ProjectReference>

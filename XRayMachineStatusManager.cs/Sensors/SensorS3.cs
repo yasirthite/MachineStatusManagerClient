@@ -25,6 +25,7 @@ namespace XRayMachineStatusManagement.Sensors
         private SensorRecord Prev_SensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
         public const int SensorProhibitedtimeInMilliseconds = 200;
+        private int BagNumber = 0;
 
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
@@ -73,6 +74,10 @@ namespace XRayMachineStatusManagement.Sensors
                     else
                     {
                         //Indicates: Prohibited Window is NOT open. You can safely take the value.
+                        Console.WriteLine($">>------------------------------------------->>[WESI][BAG Number: {++BagNumber}] " +
+                            $"Time to pass through S3({newSensorRecord.sensorCode} - {Prev_SensorRecord.sensorCode}) " +
+                            $"= {(newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp).TotalMilliseconds} ms.");
+
                         Prev_SensorRecord = newSensorRecord;
                         return true;
                     }

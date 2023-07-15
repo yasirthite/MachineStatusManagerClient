@@ -155,7 +155,7 @@ namespace XRayMachineStatusManagement
             //newsensorTimeStamp = DateTime.Now;
             //TimeSpan delayDuration = newsensorTimeStamp - prevSensorTimeStamp;
             //prevSensorTimeStamp = newsensorTimeStamp;
-            //Console.WriteLine($"Task.Delay({(int)delayDuration.TotalMilliseconds}).Wait(); manager.DecideStatus({sensorCode});");
+            //Console.WriteLine($"[SMDT]Task.Delay({(int)delayDuration.TotalMilliseconds}).Wait(); manager.DecideStatus({sensorCode});");
         }
 
         public void DecideStatus(SensorCode sensorCode)
