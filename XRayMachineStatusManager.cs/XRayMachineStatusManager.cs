@@ -134,28 +134,28 @@ namespace XRayMachineStatusManagement
 
             _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: CanTurnOffSource = True.");
 
-            //if (!IsAnyBagInTunnel && IsSourceOn)
-            //{
-            //    IsSourceOn = false;
+            if (!IsAnyBagInTunnel && IsSourceOn)
+            {
+                IsSourceOn = false;
 
-            //    _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
+                _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
 
-            //    TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
+                TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
-            //    CanTurnOffSource = false;
+                CanTurnOffSource = false;
 
-            //    LogBagData();
-            //}
+                LogBagData();
+            }
         }
 
-        private void LogSimulationData()
+        private void LogSimulationData(SensorCode sensorCode)
         {
             //Todo: Log Simulation Data (Time Required To Complete: 3-4 Working days).
 
-            //newsensorTimeStamp = DateTime.Now;
-            //TimeSpan delayDuration = newsensorTimeStamp - prevSensorTimeStamp;
-            //prevSensorTimeStamp = newsensorTimeStamp;
-            //Console.WriteLine($"[SMDT]Task.Delay({(int)delayDuration.TotalMilliseconds}).Wait(); manager.DecideStatus({sensorCode});");
+            newsensorTimeStamp = DateTime.Now;
+            TimeSpan delayDuration = newsensorTimeStamp - prevSensorTimeStamp;
+            prevSensorTimeStamp = newsensorTimeStamp;
+            Console.WriteLine($"[SMDT]Task.Delay({(int)delayDuration.TotalMilliseconds}).Wait(); manager.DecideStatus({sensorCode});");
         }
 
         public void DecideStatus(SensorCode sensorCode)
@@ -163,6 +163,8 @@ namespace XRayMachineStatusManagement
             try
             {
                 Console.WriteLine($"{ConsoleLogger.GetMessageHeader}[DECIDE_STATUS: -----> [{sensorCode}]");
+                
+                LogSimulationData(sensorCode);
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
 
