@@ -138,7 +138,7 @@ namespace XRayMachineStatusManagement
             {
                 IsSourceOn = false;
 
-                _logger.LogInformation($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
+                _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
 
                 TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
