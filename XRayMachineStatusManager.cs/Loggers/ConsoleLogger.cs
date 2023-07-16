@@ -58,5 +58,16 @@ namespace XRayMachineStatusManagement
                 Console.ResetColor();
             }
         }
+
+        public void LogWithoutColor(string message) 
+        { 
+            lock (this)
+            {
+                Console.ForegroundColor = ConsoleColor.Black; 
+                Console.WriteLine(GetMessageHeader + message); 
+                Console.ResetColor();
+            }
+        
+        }
     }
 }

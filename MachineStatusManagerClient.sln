@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source OFF Before D1 ON", "
 	ProjectSection(SolutionItems) = preProject
 		Raw - 12 Bags Data.txt = Raw - 12 Bags Data.txt
 		SMDT.txt = SMDT.txt
+		SMDT_25_CTP.txt = SMDT_25_CTP.txt
 	EndProjectSection
 EndProject
 Global

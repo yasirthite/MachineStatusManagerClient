@@ -74,9 +74,11 @@ namespace XRayMachineStatusManagement.Sensors
                     else
                     {
                         //Indicates: Prohibited Window is NOT open. You can safely take the value.
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($">>------------------------------------------->>[WESI][BAG Number: {++BagNumber}] " +
                             $"Time to pass through S3({newSensorRecord.sensorCode} - {Prev_SensorRecord.sensorCode}) " +
                             $"= {(newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp).TotalMilliseconds} ms.");
+                        Console.ResetColor();
 
                         Prev_SensorRecord = newSensorRecord;
                         return true;
