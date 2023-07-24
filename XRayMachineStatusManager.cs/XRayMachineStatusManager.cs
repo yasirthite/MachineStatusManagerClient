@@ -92,7 +92,7 @@ namespace XRayMachineStatusManagement
 
             if (CanTurnOffDetector1)
             {
-                if(IsDetector1_On)
+                if (IsDetector1_On)
                 {
                     IsDetector1_On = false;
                     _logger.LogCritical($"[{nameof(SensorS2_FaultySensorDataHandler)}]: Detector 1 is turning OFF ...");
@@ -135,25 +135,18 @@ namespace XRayMachineStatusManagement
 
             _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: CanTurnOffSource = True.");
 
-            if (!IsAnyBagInTunnel && IsSourceOn)
-            {
-                Task.Delay(2000).ContinueWith(_ =>
-                {
-                    if (!IsAnyBagInTunnel && IsSourceOn)
-                    {
-                        IsSourceOn = false;
+            //if (!IsAnyBagInTunnel && IsSourceOn)
+            //{
+            //    IsSourceOn = false;
 
-                        _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
+            //    _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
 
-                        TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
+            //    TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
-                        CanTurnOffSource = false;
+            //    CanTurnOffSource = false;
 
-                        LogBagData();
-                    }
-                });
-                
-            }
+            //    LogBagData();
+            //}
         }
 
         private void LogSimulationData(SensorCode sensorCode)
@@ -171,7 +164,7 @@ namespace XRayMachineStatusManagement
             try
             {
                 Console.WriteLine($"{ConsoleLogger.GetMessageHeader}[DECIDE_STATUS: -----> [{sensorCode}]");
-                
+
                 LogSimulationData(sensorCode);
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
@@ -182,7 +175,8 @@ namespace XRayMachineStatusManagement
 
                         CanTurnOffSource = false;
 
-                        if (sensorS1.HasValid(newSensorRecord)){
+                        if (sensorS1.HasValid(newSensorRecord))
+                        {
 
                             if (!IsSourceOn)
                             {
@@ -274,14 +268,14 @@ namespace XRayMachineStatusManagement
                                 nS3BagsPartial++;
 
                                 //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
-                                
+
                                 LogBagData();
                             }
 
                             if (!IsDetector2_On)
                             {
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
-                                
+
                                 TurnOnDetector2?.Invoke(this, sensorCode);
 
                                 IsDetector2_On = true;
@@ -485,6 +479,28 @@ namespace XRayMachineStatusManagement
             //_logger.LogInformation($"IsSourceON: {IsSourceOn}");
             //_logger.LogInformation($"IsDetector 1 ON: {IsDetector1_On}");
             //_logger.LogInformation($"IsDetector 2 ON: {IsDetector2_On}");
+        }
+
+        private bool NoSensorS1SignalSince2Seconds => (DateTime.Now - sensorS1.SensorRecord.timeStamp).TotalSeconds > 2;
+
+        private bool IsNoSensorSignalMoreThan2SecondsAgo()
+        {
+            var maxTimeStamp = sensorS1.SensorRecord.timeStamp;
+
+            //if (sensorS2.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS2.SensorRecord.timeStamp;
+            //}
+            //if (sensorS3.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS3.SensorRecord.timeStamp;
+            //}
+            //if (sensorS4.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS4.SensorRecord.timeStamp;
+            //}
+
+            return (DateTime.Now - maxTimeStamp).TotalSeconds > 2;
         }
 
         private int nS2BagsPartial = 0;

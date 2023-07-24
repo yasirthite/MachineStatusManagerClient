@@ -24,7 +24,8 @@ namespace XRayMachineStatusManagement.Sensors
             }
         }
 
-        private SensorRecord Prev_SensorRecord;
+        public SensorRecord SensorRecord { get { return _prevSensorRecord; } }
+        private SensorRecord _prevSensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
         private const int SensorWaitTimeInMilliseconds = 0;
         private bool IsSourceONCircuitBreakerPutToTrigger = false;
@@ -42,7 +43,7 @@ namespace XRayMachineStatusManagement.Sensors
         private SensorS1(IMachineStatusLogger logger)
         {
             this.machineStatusLogger = logger;
-            Prev_SensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
+            _prevSensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
         }
 
         private static readonly Lazy<SensorS1> lazySensor = new Lazy<SensorS1>(() => new SensorS1(new ConsoleLogger()));
@@ -62,7 +63,7 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool NewCheckValidityForForwardDirection(SensorRecord newSensorRecord)
         {
-            Prev_SensorRecord = newSensorRecord;
+            _prevSensorRecord = newSensorRecord;
 
             if (newSensorRecord.sensorCode.IsS1_ON_FWD())
             {
@@ -84,14 +85,14 @@ namespace XRayMachineStatusManagement.Sensors
             if (SensorWaitTimeInMilliseconds <= 0)
                 return false;
 
-            TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;
+            TimeSpan timeStampDifference = newSensorRecord.timeStamp - _prevSensorRecord.timeStamp;
             return timeStampDifference < SensorWaitTimeWindow;
         }
 
         private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
         {
-            return ((Prev_SensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
-                            ((Prev_SensorRecord.sensorCode.IsS1_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS1_OFF_FWD()));
+            return ((_prevSensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
+                            ((_prevSensorRecord.sensorCode.IsS1_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS1_OFF_FWD()));
         }
     }
 }
