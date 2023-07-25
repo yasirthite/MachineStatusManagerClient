@@ -13,10 +13,59 @@ namespace MachineStatusManagerClient
         internal static void Execute(XRayMachineStatusManagement.XRayMachineStatusManager manager)
         {
             stopwatch.Start();
-            
-            Task.Delay(2000).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
-            //Task.Delay(475).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
-           // Task.Delay(640).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+
+            Task.Delay(500).Wait(); 
+            manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(93).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(1202).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+            Task.Delay(906).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+            Task.Delay(234).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(406).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(312).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+            Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(15).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(374).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+            Task.Delay(203).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(124).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(218).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(109).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(203).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+            Task.Delay(265).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(702).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+            Task.Delay(374).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(156).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
+            Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
+            Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(515).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(359).Wait(); manager.DecideStatus(SensorCode.S2_OFF_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S3_ON_FWD);
+            Task.Delay(390).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(343).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
+            Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S3_OFF_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S4_ON_FWD);
+            Task.Delay(546).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(0).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(62).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(31).Wait(); manager.DecideStatus(SensorCode.S5_ON_FWD);
+            Task.Delay(234).Wait(); manager.DecideStatus(SensorCode.S4_OFF_FWD);
+            Task.Delay(124).Wait(); manager.DecideStatus(SensorCode.S5_OFF_FWD);
+            Task.Delay(46).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);
 
             /*
             Task.Delay(1443).Wait(); manager.DecideStatus(SensorCode.S2_ON_FWD);

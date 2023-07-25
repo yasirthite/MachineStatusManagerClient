@@ -92,7 +92,7 @@ namespace XRayMachineStatusManagement
 
             if (CanTurnOffDetector1)
             {
-                if(IsDetector1_On)
+                if (IsDetector1_On)
                 {
                     IsDetector1_On = false;
                     _logger.LogCritical($"[{nameof(SensorS2_FaultySensorDataHandler)}]: Detector 1 is turning OFF ...");
@@ -133,26 +133,23 @@ namespace XRayMachineStatusManagement
         {
             CanTurnOffSource = true;
 
-            _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: CanTurnOffSource = True.");
+            _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: CanTurnOffSource = {CanTurnOffSource}.");
 
             if (!IsAnyBagInTunnel && IsSourceOn)
             {
-                Task.Delay(2000).ContinueWith(_ =>
+
+                if (!IsAnyBagInTunnel && IsSourceOn)
                 {
-                    if (!IsAnyBagInTunnel && IsSourceOn)
-                    {
-                        IsSourceOn = false;
+                    IsSourceOn = false;
 
-                        _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
+                    _logger.LogWarning($"[{nameof(SensorS1_CanStopSourceHandler)}]: Source is turning OFF ...");
 
-                        TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
+                    TurnOffSource?.Invoke(this, SensorCode.SourceOnCircuitBreaker);
 
-                        CanTurnOffSource = false;
+                    CanTurnOffSource = false;
 
-                        LogBagData();
-                    }
-                });
-                
+                    LogBagData();
+                }
             }
         }
 
@@ -171,7 +168,7 @@ namespace XRayMachineStatusManagement
             try
             {
                 Console.WriteLine($"{ConsoleLogger.GetMessageHeader}[DECIDE_STATUS: -----> [{sensorCode}]");
-                
+
                 LogSimulationData(sensorCode);
 
                 SensorRecord newSensorRecord = new SensorRecord() { sensorCode = sensorCode, timeStamp = DateTime.Now };
@@ -182,7 +179,8 @@ namespace XRayMachineStatusManagement
 
                         CanTurnOffSource = false;
 
-                        if (sensorS1.HasValid(newSensorRecord)){
+                        if (sensorS1.HasValid(newSensorRecord))
+                        {
 
                             if (!IsSourceOn)
                             {
@@ -274,14 +272,14 @@ namespace XRayMachineStatusManagement
                                 nS3BagsPartial++;
 
                                 //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Updated bag's data.");
-                                
+
                                 LogBagData();
                             }
 
                             if (!IsDetector2_On)
                             {
                                 _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
-                                
+
                                 TurnOnDetector2?.Invoke(this, sensorCode);
 
                                 IsDetector2_On = true;

@@ -6,6 +6,7 @@
 
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using XRayMachineStatusManagement.Common;
 using XRayMachineStatusManagement.Loggers;
@@ -28,6 +29,7 @@ namespace XRayMachineStatusManagement.Sensors
         private IMachineStatusLogger machineStatusLogger = default;
         private const int SensorWaitTimeInMilliseconds = 0;
         private bool IsSourceONCircuitBreakerPutToTrigger = false;
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         /// <summary>
         /// Sensor's Wait Time Window in milliseconds.
@@ -37,7 +39,7 @@ namespace XRayMachineStatusManagement.Sensors
         /// <summary>
         /// This time window causes Source-ON-Circuit to break by firing event CanStopSource.
         /// </summary>
-        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(2500);
+        private TimeSpan SourceStopTimeWindow = TimeSpan.FromMilliseconds(3500);
 
         private SensorS1(IMachineStatusLogger logger)
         {
@@ -66,17 +68,37 @@ namespace XRayMachineStatusManagement.Sensors
 
             if (newSensorRecord.sensorCode.IsS1_ON_FWD())
             {
-                if (!IsSourceONCircuitBreakerPutToTrigger)
-                {
-                    IsSourceONCircuitBreakerPutToTrigger = true;
+                TriggerCanStopSourceAfterSourceStopTimeWindowIsComplete();
 
-                    Task.Delay(SourceStopTimeWindow)
-                        .ContinueWith(_ => CanStopSource?.Invoke())
-                        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
-                }
+                //if (!IsSourceONCircuitBreakerPutToTrigger)
+                //{
+                //    IsSourceONCircuitBreakerPutToTrigger = true;
+
+                //    cancellationTokenSource = new CancellationTokenSource();
+
+                //    Task.Delay(SourceStopTimeWindow, cancellationTokenSource.Token)
+                //        .ContinueWith(_ => CanStopSource?.Invoke())
+                //        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
+                //}
             }
 
             return true;
+        }
+
+        private void TriggerCanStopSourceAfterSourceStopTimeWindowIsComplete()
+        {
+            // Capture the previous token before canceling it
+            //var previousToken = cancellationTokenSource.Token;
+
+            // Cancel the previous task
+            cancellationTokenSource.Cancel();
+
+            // Create a new CancellationTokenSource
+            cancellationTokenSource = new CancellationTokenSource();
+
+            // Use the previous token to prevent the race condition
+            Task.Delay(SourceStopTimeWindow, cancellationTokenSource.Token)
+                .ContinueWith(_ => CanStopSource?.Invoke(), TaskContinuationOptions.NotOnCanceled);
         }
 
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
