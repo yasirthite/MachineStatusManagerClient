@@ -24,7 +24,8 @@ namespace XRayMachineStatusManagement.Sensors
             }
         }
 
-        private SensorRecord Prev_SensorRecord;
+        public SensorRecord SensorRecord { get { return _prevSensorRecord; } }
+        private SensorRecord _prevSensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
         private const int SensorWaitTimeInMilliseconds = 0;
 
@@ -37,7 +38,7 @@ namespace XRayMachineStatusManagement.Sensors
         private SensorS5(IMachineStatusLogger logger)
         {
             this.machineStatusLogger = logger;
-            Prev_SensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
+            _prevSensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
         }
 
         private static readonly Lazy<SensorS5> lazySensor = new Lazy<SensorS5>(() => new SensorS5(new ConsoleLogger()));
@@ -60,29 +61,29 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool CheckValidityForReverseDirection(SensorRecord newSensorRecord)
         {
-            if (Prev_SensorRecord.sensorCode.IsEmpty())
+            if (_prevSensorRecord.sensorCode.IsEmpty())
             {
-                Prev_SensorRecord = newSensorRecord;
+                _prevSensorRecord = newSensorRecord;
                 Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
                 return true;
             }
             else if (IsProhibitedTimeWindowOpenFor(newSensorRecord))
             {
-                if (Prev_SensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_OFF_FWD())
-                    Prev_SensorRecord = newSensorRecord;
+                if (_prevSensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_OFF_FWD())
+                    _prevSensorRecord = newSensorRecord;
                 else
-                    Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                    _prevSensorRecord.timeStamp = newSensorRecord.timeStamp;
 
                 return false;
             }
             else if (PrevSensorRecordHasInvalidSequenceWith(newSensorRecord))
             {
-                Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                _prevSensorRecord.timeStamp = newSensorRecord.timeStamp;
                 return false;
             }
             else
             {
-                Prev_SensorRecord = newSensorRecord;
+                _prevSensorRecord = newSensorRecord;
                 Task.Delay(SourceStopTimeWindow).ContinueWith(_ => CanStopSource?.Invoke());
                 return true;
             }
@@ -93,14 +94,14 @@ namespace XRayMachineStatusManagement.Sensors
             if (SensorWaitTimeInMilliseconds <= 0)
                 return false;
 
-            TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;
+            TimeSpan timeStampDifference = newSensorRecord.timeStamp - _prevSensorRecord.timeStamp;
             return timeStampDifference < SensorWaitTimeWindow;
         }
 
         private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
         {
-            return ((Prev_SensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_ON_FWD()) ||
-                            ((Prev_SensorRecord.sensorCode.IsS5_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS5_OFF_FWD()));
+            return ((_prevSensorRecord.sensorCode.IsS5_ON_FWD() && newSensorRecord.sensorCode.IsS5_ON_FWD()) ||
+                            ((_prevSensorRecord.sensorCode.IsS5_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS5_OFF_FWD()));
         }
     }
 }

@@ -22,7 +22,8 @@ namespace XRayMachineStatusManagement.Sensors
             }
         }
 
-        private SensorRecord Prev_SensorRecord;
+        public SensorRecord SensorRecord { get { return _prevSensorRecord; } }
+        private SensorRecord _prevSensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
         public const int SensorProhibitedtimeInMilliseconds = 200;
         private int BagNumber = 0;
@@ -40,7 +41,7 @@ namespace XRayMachineStatusManagement.Sensors
         private SensorS3(IMachineStatusLogger logger)
         {
             this.machineStatusLogger = logger;
-            Prev_SensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
+            _prevSensorRecord = new SensorRecord() { sensorCode = SensorCode.Empty, timeStamp = DateTime.MinValue };
         }
 
         private static readonly Lazy<SensorS3> lazySensor = new Lazy<SensorS3>(() => new SensorS3(new ConsoleLogger()));
@@ -68,7 +69,7 @@ namespace XRayMachineStatusManagement.Sensors
                     {
                         //Todo: decrement nS2PartiallBags due to previous faulty sensor data. Use event for time being.
                         FaultySensorData?.Invoke();
-                        Prev_SensorRecord = newSensorRecord;
+                        _prevSensorRecord = newSensorRecord;
                         return false;
                     }
                     else
@@ -76,44 +77,44 @@ namespace XRayMachineStatusManagement.Sensors
                         //Indicates: Prohibited Window is NOT open. You can safely take the value.
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($">>------------------------------------------->>[WESI][BAG Number: {++BagNumber}] " +
-                            $"Time to pass through S3({newSensorRecord.sensorCode} - {Prev_SensorRecord.sensorCode}) " +
-                            $"= {(newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp).TotalMilliseconds} ms.");
+                            $"Time to pass through S3({newSensorRecord.sensorCode} - {_prevSensorRecord.sensorCode}) " +
+                            $"= {(newSensorRecord.timeStamp - _prevSensorRecord.timeStamp).TotalMilliseconds} ms.");
                         Console.ResetColor();
 
-                        Prev_SensorRecord = newSensorRecord;
+                        _prevSensorRecord = newSensorRecord;
                         return true;
                     }
                 }
                 else
                 {
                     //Indicates: Sensor is Turning ON.
-                    Prev_SensorRecord = newSensorRecord;
+                    _prevSensorRecord = newSensorRecord;
                     return true;
                 }
             }
             else
             {
                 //Indicates: Sensor Data Sequence is Invalid. i:e, Receiving two consecutive ONs or OFFs.
-                Prev_SensorRecord.timeStamp = newSensorRecord.timeStamp;
+                _prevSensorRecord.timeStamp = newSensorRecord.timeStamp;
                 return false;
             }
         }
 
         private bool IsTurningOFF(SensorRecord newSensorRecord)
         {
-            return Prev_SensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD();
+            return _prevSensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD();
         }
 
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
         {
-            TimeSpan timeStampDifference = newSensorRecord.timeStamp - Prev_SensorRecord.timeStamp;
+            TimeSpan timeStampDifference = newSensorRecord.timeStamp - _prevSensorRecord.timeStamp;
             return timeStampDifference < SensorProhibitedTimeWindow;
         }
 
         private bool HasValidSequence(SensorRecord newSensorRecord)
         {
-            return !((Prev_SensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_ON_FWD()) ||
-                            ((Prev_SensorRecord.sensorCode.IsS3_OFF_FWD() || Prev_SensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS3_OFF_FWD()));
+            return !((_prevSensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_ON_FWD()) ||
+                            ((_prevSensorRecord.sensorCode.IsS3_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS3_OFF_FWD()));
         }
     }
 }

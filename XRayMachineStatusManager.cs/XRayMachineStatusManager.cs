@@ -485,6 +485,28 @@ namespace XRayMachineStatusManagement
             //_logger.LogInformation($"IsDetector 2 ON: {IsDetector2_On}");
         }
 
+        private bool NoSensorS1SignalSince2Seconds => (DateTime.Now - sensorS1.SensorRecord.timeStamp).TotalSeconds > 2;
+
+        private bool IsNoSensorSignalMoreThan2SecondsAgo()
+        {
+            var maxTimeStamp = sensorS1.SensorRecord.timeStamp;
+
+            //if (sensorS2.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS2.SensorRecord.timeStamp;
+            //}
+            //if (sensorS3.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS3.SensorRecord.timeStamp;
+            //}
+            //if (sensorS4.SensorRecord.timeStamp > maxTimeStamp)
+            //{
+            //    maxTimeStamp = sensorS4.SensorRecord.timeStamp;
+            //}
+
+            return (DateTime.Now - maxTimeStamp).TotalSeconds > 2;
+        }
+
         private int nS2BagsPartial = 0;
         private int nS2BagsFull = 0;
         private int nS3BagsPartial = 0;
