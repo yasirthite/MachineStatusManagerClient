@@ -32,7 +32,9 @@ namespace XRayMachineStatusManagement
         S5_OFF_FWD = 5846,
 
         BELT_FWD = 2168,
-        BELT_STOP = 2169,
-        BELT_REV = 2170
+        BELT_PAUSE = 2169,
+        BELT_REV = 2170,
+        BELT_RESUME_FWD = 6666,
+        BELT_RESUME_REV = 6668
     }
 }

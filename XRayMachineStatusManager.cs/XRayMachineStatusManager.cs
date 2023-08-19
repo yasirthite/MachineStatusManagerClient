@@ -16,6 +16,8 @@ namespace XRayMachineStatusManagement
         private readonly ConsoleLogger _logger;
         private readonly bool _suppressInvalidValueException;
         private bool CanTurnOffSource = false;
+        private bool IsBeltMovingFwd = false;
+        private bool IsBeltMovingRev = false;
 
         DateTime prevSensorTimeStamp = DateTime.Now;
         DateTime newsensorTimeStamp = DateTime.Now;
@@ -32,6 +34,7 @@ namespace XRayMachineStatusManagement
         public event EventHandler<SensorCode> TurnOffDetector1;
         public event EventHandler<SensorCode> TurnOnDetector2;
         public event EventHandler<SensorCode> TurnOffDetector2;
+        public event EventHandler<SensorCode > BeltResumedForward;
 
         /// <summary>
         /// This event occurs when User doesn't ensure the entering of Bag in the tunnel.
@@ -181,8 +184,45 @@ namespace XRayMachineStatusManagement
 
                 switch (sensorCode)
                 {
-                    case SensorCode.BELT_STOP:
-                        SourceOffExceptionalEvent.Invoke(this, SensorCode.BELT_STOP); break;
+                    case SensorCode.BELT_RESUME_REV:
+                        {
+                            IsBeltMovingRev = true;
+                            IsBeltMovingFwd = false;
+                            
+                            break;
+                        }
+
+                    case SensorCode.BELT_RESUME_FWD:
+                        {
+                            IsBeltMovingFwd = true;
+                            IsBeltMovingRev = false;
+
+                            BeltResumedForward?.Invoke(this, sensorCode);
+
+                            break;
+                        }
+
+                    case SensorCode.BELT_REV:
+                        {
+                            IsBeltMovingRev = true;
+                            IsBeltMovingFwd = false; //added for safety.
+                            break;
+                        }
+
+                    case SensorCode.BELT_FWD:
+                        {
+                            IsBeltMovingFwd = true;
+                            IsBeltMovingRev = false; //added for safety.
+                            break;
+                        }
+
+                    case SensorCode.BELT_PAUSE:
+                        {
+                            IsBeltMovingFwd = false;
+                            IsBeltMovingRev = false;
+                            
+                            break;
+                        }
 
                     case SensorCode.S1_ON_FWD:
 

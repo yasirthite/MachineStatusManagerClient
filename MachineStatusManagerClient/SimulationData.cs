@@ -339,7 +339,7 @@ namespace MachineStatusManagerClient
             Task.Delay(2976).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
             Task.Delay(608).Wait(); manager.DecideStatus(SensorCode.S1_OFF_FWD);
             Task.Delay(5).Wait(); manager.DecideStatus(SensorCode.S1_ON_FWD);
-            Task.Delay(85230).Wait(); manager.DecideStatus(SensorCode.BELT_STOP);
+            Task.Delay(85230).Wait(); manager.DecideStatus(SensorCode.BELT_PAUSE);
 
 
 
