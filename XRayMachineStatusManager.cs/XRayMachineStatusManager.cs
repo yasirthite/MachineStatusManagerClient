@@ -33,6 +33,12 @@ namespace XRayMachineStatusManagement
         public event EventHandler<SensorCode> TurnOnDetector2;
         public event EventHandler<SensorCode> TurnOffDetector2;
 
+        /// <summary>
+        /// This event occurs when User doesn't ensure the entering of Bag in the tunnel.
+        /// The Bag remains partially inside the tunnel due to resitance of FLAPs.
+        /// </summary>
+        public event EventHandler<SensorCode> SourceOffExceptionalEvent;
+
         public XRayMachineStatusManager()
         {
             _suppressInvalidValueException = true;
@@ -175,6 +181,9 @@ namespace XRayMachineStatusManagement
 
                 switch (sensorCode)
                 {
+                    case SensorCode.BELT_STOP:
+                        SourceOffExceptionalEvent.Invoke(this, SensorCode.BELT_STOP); break;
+
                     case SensorCode.S1_ON_FWD:
 
                         CanTurnOffSource = false;
@@ -229,10 +238,15 @@ namespace XRayMachineStatusManagement
 
                             if (!IsDetector1_On)
                             {
-                                IsDetector1_On = true;
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
-                                TurnOnDetector1?.Invoke(this, sensorCode);
-                                LogBagData();
+                                if (!IsSourceOn)
+                                    SourceOffExceptionalEvent?.Invoke(this, sensorCode);
+                                else
+                                {
+                                    IsDetector1_On = true;
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 1 is turning ON ...");
+                                    TurnOnDetector1?.Invoke(this, sensorCode);
+                                    LogBagData();
+                                }
                             }
                             else
                             {
@@ -278,13 +292,18 @@ namespace XRayMachineStatusManagement
 
                             if (!IsDetector2_On)
                             {
-                                _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
+                                if (!IsSourceOn)
+                                    SourceOffExceptionalEvent.Invoke(this, sensorCode);
+                                else
+                                {
+                                    _logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: Detector 2 is turning ON ...");
 
-                                TurnOnDetector2?.Invoke(this, sensorCode);
+                                    TurnOnDetector2?.Invoke(this, sensorCode);
 
-                                IsDetector2_On = true;
+                                    IsDetector2_On = true;
 
-                                LogBagData();
+                                    LogBagData();
+                                }
                             }
                             else
                             {

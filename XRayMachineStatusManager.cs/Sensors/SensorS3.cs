@@ -25,7 +25,7 @@ namespace XRayMachineStatusManagement.Sensors
         public SensorRecord SensorRecord { get { return _prevSensorRecord; } }
         private SensorRecord _prevSensorRecord;
         private IMachineStatusLogger machineStatusLogger = default;
-        public const int SensorProhibitedtimeInMilliseconds = 200;
+        public const int SensorProhibitedtimeInMilliseconds = 250;
         private int BagNumber = 0;
 
         /// <summary>
