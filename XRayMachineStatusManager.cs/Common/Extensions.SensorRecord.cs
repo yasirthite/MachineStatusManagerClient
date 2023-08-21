@@ -14,15 +14,26 @@ namespace XRayMachineStatusManagement.Common
             return sensorCode == SensorCode.Empty;
         }
 
+
         public static bool IsS1_ON_FWD(this SensorCode sensorCode)
         {
             return sensorCode == SensorCode.S1_ON_FWD;
         }
+        public static bool IsS1_ON_REV(this SensorCode sensorCode)
+        {
+            return sensorCode == SensorCode.S1_ON_REV;
+        }
+
 
         public static bool IsS1_OFF_FWD(this SensorCode sensorCode)
         {
             return sensorCode == SensorCode.S1_OFF_FWD;
         }
+        public static bool IsS1_OFF_REV(this SensorCode sensorCode)
+        {
+            return sensorCode == SensorCode.S1_ON_REV;
+        }
+
 
         public static bool IsS2_ON_FWD(this SensorCode sensorCode)
         {

@@ -53,17 +53,37 @@ namespace XRayMachineStatusManagement.Sensors
         internal bool HasValid(SensorRecord newSensorRecord)
         {
             if (newSensorRecord.sensorCode.IsS1_ON_FWD() || newSensorRecord.sensorCode.IsS1_OFF_FWD())
-                return NewCheckValidityForForwardDirection(newSensorRecord);
-            else
+                return CheckValidityForForwardDirection(newSensorRecord);
+            else if(newSensorRecord.sensorCode.IsS1_ON_REV() || newSensorRecord.sensorCode.IsS1_OFF_REV())
                 return CheckValidityForReverseDirection(newSensorRecord);
+            else 
+                return false;
         }
 
         private bool CheckValidityForReverseDirection(SensorRecord newSensorRecord)
         {
+            _prevSensorRecord = newSensorRecord;
+
+            if (newSensorRecord.sensorCode.IsS1_ON_REV())
+            {
+                TriggerCanStopSourceAfterSourceStopTimeWindowIsComplete();
+
+                //if (!IsSourceONCircuitBreakerPutToTrigger)
+                //{
+                //    IsSourceONCircuitBreakerPutToTrigger = true;
+
+                //    cancellationTokenSource = new CancellationTokenSource();
+
+                //    Task.Delay(SourceStopTimeWindow, cancellationTokenSource.Token)
+                //        .ContinueWith(_ => CanStopSource?.Invoke())
+                //        .ContinueWith(_ => IsSourceONCircuitBreakerPutToTrigger = false);
+                //}
+            }
+
             return true;
         }
 
-        private bool NewCheckValidityForForwardDirection(SensorRecord newSensorRecord)
+        private bool CheckValidityForForwardDirection(SensorRecord newSensorRecord)
         {
             _prevSensorRecord = newSensorRecord;
 
@@ -102,19 +122,19 @@ namespace XRayMachineStatusManagement.Sensors
                 .ContinueWith(_ => CanStopSource?.Invoke(), TaskContinuationOptions.NotOnCanceled);
         }
 
-        private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
-        {
-            if (SensorWaitTimeInMilliseconds <= 0)
-                return false;
+        //private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
+        //{
+        //    if (SensorWaitTimeInMilliseconds <= 0)
+        //        return false;
 
-            TimeSpan timeStampDifference = newSensorRecord.timeStamp - _prevSensorRecord.timeStamp;
-            return timeStampDifference < SensorWaitTimeWindow;
-        }
+        //    TimeSpan timeStampDifference = newSensorRecord.timeStamp - _prevSensorRecord.timeStamp;
+        //    return timeStampDifference < SensorWaitTimeWindow;
+        //}
 
-        private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
-        {
-            return ((_prevSensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
-                            ((_prevSensorRecord.sensorCode.IsS1_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS1_OFF_FWD()));
-        }
+        //private bool PrevSensorRecordHasInvalidSequenceWith(SensorRecord newSensorRecord)
+        //{
+        //    return ((_prevSensorRecord.sensorCode.IsS1_ON_FWD() && newSensorRecord.sensorCode.IsS1_ON_FWD()) ||
+        //                    ((_prevSensorRecord.sensorCode.IsS1_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS1_OFF_FWD()));
+        //}
     }
 }
