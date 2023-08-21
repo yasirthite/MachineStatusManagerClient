@@ -184,24 +184,6 @@ namespace XRayMachineStatusManagement
 
                 switch (sensorCode)
                 {
-                    case SensorCode.BELT_RESUME_REV:
-                        {
-                            IsBeltMovingRev = true;
-                            IsBeltMovingFwd = false;
-                            
-                            break;
-                        }
-
-                    case SensorCode.BELT_RESUME_FWD:
-                        {
-                            IsBeltMovingFwd = true;
-                            IsBeltMovingRev = false;
-
-                            BeltResumedForward?.Invoke(this, sensorCode);
-
-                            break;
-                        }
-
                     case SensorCode.BELT_REV:
                         {
                             IsBeltMovingRev = true;
@@ -514,6 +496,24 @@ namespace XRayMachineStatusManagement
                         }
 
                         break;
+
+                    case SensorCode.BELT_RESUME_REV:
+                        {
+                            IsBeltMovingRev = true;
+                            IsBeltMovingFwd = false;
+
+                            break;
+                        }
+
+                    case SensorCode.BELT_RESUME_FWD:
+                        {
+                            IsBeltMovingFwd = true;
+                            IsBeltMovingRev = false;
+
+                            BeltResumedForward?.Invoke(this, sensorCode);
+
+                            break;
+                        }
 
                     default:
                         if (_suppressInvalidValueException)
