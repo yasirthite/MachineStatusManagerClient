@@ -56,7 +56,7 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool CheckValidityForReverseDirection(SensorRecord newSensorRecord)
         {
-            return true;
+            return CheckValidityForForwardDirection(newSensorRecord);
         }
 
         private bool CheckValidityForForwardDirection(SensorRecord newSensorRecord)
@@ -102,7 +102,8 @@ namespace XRayMachineStatusManagement.Sensors
 
         private bool IsTurningOFF(SensorRecord newSensorRecord)
         {
-            return _prevSensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD();
+            return _prevSensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_OFF_FWD() ||
+                _prevSensorRecord.sensorCode.IsS3_ON_REV() && newSensorRecord.sensorCode.IsS3_OFF_REV();
         }
 
         private bool IsProhibitedTimeWindowOpenFor(SensorRecord newSensorRecord)
@@ -114,7 +115,9 @@ namespace XRayMachineStatusManagement.Sensors
         private bool HasValidSequence(SensorRecord newSensorRecord)
         {
             return !((_prevSensorRecord.sensorCode.IsS3_ON_FWD() && newSensorRecord.sensorCode.IsS3_ON_FWD()) ||
-                            ((_prevSensorRecord.sensorCode.IsS3_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS3_OFF_FWD()));
+                (_prevSensorRecord.sensorCode.IsS3_ON_REV() && newSensorRecord.sensorCode.IsS3_ON_REV()) ||
+                ((_prevSensorRecord.sensorCode.IsS3_OFF_FWD() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS3_OFF_FWD()) ||
+                ((_prevSensorRecord.sensorCode.IsS3_OFF_REV() || _prevSensorRecord.sensorCode.IsEmpty()) && newSensorRecord.sensorCode.IsS3_OFF_REV()));
         }
     }
 }

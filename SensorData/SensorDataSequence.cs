@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.IO.Ports;
 using System.Threading;
 using XRayMachineStatusManagement;
-using System.Security.Cryptography;
-using System.Net.Http;
 
 namespace SensorData
 {
@@ -35,12 +28,18 @@ namespace SensorData
             manager.TurnOffDetector1 += Manager_TurnOffDetector1;
             manager.TurnOnDetector2 += Manager_TurnOnDetector2;
             manager.TurnOffDetector2 += Manager_TurnOffDetector2;
+            manager.SourceOffExceptionalEvent += Manager_SourceOffExceptionalEvent;
 
             this.KeyBoardSerialPort = new System.IO.Ports.SerialPort(new System.ComponentModel.Container());
             this.USBPort = new System.IO.Ports.SerialPort(new System.ComponentModel.Container());
             InitializeKeyboardSerialPort();
             InitializeKeyboardUSBPort();
 
+        }
+
+        private void Manager_SourceOffExceptionalEvent(object sender, SensorCode e)
+        {
+            Console.WriteLine($"[{Thread.CurrentThread.ManagedThreadId}] [{nameof(Manager_TurnOffSource)}] EventHandled -->> Source is Off");
         }
 
         private void Manager_TurnOnDetector2(object sender, SensorCode e)

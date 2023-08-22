@@ -239,7 +239,6 @@ namespace XRayMachineStatusManagement
 
                     case SensorCode.S4_ON_REV:
                     case SensorCode.S4_ON_FWD:
-
                         if (sensorS4.HasValid(newSensorRecord))
                         {
                             //_logger.LogInformation($"[{sensorCode}:{(int)sensorCode}]: SKIP -> Un-used Sensor Signal.");
@@ -560,12 +559,12 @@ namespace XRayMachineStatusManagement
 
         private void LogBagData()
         {
-            _logger.LogInformation($"Detector 1: Partial = {nS2BagsPartial}, Full = {nS2BagsFull}");
-            _logger.LogInformation($"Detector 2: Partial = {nS3BagsPartial}, Full = {nS3BagsFull}");
-            _logger.LogInformation($"CanTurnOffSource: {CanTurnOffSource}, CanTurnOffDetector 1 = {CanTurnOffDetector1}, CanTurnOffDetector 2 = {CanTurnOffDetector2}");
-            _logger.LogInformation($"IsSourceON: {IsSourceOn}");
-            _logger.LogInformation($"IsDetector 1 ON: {IsDetector1_On}");
-            _logger.LogInformation($"IsDetector 2 ON: {IsDetector2_On}");
+            //_logger.LogInformation($"Detector 1: Partial = {nS2BagsPartial}, Full = {nS2BagsFull}");
+            //_logger.LogInformation($"Detector 2: Partial = {nS3BagsPartial}, Full = {nS3BagsFull}");
+            //_logger.LogInformation($"CanTurnOffSource: {CanTurnOffSource}, CanTurnOffDetector 1 = {CanTurnOffDetector1}, CanTurnOffDetector 2 = {CanTurnOffDetector2}");
+            //_logger.LogInformation($"IsSourceON: {IsSourceOn}");
+            //_logger.LogInformation($"IsDetector 1 ON: {IsDetector1_On}");
+            //_logger.LogInformation($"IsDetector 2 ON: {IsDetector2_On}");
         }
 
         private bool NoSensorS1SignalSince2Seconds => (DateTime.Now - sensorS1.SensorRecord.timeStamp).TotalSeconds > 2;
