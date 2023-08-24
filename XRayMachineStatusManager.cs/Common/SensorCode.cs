@@ -58,5 +58,10 @@ namespace XRayMachineStatusManagement
         S5_ON_REV = 4835,
         S5_OFF_REV = 5835,
         #endregion SENSOR REV CODES
+
+        #region KEYBOARD CODES
+        EMERGENCY_STOP_PRESSED = 4801,
+        EMERGENCY_STOP_RELEASED = 4800 
+        #endregion
     }
 }

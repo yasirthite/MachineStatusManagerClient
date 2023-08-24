@@ -34,6 +34,8 @@ namespace XRayMachineStatusManagement
         public event EventHandler<SensorCode> TurnOffDetector1;
         public event EventHandler<SensorCode> TurnOnDetector2;
         public event EventHandler<SensorCode> TurnOffDetector2;
+        public event EventHandler<SensorCode> EmergencyStopPressed;
+        public event EventHandler<SensorCode> EmergencyStopReleased;
 
         /// <summary>
         /// This event occurs when User doesn't ensure the entering of Bag in the tunnel.
@@ -183,6 +185,7 @@ namespace XRayMachineStatusManagement
 
                 switch (sensorCode)
                 {
+                    #region SENSOR CODES
                     case SensorCode.S1_ON_FWD:
                     case SensorCode.S1_ON_REV:
                         ManageSourceOn(sensorCode, newSensorRecord);
@@ -273,9 +276,11 @@ namespace XRayMachineStatusManagement
                     case SensorCode.S5_OFF_REV:
                     case SensorCode.S5_OFF_FWD:
                         ManageSourceOff(sensorCode, newSensorRecord);
-                        break;
+                        break; 
+                    #endregion
 
-                    #region BELT REV CODE
+
+                    #region BELT REV CODES
                     case SensorCode.BELT_REV:
                         {
                             IsBeltMovingRev = true;
@@ -308,7 +313,18 @@ namespace XRayMachineStatusManagement
 
                             break;
                         }
-                        #endregion BELT REV CODE
+                    #endregion BELT REV CODE
+
+
+                    #region KEYBOARD CODES
+                    case SensorCode.EMERGENCY_STOP_PRESSED:
+                        EmergencyStopPressed.Invoke(this, sensorCode);
+                        break;
+
+                    case SensorCode.EMERGENCY_STOP_RELEASED:
+                        EmergencyStopReleased.Invoke(this, sensorCode);
+                        break; 
+                    #endregion
 
                     default:
                         if (_suppressInvalidValueException)
