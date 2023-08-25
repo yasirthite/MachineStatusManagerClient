@@ -13,11 +13,27 @@ namespace XRayMachineStatusManagement
 {
     public class XRayMachineStatusManager
     {
+        public bool IsBeltMovingFwd { get; private set; }
+        public bool IsBeltMovingRev { get; private set; }
+        public int MyProperty { get; set; }
+
+        public event EventHandler<SensorCode> TurnOnSource;
+        public event EventHandler<SensorCode> TurnOffSource;
+        public event EventHandler<SensorCode> TurnOnDetector1;
+        public event EventHandler<SensorCode> TurnOffDetector1;
+        public event EventHandler<SensorCode> TurnOnDetector2;
+        public event EventHandler<SensorCode> TurnOffDetector2;
+        public event EventHandler<SensorCode> EmergencyStopPressed;
+        public event EventHandler<SensorCode> EmergencyStopReleased;
+        /// <summary>
+        /// This event occurs when User doesn't ensure the entering of Bag in the tunnel.
+        /// The Bag remains partially inside the tunnel due to resitance of FLAPs.
+        /// </summary>
+        public event EventHandler<SensorCode> SourceOffExceptionalEvent;
+
         private readonly ConsoleLogger _logger;
         private readonly bool _suppressInvalidValueException;
         private bool CanTurnOffSource = false;
-        private bool IsBeltMovingFwd = false;
-        private bool IsBeltMovingRev = false;
 
         DateTime prevSensorTimeStamp = DateTime.Now;
         DateTime newsensorTimeStamp = DateTime.Now;
@@ -28,20 +44,8 @@ namespace XRayMachineStatusManagement
         private SensorS4 sensorS4;
         private SensorS5 sensorS5;
 
-        public event EventHandler<SensorCode> TurnOnSource;
-        public event EventHandler<SensorCode> TurnOffSource;
-        public event EventHandler<SensorCode> TurnOnDetector1;
-        public event EventHandler<SensorCode> TurnOffDetector1;
-        public event EventHandler<SensorCode> TurnOnDetector2;
-        public event EventHandler<SensorCode> TurnOffDetector2;
-        public event EventHandler<SensorCode> EmergencyStopPressed;
-        public event EventHandler<SensorCode> EmergencyStopReleased;
 
-        /// <summary>
-        /// This event occurs when User doesn't ensure the entering of Bag in the tunnel.
-        /// The Bag remains partially inside the tunnel due to resitance of FLAPs.
-        /// </summary>
-        public event EventHandler<SensorCode> SourceOffExceptionalEvent;
+        
 
         public XRayMachineStatusManager()
         {
